@@ -4,7 +4,7 @@ public class Configuracao {
 	
 	String Versao = "v0.1";
 	String NomeDoSistema = "SisJus";
-	String Autor = "We have able to do the better of Team";
+	String Autor = "We have able to do the better Team";
 	String Sigla = "SJ v0.1";
 	public String getVersao() {
 		return Versao;
