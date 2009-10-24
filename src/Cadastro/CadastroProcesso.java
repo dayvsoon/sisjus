@@ -21,7 +21,7 @@ public class CadastroProcesso {
 	   private int cod_id;
 	   private int id;
 	   public static Connection Conn = null;
-	   
+	  
 	   
 	   FacesContext context = FacesContext.getCurrentInstance();
 	   public CadastroProcesso() throws SQLException{

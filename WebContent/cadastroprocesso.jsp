@@ -10,6 +10,27 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Cadastro de Processo</title>
+	<script type="text/javascript">
+	function Formatadata(Campo, teclapres)
+			{
+				var tecla = teclapres.keyCode;
+				var vr = new String(Campo.value);
+				vr = vr.replace("/", "");
+				vr = vr.replace("/", "");
+				vr = vr.replace("/", "");
+				tam = vr.length + 1;
+				if (tecla != 8 && tecla != 8)
+				{
+				   if (tam > 0 && tam < 2)
+					Campo.value = vr.substr(0, 2) ;
+				   if (tam > 2 && tam < 4)
+					Campo.value = vr.substr(0, 2) + '/' + vr.substr(2, 2);
+				   if (tam > 4 && tam < 7)
+					Campo.value = vr.substr(0, 2) + '/' + vr.substr(2, 2) + '/' + vr.substr(4,7);
+				}
+			}
+	
+	</script>
 	</head>
 	<body>
 	<h:form>
@@ -24,15 +45,16 @@
 	     <td><h:outputText value="Réu: " />
 	     <td><h:outputText value="Numero do Processo: " />   </td>
 	     <td><h:outputText value="Classificação do Direito: " />
-	     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Status: " />
-	     <td><h:outputText value="Data:" /></td> 
+	     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Status: " />
+	     <td><h:outputText value="Data Inicial:" /></td>
+	     <td><h:outputText value="Data Limite:" /></td> 
 	   </tr>
 	   <tr>
 	   <td><h:inputText onclick="this.style.background: #638cb5; color: white" onselect="background: #638cb5; color: white" value="#{cadastroProcesso.nomeDoAutor}" /></td>
 	   <td><h:inputText value="#{cadastroProcesso.nomeDoReu}" /></td>
 	   <td><h:inputText value="#{cadastroProcesso.numeroProcesso}" /></td>
 	   <td><h:inputText value="#{cadastroProcesso.cod_dir}" />
-	   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h:selectOneListbox value="#{cadastroProcesso.status}" size="1" style="color: red"   >
+	   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h:selectOneListbox value="#{cadastroProcesso.status}" size="1" style="color: red"   >
 	                <f:selectItem itemLabel="Concluso para despacho" itemValue="Concluso para despacho" />
 					<f:selectItem itemLabel="Em Andamento" itemValue="Em Andamento" />
 					<f:selectItem itemLabel="Arquivado" itemValue="Em Revisão" />
@@ -43,7 +65,8 @@
 					<f:selectItem  itemLabel="Para réplica" itemValue="Para réplica"/>
 					<f:selectItem itemLabel="Status..." />
 	        </h:selectOneListbox></td>
-	        <td><h:inputText  />  </td>
+	        <td><h:inputText onkeyup="Formatadata(this,event)"  maxlength="10" />  </td>
+	        <td><h:inputText  onkeyup="Formatadata(this,event)" id="data" maxlength="10" /></td>
 	     
 	   </tr>
 	 </table>		
