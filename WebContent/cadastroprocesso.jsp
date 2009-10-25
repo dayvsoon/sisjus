@@ -65,9 +65,12 @@
 					<f:selectItem  itemLabel="Para réplica" itemValue="Para réplica"/>
 					<f:selectItem itemLabel="Status..." />
 	        </h:selectOneListbox></td>
-	        <td><h:inputText onkeyup="Formatadata(this,event)"  maxlength="10" />  </td>
-	        <td><h:inputText  onkeyup="Formatadata(this,event)" id="data" maxlength="10" /></td>
-	     
+	        <td><h:inputText id="ITDataInicial" onkeyup="Formatadata(this,event)"  disabled="#{cadastroProcesso.desativaData}" size="12" maxlength="10" value="#{cadastroProcesso.dataInicial}" />  </td>
+	        <td><h:inputText  onkeyup="Formatadata(this,event)" id="ITdataFinal" size="12" maxlength="10" value="#{cadastroProcesso.dataFinal}" >
+	        <a4j:support event="onkeypress" reRender="OPTcontador"></a4j:support>
+	        </h:inputText> </td>
+	        <td><h:outputText id="OPTcontador" value="#{cadastroProcesso.dataFinal}" /> </td>
+            	   
 	   </tr>
 	 </table>		
 		<br>
@@ -77,10 +80,10 @@
 			<tr>
 				<td><b><h:outputText value="Descrição do Processo: "></h:outputText></b></td>
 			</tr>
-			<tr>
-				<td><h:inputTextarea cols="70" rows="8"
+			<tr align="center">
+				<td align="center"><h:inputTextarea cols="70" rows="8"
 					value="#{cadastroProcesso.descricaoDoProcesso}"
-					style="width: 1000px; height: 390px"></h:inputTextarea>
+					style="width: 1350px; height: 390px"></h:inputTextarea>
 			</tr>
 			<tr>
 				
@@ -93,17 +96,17 @@
 				<td><b><h:outputText value="Observações: "></h:outputText></b></td>
 			</tr>
 			<tr>
-				<td><h:inputTextarea style="width: 950px; height: 60;"
+				<td><h:inputTextarea style="width: 1050px; height: 60;"
 					value="#{cadastroProcesso.observacao}"></h:inputTextarea></td>
 			</tr>
 		</table>
 
 		<h:commandButton value="Visualizar"
-			action="http://localhost:8080/SisJus/faces/visualizar.jsp"></h:commandButton>
+			action="http://localhost:8080/JusSis/faces/visualizar.jsp"></h:commandButton>
 		<h:commandButton value="Grava"
 			action="#{cadastroProcesso.InserirDados}"></h:commandButton>
 			<f:facet name="Footer">
-			<h:outputText value="Todos Direitos Resevado. By MiguelCPJava" />
+			<h:outputText value="Todos Direitos Resevado" />
 			</f:facet>
 	</h:form>
 	</body>
