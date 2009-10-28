@@ -5,10 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
-
 import javax.faces.context.FacesContext;
 import javax.swing.*;
+
 
 public class CadastroProcesso {
 
@@ -25,7 +26,7 @@ public class CadastroProcesso {
 	private int id;
 	public static Connection Conn = null;
 	public boolean DesativaData = true;
-
+    String dtInicial;
 	FacesContext context = FacesContext.getCurrentInstance();
 
 	public CadastroProcesso() throws SQLException {
@@ -33,23 +34,36 @@ public class CadastroProcesso {
 	}
 
 	Date dataInicial = new Date(System.currentTimeMillis());
-	Date dataFinal = new Date();
-	String Formatador = new SimpleDateFormat("dd/MM/yyyy").format(dataInicial);
+	Date dataFinal = new Date(System.currentTimeMillis());
+	
+	/*String Formatador = new SimpleDateFormat("dd/MM/yyyy").parse(dataInicial);
     String FormatadorFinal = new SimpleDateFormat("dd/MM/yyyy").format(dataFinal); 
 	String DataInicial = Formatador;
 	String DataFinal = FormatadorFinal;
-    
+    */
+	 
+	String FormatadorInicial = new SimpleDateFormat("dd/MM/yyyy").format(dataInicial);
+	String FormatadorFinal = new SimpleDateFormat("dd/MM/yyyy").format(dataFinal);
+
+	//Date Resultado = new Date(dataFinal.compareTo(dataInicial));
+	//String Igual = Resultado.toString();
 	
+		
+	//  int Comparaçao = FormatadorFinal.compareTo(FormatadorInicial);
+		/*long differenceMilliSeconds = dateFinal.getTime() - dateInicial.getTime();   
+
+		System.out.println("diferenca em milisegundos: " + differenceMilliSeconds);    
+		System.out.println("diferenca em segundos: " + (differenceMilliSeconds/1000));    
+		System.out.println("diferenca em minutos: " + (differenceMilliSeconds/1000/60));    
+		System.out.println("diferenca em horas: " + (differenceMilliSeconds/1000/60/60));    
+		System.out.println("diferenca em dias: " + (differenceMilliSeconds/1000/60/60/24));    
+	*/					 
+      			    
 	
+	    	
 
 	
-	public String getDataFinal() {
-		return DataFinal;
-	}
 
-	public void setDataFinal(String dataFinal) {
-		DataFinal = dataFinal;
-	}
 
 	public boolean isDesativaData() {
 		return DesativaData;
@@ -148,17 +162,10 @@ public class CadastroProcesso {
 		Observacao = observacao;
 	}
 
-	public String getDataInicial() {
-		return DataInicial;
-	}
 
-	public void setDataInicial(String dataInicial) {
-		DataInicial = dataInicial;
-	}
-
-
+ 
 	public String InserirDados() throws SQLException {
-
+	  	 
 		PreparedStatement st;
 		PreparedStatement stm;
 		ResultSet rs;
@@ -166,7 +173,7 @@ public class CadastroProcesso {
 		try {
 			stm = Conn.prepareStatement("Select id From processo");
 			st = Conn
-					.prepareStatement("Insert Into processo(nomedoautor,nomedoreu,numerodoprocesso,status,descricaodoprocesso,observacao,cod_id) values(?,?,?,?,?,?,?)");
+					.prepareStatement("Insert Into processo(nomedoautor,nomedoreu,numerodoprocesso,status,descricaodoprocesso,observacao,cod_id,datainicial,datafinal) values(?,?,?,?,?,?,?,?,?)");
 			stm.execute();
 			rs = stm.executeQuery();
 			while (rs.next()) {
@@ -186,6 +193,8 @@ public class CadastroProcesso {
 			st.setString(5, getDescricaoDoProcesso());
 			st.setString(6, getObservacao());
 			st.setString(7, getCodigoGerado());
+			st.setString(8, getFormatadorInicial());
+			st.setString(9, getFormatadorFinal());
 			st.execute();
 			st.close();
 			// context.addMessage(null, new
@@ -205,4 +214,39 @@ public class CadastroProcesso {
 			return "invalidInsert";
 		}
 	}
-}
+
+	public String getFormatadorInicial() {
+		return FormatadorInicial;
+	}
+
+	public void setFormatadorInicial(String formatadorInicial) {
+		FormatadorInicial = formatadorInicial;
+	}
+
+	public String getFormatadorFinal() {
+		return FormatadorFinal;
+	}
+
+	public void setFormatadorFinal(String formatadorFinal) {
+		FormatadorFinal = formatadorFinal;
+	}
+
+	public Date getDataInicial() {
+		return dataInicial;
+	}
+
+	public void setDataInicial(Date dataInicial) {
+		this.dataInicial = dataInicial;
+	}
+
+	public Date getDataFinal() {
+		return dataFinal;
+	}
+
+	public void setDataFinal(Date dataFinal) {
+		this.dataFinal = dataFinal;
+	}
+
+
+
+	}
