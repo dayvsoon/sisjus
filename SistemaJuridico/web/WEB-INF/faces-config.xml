@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+<managed-bean id="ClassePessoa" >
+    <managed-bean-name>pessoa</managed-bean-name>
+    <managed-bean-class>br.com.sisjus.cadastro.pessoa</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+<managed-bean id="ClasseUsuario" >
+    <managed-bean-name>Usuario</managed-bean-name>
+    <managed-bean-class>br.com.sisjus.cadastro.Usuario</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+
+</managed-bean>
+
+<managed-bean id="ClasseSistema" >
+    <managed-bean-name>Sistema</managed-bean-name>
+    <managed-bean-class> br.com.sisjus.sistema.Sistema</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+    <managed-bean>
+        <managed-bean-name>Data</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.util.Data</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>advogadojuiz</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.advogadojuiz</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>cliente</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.cliente</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>funcionario</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.funcionario</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>processo</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.processo</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>HibernateUtil</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.HibernateUtil</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>TesteManagerBean</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.teste.TesteManagerBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>UserDAO</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.dao.UserDAO</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>UserFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.UserFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>AdvogadoJuizFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.AdvogadoJuizFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>PersonFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.PersonFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>ClienteFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.ClienteFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FuncionarioFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.FuncionarioFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>ProcessoFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.ProcessoFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/welcomeJSF.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>gotoAddNewUser</from-outcome>
+            <to-view-id>/Cadastro/cadastrousuario.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
+
+
+
+
+
+
+
+
+
+
+

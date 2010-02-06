@@ -1,0 +1,143 @@
+/* 
+    Document   : status
+    Created on : 14/01/2010, 11:38:29
+    Author     : miguel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+            hr{
+                color: blue;
+                margin-top: 10;
+                border-top: solid;
+}
+.textoinicial{
+    text-align: center;
+    background-color: green;
+    padding: 9px 0 9px 360px;
+}
+.textocentral{
+    font-family: Verdana;
+    font-size: 90%;
+    text-align: center;
+    position: relative;
+    padding-left: 2px;
+    border-top: 2px solid;
+    border-bottom: 2px dotted;
+    background-color: green;
+    background-repeat: repeat;
+    padding: 8px 0 9px 10px;
+    margin-left: 8px;
+
+}
+.topo{
+    width: 100%;
+    height: 25px;
+    border-top: 1px solid #666;
+    border-bottom: 2px dotted #666;
+    background-color: gray;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 11pt;
+    font-family: Courier new;
+    color: #0f0;
+}
+.box{
+    text-align: center;
+    background-color: red;
+    background-repeat: repeat;
+    margin-right: 8px;
+}
+
+.linha{
+   
+    width: 350px;
+    height: 275px;
+    text-align: center;
+    margin-top: 14px;
+}
+.linha2{
+   margin-top: 8px;
+   margin-left: 515px;
+   position: relative;
+   bottom: 287px;
+   width: 350px;
+   height: 275px;
+   text-align: center;
+}
+.linha3{
+   margin-left: 520px;
+   position: relative;
+   bottom: 217px;
+   width: 350px;
+   height: 275px;
+   text-align: center;
+}
+.linha4{
+   
+   margin-left: 0,5px;
+   position: relative;
+   bottom: 496px;
+   width: 350px;
+   height: 275px;
+   text-align: center;
+}
+.linha5{
+   margin-left: 1000px;
+   margin-top: -1124px;
+   padding-left: 1px;
+   width: 350px;
+   height: 275px;
+   text-align: center;
+}
+.linha6{
+    margin-left: 1000px;
+    margin-top: 70px;
+    padding-left: 1px;
+    width: 350px;
+    height: 275px;
+    text-align: center;
+}
+.linha7{
+    margin-left:  0,5px;
+    margin-top: 70px;
+    width: 350px;
+    height: 275px;
+    text-align: center;
+}
+.linha8{
+    margin-left: 520px;
+    margin-top: -279px;
+    width: 350px;
+    height: 275px;
+    text-align: center;
+}
+.linha9{
+    margin-left: 1000px;
+    margin-top: -279px;
+    width: 350px;
+    height: 275px;
+    text-align: center;
+}
+.tamanho{
+    width: 350px;
+    height: 275px;
+}
+.texto{
+    font-style: italic;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 14pt;
+    text-align: center;
+    padding-top: 50px;
+}
+
