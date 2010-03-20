@@ -19,6 +19,8 @@ public class UserFaces {
     private List<Usuario> ListOfUsers = null;
     private UserDAO userDAO = new UserDAO();
     private Usuario selectedUser;
+    private String login;
+    private String password;
     /** Creates a new instance of UserFaces */
     public UserFaces() {
     }
@@ -30,6 +32,14 @@ public class UserFaces {
         return ListOfUsers;
     }
 
+    public String doAutenthicLogin(){
+        if(userDAO.isValidLoginAndPassword(login, password)){
+            return "DoLoginSucessful";
+
+        }else {
+            return "DonotLoginSucessful";
+        }
+    }
     public void setListOfUsers(List<Usuario> ListOfUsers) {
         this.ListOfUsers = ListOfUsers;
     }
@@ -64,4 +74,22 @@ public class UserFaces {
         this.selectedUser = selectedUser;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+   
+    
 }

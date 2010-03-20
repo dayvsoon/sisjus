@@ -58,9 +58,9 @@ public class UserDAO extends GenericDAO {
 
         boolean valid;
         Session sessao = getSesseion();
-        Query query = sessao.createQuery("from Usuario user where user.login = ? and user.password = ?");
-        query.setString(1, Login);
-        query.setString(2, Password);
+        Query query = sessao.createQuery("from Usuario users where users.Login=:login and users.Password=:password");
+        query.setString("login", Login);
+        query.setString("password", Password);
         Usuario user = (Usuario) query.uniqueResult();
         valid = (user != null);
         sessao.getTransaction().commit();
@@ -76,4 +76,5 @@ public class UserDAO extends GenericDAO {
     public List<Usuario> getUsers(){
         return getCleanList(Usuario.class, "from usuario user");
     }
+
 }

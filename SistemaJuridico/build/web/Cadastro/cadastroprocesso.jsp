@@ -94,6 +94,8 @@
                 <legend>Observações do Processo</legend>
                 <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;"></h:inputTextarea>
             </fieldset>
+                <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}"/>
+                <h:commandButton value="Voltar" />
 
         </h:form>
           </f:view>

@@ -8,7 +8,7 @@
         <Node id="error.jsp" x="400" y="300" zoom="true"/>
         <Node id="Cadastro/cadastroadvogadojuiz.jsp" x="900" y="300" zoom="true"/>
         <Node id="Cadastro/cadastrocliente.jsp" x="900" y="150" zoom="true"/>
-        <Node id="welcomeJSF.jsp" x="150" y="150" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="150" y="150" zoom="false"/>
         <Node id="Cadastro/cadastrofuncionario.jsp" x="650" y="450" zoom="true"/>
         <Node id="MsgDeEntrada.jsp" x="150" y="300" zoom="true"/>
         <Node id="Cadastro/cadastrousuario.jsp" x="281" y="21" zoom="true"/>

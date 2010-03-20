@@ -12,21 +12,25 @@
 <%@taglib prefix="a4j" uri="http://richfaces.org/a4j" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
+
 <f:view>
 <html>
     <head>
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bem Vindo </title>
         <link href="../status.css" rel="stylesheet" type="text/css"/>
+        
     </head>
-    <body style="background-color: #e7e7e7">
+    
+    <body style="background-color: #e7e7e7">         
         <h:form>
 
             <div class="topo">
               
 
                     
-                    <h:outputText  value="Olá #{Usuario.login}, você tem "></h:outputText>
+                <h:outputText  value="Olá #{UserFaces.login}, você tem "></h:outputText>
                
                 
             </div>
@@ -61,10 +65,10 @@
 
                             </rich:panel>
 
-                               <rich:panel styleClass="linha8" header="Oitavo">
-                                   Exemplo 8
+                               <rich:panel styleClass="linha8" header="Processos Finalizados">
+                                   <h:selectOneMenu>
+                                   <f:selectItems value="#{ProcessoFaces.listOfProcessFinally}"/>                                    </h:selectOneMenu>
                                </rich:panel>
-
                                    <rich:panel styleClass="linha9" header="Nono">
                                        Exemplo 9
                                    </rich:panel>

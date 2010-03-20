@@ -65,7 +65,7 @@ public class processo implements Serializable {
     @Column(name="datafinal")
     private Date datafinal;
 
-    private Integer Dataregressiva;
+    //private Integer Dataregressiva;
 
     @Column(name="processdescription")
     private String descricao_processo;
@@ -177,7 +177,7 @@ public class processo implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-
+/*
     public Integer getDataregressiva() {
         return Dataregressiva;
     }
@@ -185,7 +185,7 @@ public class processo implements Serializable {
     public void setDataregressiva(Integer Dataregressiva) {
         this.Dataregressiva = Dataregressiva;
     }
-
+**/
 
     }
 

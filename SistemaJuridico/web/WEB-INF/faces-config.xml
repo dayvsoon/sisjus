@@ -65,6 +65,12 @@
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>processDAO</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.dao.processDAO</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
         <managed-bean-name>UserFaces</managed-bean-name>
         <managed-bean-class>br.com.sisjus.faces.UserFaces</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
@@ -100,8 +106,17 @@
             <from-outcome>gotoAddNewUser</from-outcome>
             <to-view-id>/Cadastro/cadastrousuario.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>DoLoginSucessful</from-outcome>
+            <to-view-id>/Tela Incial.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>DonotLoginSucessful</from-outcome>
+            <to-view-id>/welcomeJSF.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>
+
 
 
 

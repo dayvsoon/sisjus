@@ -32,19 +32,19 @@ public class Usuario implements Serializable
 
     
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    //@GeneratedValue
     @Column(name="id")
-    private Integer id_user;
+    private int id_user;
 
     @Column(name="nome",nullable=false)
-    private String nome = "Usuário";
+    private String nome;
 
     @Column(name="sobrenome",nullable=false)
-    private String sobrenome = "Usuário";
+    private String sobrenome;
 
 
     @Column(name="login",nullable=false)
-    private String Login = "Usuário";
+    private String Login;
     
     @Column(name="password", nullable=false)
     private String Password;
@@ -94,11 +94,11 @@ public class Usuario implements Serializable
         this.Permissão = Permissão;
     }
 **/
-    public Integer getId_user() {
+    public int getId_user() {
         return id_user;
     }
 
-    public void setId_user(Integer id_user) {
+    public void setId_user(int id_user) {
         this.id_user = id_user;
     }
 

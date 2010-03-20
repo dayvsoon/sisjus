@@ -21,6 +21,8 @@ public final class cadastroprocesso_jsp extends org.apache.jasper.runtime.HttpJs
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemValue_005fitemLabel_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemLabel_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputTextarea_0026_005fstyle_005frows_005fcols_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005faction_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -40,6 +42,8 @@ public final class cadastroprocesso_jsp extends org.apache.jasper.runtime.HttpJs
     _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemValue_005fitemLabel_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemLabel_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputTextarea_0026_005fstyle_005frows_005fcols_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005faction_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
@@ -55,6 +59,8 @@ public final class cadastroprocesso_jsp extends org.apache.jasper.runtime.HttpJs
     _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemValue_005fitemLabel_005fnobody.release();
     _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemLabel_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputTextarea_0026_005fstyle_005frows_005fcols_005fnobody.release();
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005faction_005fnobody.release();
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -216,6 +222,14 @@ public final class cadastroprocesso_jsp extends org.apache.jasper.runtime.HttpJs
           return true;
         out.write("\n");
         out.write("            </fieldset>\n");
+        out.write("                ");
+        if (_jspx_meth_h_005fcommandButton_005f0(_jspx_th_h_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("                ");
+        if (_jspx_meth_h_005fcommandButton_005f1(_jspx_th_h_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("\n");
         out.write("\n");
         out.write("        ");
         int evalDoAfterBody = _jspx_th_h_005fform_005f0.doAfterBody();
@@ -1427,6 +1441,54 @@ public final class cadastroprocesso_jsp extends org.apache.jasper.runtime.HttpJs
     }
     _jspx_th_h_005finputTextarea_005f1.release();
     org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputTextarea_005f1);
+    return false;
+  }
+
+  private boolean _jspx_meth_h_005fcommandButton_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  h:commandButton
+    com.sun.faces.taglib.html_basic.CommandButtonTag _jspx_th_h_005fcommandButton_005f0 = new com.sun.faces.taglib.html_basic.CommandButtonTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
+    _jspx_th_h_005fcommandButton_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_h_005fcommandButton_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fform_005f0);
+    // /Cadastro/cadastroprocesso.jsp(97,16) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_h_005fcommandButton_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastroprocesso.jsp(97,16) 'Salvar'",_el_expressionfactory.createValueExpression("Salvar",java.lang.Object.class)));
+    // /Cadastro/cadastroprocesso.jsp(97,16) name = action type = javax.el.MethodExpression reqTime = false required = false fragment = false deferredValue = false deferredMethod = true expectedTypeName = null methodSignature = java.lang.Object action() 
+    _jspx_th_h_005fcommandButton_005f0.setAction(new org.apache.jasper.el.JspMethodExpression("/Cadastro/cadastroprocesso.jsp(97,16) '#{ProcessoFaces.FinishedProcess}'",_el_expressionfactory.createMethodExpression(_jspx_page_context.getELContext(),"#{ProcessoFaces.FinishedProcess}",java.lang.Object.class,new Class[] {})));
+    _jspx_th_h_005fcommandButton_005f0.setJspId("jsp_477757503_42");
+    int _jspx_eval_h_005fcommandButton_005f0 = _jspx_th_h_005fcommandButton_005f0.doStartTag();
+    if (_jspx_th_h_005fcommandButton_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_h_005fcommandButton_005f0.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
+      return true;
+    }
+    _jspx_th_h_005fcommandButton_005f0.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_h_005fcommandButton_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  h:commandButton
+    com.sun.faces.taglib.html_basic.CommandButtonTag _jspx_th_h_005fcommandButton_005f1 = new com.sun.faces.taglib.html_basic.CommandButtonTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f1);
+    _jspx_th_h_005fcommandButton_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_h_005fcommandButton_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fform_005f0);
+    // /Cadastro/cadastroprocesso.jsp(98,16) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_h_005fcommandButton_005f1.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastroprocesso.jsp(98,16) 'Voltar'",_el_expressionfactory.createValueExpression("Voltar",java.lang.Object.class)));
+    _jspx_th_h_005fcommandButton_005f1.setJspId("jsp_477757503_43");
+    int _jspx_eval_h_005fcommandButton_005f1 = _jspx_th_h_005fcommandButton_005f1.doStartTag();
+    if (_jspx_th_h_005fcommandButton_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_h_005fcommandButton_005f1.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f1);
+      return true;
+    }
+    _jspx_th_h_005fcommandButton_005f1.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f1);
     return false;
   }
 }

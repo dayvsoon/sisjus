@@ -18,7 +18,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005frequiredMessage_005frequired_005fonkeypress_005fonkeydown_005fonfocus_005fonblur_005fid_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fmessage_0026_005fstyleClass_005ffor_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputSecret_0026_005fvalue_005frequiredMessage_005frequired_005fonkeypress_005fonkeydown_005fid_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005faction_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fmessages_0026_005fstyleClass_005fglobalOnly_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005fimmediate_005faction_005fnobody;
 
@@ -37,7 +37,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005frequiredMessage_005frequired_005fonkeypress_005fonkeydown_005fonfocus_005fonblur_005fid_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005fmessage_0026_005fstyleClass_005ffor_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputSecret_0026_005fvalue_005frequiredMessage_005frequired_005fonkeypress_005fonkeydown_005fid_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005faction_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005fmessages_0026_005fstyleClass_005fglobalOnly_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005fimmediate_005faction_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
@@ -52,7 +52,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005frequiredMessage_005frequired_005fonkeypress_005fonkeydown_005fonfocus_005fonblur_005fid_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005fmessage_0026_005fstyleClass_005ffor_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputSecret_0026_005fvalue_005frequiredMessage_005frequired_005fonkeypress_005fonkeydown_005fid_005fnobody.release();
-    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005fnobody.release();
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005faction_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005fmessages_0026_005fstyleClass_005fglobalOnly_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fstyleClass_005fimmediate_005faction_005fnobody.release();
   }
@@ -348,7 +348,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("  \t\t\t\t\t\t\t<tr height=\"50px\">\n");
         out.write("    \t\t\t\t\t\t\t<td class=\"celulaCentralCinzaDireita\">&nbsp;</td>\n");
         out.write("    \t\t\t\t\t\t\t<td class=\"celulaCentralCinzaEsquerda\">\n");
-        out.write("    \t\t\t\t\t\t\t\t");
+        out.write("                                                            ");
         if (_jspx_meth_h_005fcommandButton_005f0(_jspx_th_h_005fform_005f0, _jspx_page_context))
           return true;
         out.write("&nbsp;\n");
@@ -447,7 +447,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_h_005finputText_005f0.setPageContext(_jspx_page_context);
     _jspx_th_h_005finputText_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fform_005f0);
     // /welcomeJSF.jsp(161,95) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
-    _jspx_th_h_005finputText_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(161,95) '#{Usuario.login}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{Usuario.login}",java.lang.Object.class)));
+    _jspx_th_h_005finputText_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(161,95) '#{UserFaces.login}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{UserFaces.login}",java.lang.Object.class)));
     // /welcomeJSF.jsp(161,95) name = onfocus type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
     _jspx_th_h_005finputText_005f0.setOnfocus(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(161,95) 'if (this.value == 'Usuário') { this.value = '';}'",_el_expressionfactory.createValueExpression("if (this.value == 'Usuário') { this.value = '';}",java.lang.String.class)));
     // /welcomeJSF.jsp(161,95) name = onblur type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
@@ -513,7 +513,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /welcomeJSF.jsp(168,95) name = onkeydown type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
     _jspx_th_h_005finputSecret_005f0.setOnkeydown(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(168,95) 'this.style.backgroundColor='white''",_el_expressionfactory.createValueExpression("this.style.backgroundColor='white'",java.lang.String.class)));
     // /welcomeJSF.jsp(168,95) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
-    _jspx_th_h_005finputSecret_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(168,95) '#{Usuario.password}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{Usuario.password}",java.lang.Object.class)));
+    _jspx_th_h_005finputSecret_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(168,95) '#{UserFaces.password}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{UserFaces.password}",java.lang.Object.class)));
     // /welcomeJSF.jsp(168,95) name = required type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = boolean methodSignature = null 
     _jspx_th_h_005finputSecret_005f0.setRequired(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(168,95) 'true'",_el_expressionfactory.createValueExpression("true",boolean.class)));
     // /welcomeJSF.jsp(168,95) name = id type = null reqTime = true required = false fragment = false deferredValue = false deferredMethod = false expectedTypeName = null methodSignature = null 
@@ -566,10 +566,12 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
     _jspx_th_h_005fcommandButton_005f0.setPageContext(_jspx_page_context);
     _jspx_th_h_005fcommandButton_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fform_005f0);
-    // /welcomeJSF.jsp(176,12) name = styleClass type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
-    _jspx_th_h_005fcommandButton_005f0.setStyleClass(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(176,12) 'button'",_el_expressionfactory.createValueExpression("button",java.lang.String.class)));
-    // /welcomeJSF.jsp(176,12) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
-    _jspx_th_h_005fcommandButton_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(176,12) 'Acessar'",_el_expressionfactory.createValueExpression("Acessar",java.lang.Object.class)));
+    // /welcomeJSF.jsp(176,60) name = styleClass type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
+    _jspx_th_h_005fcommandButton_005f0.setStyleClass(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(176,60) 'button'",_el_expressionfactory.createValueExpression("button",java.lang.String.class)));
+    // /welcomeJSF.jsp(176,60) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_h_005fcommandButton_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/welcomeJSF.jsp(176,60) 'Acessar'",_el_expressionfactory.createValueExpression("Acessar",java.lang.Object.class)));
+    // /welcomeJSF.jsp(176,60) name = action type = javax.el.MethodExpression reqTime = false required = false fragment = false deferredValue = false deferredMethod = true expectedTypeName = null methodSignature = java.lang.Object action() 
+    _jspx_th_h_005fcommandButton_005f0.setAction(new org.apache.jasper.el.JspMethodExpression("/welcomeJSF.jsp(176,60) '#{UserFaces.doAutenthicLogin}'",_el_expressionfactory.createMethodExpression(_jspx_page_context.getELContext(),"#{UserFaces.doAutenthicLogin}",java.lang.Object.class,new Class[] {})));
     _jspx_th_h_005fcommandButton_005f0.setJspId("jsp_848685511_8");
     int _jspx_eval_h_005fcommandButton_005f0 = _jspx_th_h_005fcommandButton_005f0.doStartTag();
     if (_jspx_th_h_005fcommandButton_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

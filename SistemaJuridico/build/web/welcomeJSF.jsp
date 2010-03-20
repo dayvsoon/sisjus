@@ -158,14 +158,14 @@ body {
   							</tr>
                                                         <tr height="30px">
     							<td class="celulaCentralCinzaDireita"><span class="mensagemErro">*</span>Usuário:&nbsp;</td>
-                                                        <td class="celulaCentralCinzaEsquerda"><h:inputText value="#{Usuario.login}" onfocus="if (this.value == 'Usuário') { this.value = '';}" onblur="if (this.value == 'Usuário') { this.value = '';}" onkeypress="this.style.backgroundColor='lightgreen'" onkeydown="this.style.backgroundColor='white'" required="true" id="userID"
+                                                        <td class="celulaCentralCinzaEsquerda"><h:inputText value="#{UserFaces.login}" onfocus="if (this.value == 'Usuário') { this.value = '';}" onblur="if (this.value == 'Usuário') { this.value = '';}" onkeypress="this.style.backgroundColor='lightgreen'" onkeydown="this.style.backgroundColor='white'" required="true" id="userID"
     									requiredMessage="Usuário tem que ser informado!" />&nbsp;
     									<br><h:message for="userID" styleClass="mensagemErro"/>
                                                         </td>
   							</tr>
   							<tr height="30px">
     							<td class="celulaCentralCinzaDireita"><span class="mensagemErro">*</span>Senha:&nbsp;</td>
-                                                        <td class="celulaCentralCinzaEsquerda"><h:inputSecret onkeypress="this.style.backgroundColor='lightgreen'" onkeydown="this.style.backgroundColor='white'" value="#{Usuario.password}" required="true" id="passwordID"
+                                                        <td class="celulaCentralCinzaEsquerda"><h:inputSecret onkeypress="this.style.backgroundColor='lightgreen'" onkeydown="this.style.backgroundColor='white'" value="#{UserFaces.password}" required="true" id="passwordID"
     									requiredMessage="Senha tem que ser informada!"/>&nbsp;
     								<br><h:message for="passwordID" styleClass="mensagemErro"/>
     							</td>
@@ -173,7 +173,7 @@ body {
   							<tr height="50px">
     							<td class="celulaCentralCinzaDireita">&nbsp;</td>
     							<td class="celulaCentralCinzaEsquerda">
-    								<h:commandButton styleClass="button" value="Acessar" />&nbsp;
+                                                            <h:commandButton styleClass="button" value="Acessar" action="#{UserFaces.doAutenthicLogin}" />&nbsp;
     								<h:messages globalOnly="true" styleClass="mensagemErro"/>
                                                                 <h:commandButton styleClass="button" value="Cadastrar" action="#{UserFaces.doAddUser}" immediate="true"></h:commandButton>&nbsp;
                                                                

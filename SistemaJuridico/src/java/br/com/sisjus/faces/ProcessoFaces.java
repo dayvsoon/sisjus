@@ -32,16 +32,22 @@ public class ProcessoFaces {
        }
         return ListOfProcess;
     }
-      public String doAddCliente(){
+    public List<processo> getListOfProcessFinally(){
+         if (ListOfProcess == null){
+           ListOfProcess = processDAO.getProcessesFinally();
+       }
+        return ListOfProcess;
+    }
+    public String doAddProcesso(){
         selectedProcesso = new processo();
         return "gotoAddNewProcess";
     }
-  public String FinishedFuncionario(){
+  public String FinishedProcess(){
       processDAO.addProcess(selectedProcesso);
       ListOfProcess = null;
       return "gotoListProcess";
   }
-  public String removeFuncionario(){
+  public String removeProcess(){
       processDAO.removeProcess(selectedProcesso);
             ListOfProcess = null;
       return "gotoListProcess";
