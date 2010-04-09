@@ -8,6 +8,7 @@ package br.com.sisjus.faces;
 import br.com.sisjus.cadastro.funcionario;
 import br.com.sisjus.dao.FuncionarioDAO;
 import java.util.List;
+import javax.faces.model.SelectItem;
 
 
 /**
@@ -32,7 +33,8 @@ public class FuncionarioFaces {
        }
         return ListOfFuncionario;
     }
-      public String doAddCliente(){
+    
+      public String doAddEmployee(){
         selectedFuncionario = new funcionario();
         return "gotoAddNewFuncionario";
     }
@@ -57,5 +59,21 @@ public String FinishUpdateLayer(){
 
 
 }
+
+    public FuncionarioDAO getFuncionarioDAO() {
+        return funcionarioDAO;
+    }
+
+    public void setFuncionarioDAO(FuncionarioDAO funcionarioDAO) {
+        this.funcionarioDAO = funcionarioDAO;
+    }
+
+    public funcionario getSelectedFuncionario() {
+        return selectedFuncionario;
+    }
+
+    public void setSelectedFuncionario(funcionario selectedFuncionario) {
+        this.selectedFuncionario = selectedFuncionario;
+    }
 
 }

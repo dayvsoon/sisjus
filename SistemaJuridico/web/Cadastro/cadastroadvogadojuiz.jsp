@@ -24,9 +24,14 @@
             <fieldset>
 	        <legend>Cadastro de Advogado ou Juiz</legend>
                 <h:panelGrid id="layerpanel" columns="3">
+
+                    <h:outputLabel for="idlayer" value="ID: "/>
+                    <h:inputText id="idlayer" value="#{AdvogadoJuizFaces.selectedLayer.id_advogadojuiz}" size="4"/>
+                    <h:outputText/>
+                    
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:inputText size="4"/>
-                    <h:inputText id="idpessoa" size="50" readonly="true" />
+                    <h:inputText id="idpessoa" size="4" value="#{AdvogadoJuizFaces.selectedLayer.id_pessoa}"/>
+                    <h:outputText/>
 
                     <h:outputLabel for="codoab" value="Código da OAB: "/>
                     <h:inputText id="codoab" size="12"/>
@@ -41,6 +46,7 @@
                     <h:outputText/>
 
                 </h:panelGrid>
+                <h:commandButton value="Salvar" action="#{AdvogadoJuizFaces.FinishedLayer}"/>
         </fieldset>
     </h:form>
           </f:view>

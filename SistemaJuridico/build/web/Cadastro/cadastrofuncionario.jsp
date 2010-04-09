@@ -27,7 +27,9 @@
 	        <legend>Cadastro de Funcionário</legend>
                 <h:panelGrid id="layerpanel" columns="3">
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:inputText size="4"/>
+                    <rich:comboBox defaultLabel="Pessoa">
+                        <f:selectItem itemLabel="#{FuncionarioFaces.selectedFuncionario.id_pessoa}" itemValue="#{FuncionarioFaces.selectedFuncionario.id}"/>
+                    </rich:comboBox>
                     <h:inputText id="idpessoa" size="50" readonly="true" />
 
                     <h:outputLabel for="cargo" value="Cargo: "/>
@@ -36,6 +38,7 @@
 
 
                 </h:panelGrid>
+                <h:commandButton value="Salvar"/>
         </fieldset>
     </h:form>
           </f:view>

@@ -10,7 +10,7 @@
 <%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@taglib prefix="rich" uri="http://richfaces.org/rich" %>
 <%@taglib prefix="a4j" uri="http://richfaces.org/a4j" %>
-
+<%@taglib prefix="stella" uri="http://stella.caelum.com.br/faces" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -26,22 +26,31 @@
         <h:form>
             <fieldset>
 	        <legend>Cadastro de Cliente - Pessoa Física</legend>
-                <h:panelGrid id="layerpanel" columns="3">
+                <h:panelGrid id="layerpanel" columns="2">
+                    <h:outputLabel for="Idcliente" value="ID: "/>
+                    <h:inputText id="Idcliente" value="#{ClienteFaces.selectedClient.id}" size="3"/>
+                   
+
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:inputText size="4"/>
-                    <h:inputText id="idpessoa" size="50" readonly="true" />
+                    <rich:comboBox value="#{ClienteFaces.selectedClient.id_pessoa_cliente}">
+                        <f:selectItems value="#{ClienteFaces.clientsOfSystem}"/>
+                    </rich:comboBox>
 
                     <h:outputLabel for="cpf" value="C.P.F: "/>
-                    <h:inputText id="cpf" size="12" maxlength="11"/>
-                    <h:outputText />
+                    <h:inputText id="cpf" size="14" maxlength="15" value="#{ClienteFaces.selectedClient.cpfcnpj}">
+                        <stella:validateCPF formatted="true"/>
 
-                    
+                    </h:inputText>
+                                      
                     <h:outputLabel for="datainicio" value="Data de Cadastro: "/>
-                    <h:inputText id="descricaovara" size="10" maxlength="10"/>
-                    <h:outputText/>
+                    <h:inputText id="datainicio" size="10" value="#{cliente.datainicio}" readonly="true"/>
+                   
 
+                    <h:commandButton id="RecordDate" action="#{ClienteFaces.FinishedLayer}" value="Salvar"/>
+                    <h:commandButton action="#{ClienteFaces.doAddClientJuridico}" value="Cliente - Pessoa Juridica" immediate="true" />
                 </h:panelGrid>
-        </fieldset>
+                <h:message for="cpf"/>
+            </fieldset>
     </h:form>
           </f:view>
 </body>

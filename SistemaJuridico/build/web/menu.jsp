@@ -17,7 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>SisMenu - Menu Principal do SisJus</title>
     </head>
     <f:view>
     <body>
@@ -30,19 +30,26 @@
                         </h:panelGroup>
                     </f:facet>
                     <rich:menuGroup value="Cadastro">
-                        <rich:menuItem submitMode="none" value="Pessoa">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{PersonFaces.doAddPerson}" value="Pessoa"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Cliente">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{ClienteFaces.doAddCliente}" value="Cliente"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Funcionário">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{FuncionarioFaces.doAddEmployee}" value="Funcionário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Usuário">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{UserFaces.doAddUser}" value="Usuário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Advogado">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{AdvogadoJuizFaces.doAddLayer}" value="Advogado"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Juiz">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{AdvogadoJuizFaces.doAddLayer}" value="Juiz"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Processo">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{ProcessoFaces.doAddProcesso}" value="Processo"/>
                         </rich:menuItem>
                     </rich:menuGroup>
                 </rich:dropDownMenu>

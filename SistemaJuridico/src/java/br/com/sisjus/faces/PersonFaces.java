@@ -32,21 +32,22 @@ public class PersonFaces {
         selectedPerson = new pessoa();
         return "gotoAddNewPerson";
     }
-  public String FinishedPerson(){
-      selectedPerson = new pessoa();
+
+      public String FinishedPerson(){
       personDAO.addPerson(selectedPerson);
       ListOfPerson = null;
       return "gotoListPerson";
   }
-  public String removePerson(){
+
+      public String removePerson(){
       personDAO.removePerson(selectedPerson);
             ListOfPerson = null;
       return "gotoListPerson";
   }
-public String doUpdatePerson(){
-    return "gotoUpdatePerson";
+      public String doUpdatePerson(){
+      return "gotoUpdatePerson";
 }
-public String FinishUpdatePerson(){
+    public String FinishUpdatePerson(){
       personDAO.updatePerson(selectedPerson);
       ListOfPerson = null;
       return "gotoListPerson";

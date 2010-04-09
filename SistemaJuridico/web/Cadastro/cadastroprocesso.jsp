@@ -25,8 +25,8 @@
         <h:form>
             
                 <fieldset>
-	        <legend>Autor</legend>
-                <h:panelGrid id="panelfilho1" columns="2">
+                    <legend>Autor</legend>
+                <h:panelGrid id="panelautor" columns="2">
                     <h:outputLabel for="idpessoa1" value="Id Pessoa: "/>
                     <h:inputText id="idpessoa1"size="4"/>
 
@@ -36,7 +36,7 @@
             </fieldset>
           <fieldset>
 	        <legend>Réu</legend>
-                <h:panelGrid id="panelfilho2" columns="2">
+                <h:panelGrid id="panelreu" columns="2">
                     <h:outputLabel for="idpessoa2" value="Id Pessoa: "/>
                     <h:inputText id="idpessoa2" size="4"/>
 
@@ -58,7 +58,8 @@
                     
                     <h:outputLabel for="status" value="Status do Processo: "/>
                     <h:selectOneMenu id="status">
-                        <f:selectItem itemLabel="Concluso para despacho" itemValue="Concluso para despacho" />
+                                        <f:selectItem itemLabel="Status..." />
+                                        <f:selectItem itemLabel="Concluso para despacho" itemValue="Concluso para despacho" />
 					<f:selectItem itemLabel="Em Andamento" itemValue="Em Andamento" />
 					<f:selectItem itemLabel="Arquivado" itemValue="Em Revisão" />
 					<f:selectItem itemLabel="A ser revisado" itemValue="A ser revisado" />
@@ -66,7 +67,7 @@
 					<f:selectItem itemLabel="Para expedição de alvará" itemValue="Para expedição de alvará" />
 					<f:selectItem  itemLabel="Para audiência de instrução e julgamento" itemValue="Para audiência de instrução e julgamento"/>
 					<f:selectItem  itemLabel="Para réplica" itemValue="Para réplica"/>
-					<f:selectItem itemLabel="Status..." />
+					
 	        
                     </h:selectOneMenu>
                     <h:outputText/>

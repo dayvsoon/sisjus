@@ -26,7 +26,7 @@ public class ProcessoFaces {
     }
 
 
-    public List<processo> getListOfFuncionario() {
+    public List<processo> getListOfProcess() {
        if (ListOfProcess == null){
            ListOfProcess = processDAO.getProcesses();
        }

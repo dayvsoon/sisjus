@@ -29,7 +29,9 @@
 		 <fieldset>
 	        <legend>Cadastro de Pessoa</legend>
 				<h:panelGrid columns="2">
- 
+                                    <h:outputLabel for="Id_Idpessoa" value="ID: "/>
+                                    <h:inputText id="id_pessoa" size="3" value="#{PersonFaces.selectedPerson.id}"/>
+
                                     <h:outputLabel for="nomepessoa" value="Nome: "/>
                                     <h:inputText id="nomepessoa" size="50" value="#{PersonFaces.selectedPerson.nome}"/>
 
@@ -48,7 +50,7 @@
 
                                     <h:outputLabel for="txtDate" value="Data de nascimento: "/>
                                     <h:inputText validatorMessage="Data de nascimento com formato inválido!"id="txtDate" size="10" maxlength="10" onkeydown="return validar(event)" onblur="validaDat(this,this.value)"  onkeyup="Formatadata(this,event)" value="#{PersonFaces.selectedPerson.data_nasc}" >
-					<f:convertDateTime pattern="dd/MM/yyyy" />
+					
 	     			    </h:inputText>
 
                                     <h:outputLabel for="endereco" value="Endereço: "/>

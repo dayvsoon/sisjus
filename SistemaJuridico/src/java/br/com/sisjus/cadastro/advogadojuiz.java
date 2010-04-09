@@ -27,13 +27,14 @@ import javax.persistence.Table;
 @Table(name="layer")
 public class advogadojuiz implements Serializable {
 
-    @Id @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Id 
     @Column(name="id" )
     private Integer id_advogadojuiz;
 
 
+    
+    @ManyToOne
     @JoinColumn(name="ID_PERSON")
-    @OneToOne
     private pessoa id_pessoa;
 
     @Column(name="cod_oab")
@@ -121,7 +122,10 @@ public class advogadojuiz implements Serializable {
         hash = 71 * hash + (this.id_advogadojuiz != null ? this.id_advogadojuiz.hashCode() : 0);
         return hash;
     }
-
+@Override
+   public String toString(){
+       return id_pessoa.getNome();
+   }
    /* public String toString(){
         return id;
     }**/

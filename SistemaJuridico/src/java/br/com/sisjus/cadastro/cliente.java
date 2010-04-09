@@ -6,19 +6,17 @@
 package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
+
 
 /**
  *
@@ -26,11 +24,11 @@ import javax.persistence.Temporal;
  */
 
 @Entity
-@Table(name="cliente")
+@Table(name="client")
 public class cliente implements Serializable {
 
    
-    @Id @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Id 
     @Column(name="id")
     private Integer id;
     
@@ -40,9 +38,10 @@ public class cliente implements Serializable {
 
     @Column(name="cpfcnpj")
     private String cpfcnpj;
-    @Temporal(javax.persistence.TemporalType.DATE)
+
+    
     @Column(name="datainicio")
-    private Date datainicio;
+    private String datainicio = br.com.sisjus.util.Data.Formatador;
 
     @OneToMany(mappedBy="id_cliente", fetch=FetchType.LAZY)
     List<processo> ProcessOfUser;
@@ -77,11 +76,11 @@ public class cliente implements Serializable {
         this.cpfcnpj = cpfcnpj;
     }
 
-    public Date getDatainicio() {
+    public String getDatainicio() {
         return datainicio;
     }
 
-    public void setDatainicio(Date datainicio) {
+    public void setDatainicio(String datainicio) {
         this.datainicio = datainicio;
     }
 
@@ -91,6 +90,32 @@ public class cliente implements Serializable {
 
     public void setId_pessoa_cliente(pessoa id_pessoa_cliente) {
         this.id_pessoa_cliente = id_pessoa_cliente;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final cliente other = (cliente) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        if (this.id_pessoa_cliente != other.id_pessoa_cliente && (this.id_pessoa_cliente == null || !this.id_pessoa_cliente.equals(other.id_pessoa_cliente))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 67 * hash + (this.id_pessoa_cliente != null ? this.id_pessoa_cliente.hashCode() : 0);
+        return hash;
     }
     
 

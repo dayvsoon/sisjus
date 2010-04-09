@@ -15,10 +15,12 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fform;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fpanelGrid_0026_005fid_005fcolumns;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005foutputLabel_0026_005fvalue_005ffor_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005frich_005fcomboBox_0026_005fdefaultLabel;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemValue_005fitemLabel_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005freadonly_005fid_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005fmaxlength_005fid_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005foutputText_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -32,10 +34,12 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     _005fjspx_005ftagPool_005fh_005fform = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005fpanelGrid_0026_005fid_005fcolumns = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005foutputLabel_0026_005fvalue_005ffor_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005frich_005fcomboBox_0026_005fdefaultLabel = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemValue_005fitemLabel_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005freadonly_005fid_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005fmaxlength_005fid_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005foutputText_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
@@ -45,10 +49,12 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     _005fjspx_005ftagPool_005fh_005fform.release();
     _005fjspx_005ftagPool_005fh_005fpanelGrid_0026_005fid_005fcolumns.release();
     _005fjspx_005ftagPool_005fh_005foutputLabel_0026_005fvalue_005ffor_005fnobody.release();
-    _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005fnobody.release();
+    _005fjspx_005ftagPool_005frich_005fcomboBox_0026_005fdefaultLabel.release();
+    _005fjspx_005ftagPool_005ff_005fselectItem_0026_005fitemValue_005fitemLabel_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005freadonly_005fid_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fsize_005fmaxlength_005fid_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005foutputText_005fnobody.release();
+    _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -179,6 +185,10 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
         if (_jspx_meth_h_005fpanelGrid_005f0(_jspx_th_h_005fform_005f0, _jspx_page_context))
           return true;
         out.write("\n");
+        out.write("                ");
+        if (_jspx_meth_h_005fcommandButton_005f0(_jspx_th_h_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("\n");
         out.write("        </fieldset>\n");
         out.write("    ");
         int evalDoAfterBody = _jspx_th_h_005fform_005f0.doAfterBody();
@@ -227,11 +237,11 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
           return true;
         out.write("\n");
         out.write("                    ");
-        if (_jspx_meth_h_005finputText_005f0(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
+        if (_jspx_meth_rich_005fcomboBox_005f0(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
           return true;
         out.write("\n");
         out.write("                    ");
-        if (_jspx_meth_h_005finputText_005f1(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
+        if (_jspx_meth_h_005finputText_005f0(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
           return true;
         out.write("\n");
         out.write("\n");
@@ -240,7 +250,7 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
           return true;
         out.write("\n");
         out.write("                    ");
-        if (_jspx_meth_h_005finputText_005f2(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
+        if (_jspx_meth_h_005finputText_005f1(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
           return true;
         out.write("\n");
         out.write("                    ");
@@ -293,6 +303,75 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     return false;
   }
 
+  private boolean _jspx_meth_rich_005fcomboBox_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  rich:comboBox
+    org.richfaces.taglib.ComboBoxTag _jspx_th_rich_005fcomboBox_005f0 = new org.richfaces.taglib.ComboBoxTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_rich_005fcomboBox_005f0);
+    _jspx_th_rich_005fcomboBox_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_rich_005fcomboBox_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
+    // /Cadastro/cadastrofuncionario.jsp(30,20) name = defaultLabel type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
+    _jspx_th_rich_005fcomboBox_005f0.setDefaultLabel(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(30,20) 'Pessoa'",_el_expressionfactory.createValueExpression("Pessoa",java.lang.String.class)));
+    _jspx_th_rich_005fcomboBox_005f0.setJspId("jsp_1174947178_4");
+    int _jspx_eval_rich_005fcomboBox_005f0 = _jspx_th_rich_005fcomboBox_005f0.doStartTag();
+    if (_jspx_eval_rich_005fcomboBox_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_rich_005fcomboBox_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.pushBody();
+        _jspx_th_rich_005fcomboBox_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_rich_005fcomboBox_005f0.doInitBody();
+      }
+      do {
+        out.write("\n");
+        out.write("                        ");
+        if (_jspx_meth_f_005fselectItem_005f0(_jspx_th_rich_005fcomboBox_005f0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("                    ");
+        int evalDoAfterBody = _jspx_th_rich_005fcomboBox_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+      if (_jspx_eval_rich_005fcomboBox_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.popBody();
+      }
+    }
+    if (_jspx_th_rich_005fcomboBox_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_rich_005fcomboBox_005f0.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_rich_005fcomboBox_005f0);
+      return true;
+    }
+    _jspx_th_rich_005fcomboBox_005f0.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_rich_005fcomboBox_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_f_005fselectItem_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_rich_005fcomboBox_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  f:selectItem
+    com.sun.faces.taglib.jsf_core.SelectItemTag _jspx_th_f_005fselectItem_005f0 = new com.sun.faces.taglib.jsf_core.SelectItemTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_f_005fselectItem_005f0);
+    _jspx_th_f_005fselectItem_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_f_005fselectItem_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_rich_005fcomboBox_005f0);
+    // /Cadastro/cadastrofuncionario.jsp(31,24) name = itemLabel type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
+    _jspx_th_f_005fselectItem_005f0.setItemLabel(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(31,24) '#{FuncionarioFaces.selectedFuncionario.id_pessoa}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{FuncionarioFaces.selectedFuncionario.id_pessoa}",java.lang.String.class)));
+    // /Cadastro/cadastrofuncionario.jsp(31,24) name = itemValue type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_f_005fselectItem_005f0.setItemValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(31,24) '#{FuncionarioFaces.selectedFuncionario.id}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{FuncionarioFaces.selectedFuncionario.id}",java.lang.Object.class)));
+    _jspx_th_f_005fselectItem_005f0.setJspId("jsp_1174947178_5");
+    int _jspx_eval_f_005fselectItem_005f0 = _jspx_th_f_005fselectItem_005f0.doStartTag();
+    if (_jspx_th_f_005fselectItem_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_f_005fselectItem_005f0.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_f_005fselectItem_005f0);
+      return true;
+    }
+    _jspx_th_f_005fselectItem_005f0.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_f_005fselectItem_005f0);
+    return false;
+  }
+
   private boolean _jspx_meth_h_005finputText_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -302,9 +381,13 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f0);
     _jspx_th_h_005finputText_005f0.setPageContext(_jspx_page_context);
     _jspx_th_h_005finputText_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
-    // /Cadastro/cadastrofuncionario.jsp(30,20) name = size type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
-    _jspx_th_h_005finputText_005f0.setSize(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(30,20) '4'",_el_expressionfactory.createValueExpression("4",int.class)));
-    _jspx_th_h_005finputText_005f0.setJspId("jsp_1174947178_4");
+    // /Cadastro/cadastrofuncionario.jsp(33,20) name = id type = null reqTime = true required = false fragment = false deferredValue = false deferredMethod = false expectedTypeName = null methodSignature = null 
+    _jspx_th_h_005finputText_005f0.setId("idpessoa");
+    // /Cadastro/cadastrofuncionario.jsp(33,20) name = size type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
+    _jspx_th_h_005finputText_005f0.setSize(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(33,20) '50'",_el_expressionfactory.createValueExpression("50",int.class)));
+    // /Cadastro/cadastrofuncionario.jsp(33,20) name = readonly type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = boolean methodSignature = null 
+    _jspx_th_h_005finputText_005f0.setReadonly(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(33,20) 'true'",_el_expressionfactory.createValueExpression("true",boolean.class)));
+    _jspx_th_h_005finputText_005f0.setJspId("jsp_1174947178_6");
     int _jspx_eval_h_005finputText_005f0 = _jspx_th_h_005finputText_005f0.doStartTag();
     if (_jspx_th_h_005finputText_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_th_h_005finputText_005f0.release();
@@ -313,33 +396,6 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     }
     _jspx_th_h_005finputText_005f0.release();
     org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f0);
-    return false;
-  }
-
-  private boolean _jspx_meth_h_005finputText_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  h:inputText
-    com.sun.faces.taglib.html_basic.InputTextTag _jspx_th_h_005finputText_005f1 = new com.sun.faces.taglib.html_basic.InputTextTag();
-    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f1);
-    _jspx_th_h_005finputText_005f1.setPageContext(_jspx_page_context);
-    _jspx_th_h_005finputText_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
-    // /Cadastro/cadastrofuncionario.jsp(31,20) name = id type = null reqTime = true required = false fragment = false deferredValue = false deferredMethod = false expectedTypeName = null methodSignature = null 
-    _jspx_th_h_005finputText_005f1.setId("idpessoa");
-    // /Cadastro/cadastrofuncionario.jsp(31,20) name = size type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
-    _jspx_th_h_005finputText_005f1.setSize(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(31,20) '50'",_el_expressionfactory.createValueExpression("50",int.class)));
-    // /Cadastro/cadastrofuncionario.jsp(31,20) name = readonly type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = boolean methodSignature = null 
-    _jspx_th_h_005finputText_005f1.setReadonly(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(31,20) 'true'",_el_expressionfactory.createValueExpression("true",boolean.class)));
-    _jspx_th_h_005finputText_005f1.setJspId("jsp_1174947178_5");
-    int _jspx_eval_h_005finputText_005f1 = _jspx_th_h_005finputText_005f1.doStartTag();
-    if (_jspx_th_h_005finputText_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_th_h_005finputText_005f1.release();
-      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f1);
-      return true;
-    }
-    _jspx_th_h_005finputText_005f1.release();
-    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f1);
     return false;
   }
 
@@ -352,11 +408,11 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005foutputLabel_005f1);
     _jspx_th_h_005foutputLabel_005f1.setPageContext(_jspx_page_context);
     _jspx_th_h_005foutputLabel_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
-    // /Cadastro/cadastrofuncionario.jsp(33,20) name = for type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
-    _jspx_th_h_005foutputLabel_005f1.setFor(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(33,20) 'cargo'",_el_expressionfactory.createValueExpression("cargo",java.lang.String.class)));
-    // /Cadastro/cadastrofuncionario.jsp(33,20) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
-    _jspx_th_h_005foutputLabel_005f1.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(33,20) 'Cargo: '",_el_expressionfactory.createValueExpression("Cargo: ",java.lang.Object.class)));
-    _jspx_th_h_005foutputLabel_005f1.setJspId("jsp_1174947178_6");
+    // /Cadastro/cadastrofuncionario.jsp(35,20) name = for type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
+    _jspx_th_h_005foutputLabel_005f1.setFor(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(35,20) 'cargo'",_el_expressionfactory.createValueExpression("cargo",java.lang.String.class)));
+    // /Cadastro/cadastrofuncionario.jsp(35,20) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_h_005foutputLabel_005f1.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(35,20) 'Cargo: '",_el_expressionfactory.createValueExpression("Cargo: ",java.lang.Object.class)));
+    _jspx_th_h_005foutputLabel_005f1.setJspId("jsp_1174947178_7");
     int _jspx_eval_h_005foutputLabel_005f1 = _jspx_th_h_005foutputLabel_005f1.doStartTag();
     if (_jspx_th_h_005foutputLabel_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_th_h_005foutputLabel_005f1.release();
@@ -368,30 +424,30 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     return false;
   }
 
-  private boolean _jspx_meth_h_005finputText_005f2(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_h_005finputText_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  h:inputText
-    com.sun.faces.taglib.html_basic.InputTextTag _jspx_th_h_005finputText_005f2 = new com.sun.faces.taglib.html_basic.InputTextTag();
-    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f2);
-    _jspx_th_h_005finputText_005f2.setPageContext(_jspx_page_context);
-    _jspx_th_h_005finputText_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
-    // /Cadastro/cadastrofuncionario.jsp(34,20) name = id type = null reqTime = true required = false fragment = false deferredValue = false deferredMethod = false expectedTypeName = null methodSignature = null 
-    _jspx_th_h_005finputText_005f2.setId("cargo");
-    // /Cadastro/cadastrofuncionario.jsp(34,20) name = size type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
-    _jspx_th_h_005finputText_005f2.setSize(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(34,20) '12'",_el_expressionfactory.createValueExpression("12",int.class)));
-    // /Cadastro/cadastrofuncionario.jsp(34,20) name = maxlength type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
-    _jspx_th_h_005finputText_005f2.setMaxlength(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(34,20) '11'",_el_expressionfactory.createValueExpression("11",int.class)));
-    _jspx_th_h_005finputText_005f2.setJspId("jsp_1174947178_7");
-    int _jspx_eval_h_005finputText_005f2 = _jspx_th_h_005finputText_005f2.doStartTag();
-    if (_jspx_th_h_005finputText_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_th_h_005finputText_005f2.release();
-      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f2);
+    com.sun.faces.taglib.html_basic.InputTextTag _jspx_th_h_005finputText_005f1 = new com.sun.faces.taglib.html_basic.InputTextTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f1);
+    _jspx_th_h_005finputText_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_h_005finputText_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
+    // /Cadastro/cadastrofuncionario.jsp(36,20) name = id type = null reqTime = true required = false fragment = false deferredValue = false deferredMethod = false expectedTypeName = null methodSignature = null 
+    _jspx_th_h_005finputText_005f1.setId("cargo");
+    // /Cadastro/cadastrofuncionario.jsp(36,20) name = size type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
+    _jspx_th_h_005finputText_005f1.setSize(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(36,20) '12'",_el_expressionfactory.createValueExpression("12",int.class)));
+    // /Cadastro/cadastrofuncionario.jsp(36,20) name = maxlength type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = int methodSignature = null 
+    _jspx_th_h_005finputText_005f1.setMaxlength(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(36,20) '11'",_el_expressionfactory.createValueExpression("11",int.class)));
+    _jspx_th_h_005finputText_005f1.setJspId("jsp_1174947178_8");
+    int _jspx_eval_h_005finputText_005f1 = _jspx_th_h_005finputText_005f1.doStartTag();
+    if (_jspx_th_h_005finputText_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_h_005finputText_005f1.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f1);
       return true;
     }
-    _jspx_th_h_005finputText_005f2.release();
-    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f2);
+    _jspx_th_h_005finputText_005f1.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005finputText_005f1);
     return false;
   }
 
@@ -404,7 +460,7 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005foutputText_005f0);
     _jspx_th_h_005foutputText_005f0.setPageContext(_jspx_page_context);
     _jspx_th_h_005foutputText_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
-    _jspx_th_h_005foutputText_005f0.setJspId("jsp_1174947178_8");
+    _jspx_th_h_005foutputText_005f0.setJspId("jsp_1174947178_9");
     int _jspx_eval_h_005foutputText_005f0 = _jspx_th_h_005foutputText_005f0.doStartTag();
     if (_jspx_th_h_005foutputText_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_th_h_005foutputText_005f0.release();
@@ -413,6 +469,29 @@ public final class cadastrofuncionario_jsp extends org.apache.jasper.runtime.Htt
     }
     _jspx_th_h_005foutputText_005f0.release();
     org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005foutputText_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_h_005fcommandButton_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  h:commandButton
+    com.sun.faces.taglib.html_basic.CommandButtonTag _jspx_th_h_005fcommandButton_005f0 = new com.sun.faces.taglib.html_basic.CommandButtonTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
+    _jspx_th_h_005fcommandButton_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_h_005fcommandButton_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fform_005f0);
+    // /Cadastro/cadastrofuncionario.jsp(41,16) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_h_005fcommandButton_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrofuncionario.jsp(41,16) 'Salvar'",_el_expressionfactory.createValueExpression("Salvar",java.lang.Object.class)));
+    _jspx_th_h_005fcommandButton_005f0.setJspId("jsp_1174947178_10");
+    int _jspx_eval_h_005fcommandButton_005f0 = _jspx_th_h_005fcommandButton_005f0.doStartTag();
+    if (_jspx_th_h_005fcommandButton_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_h_005fcommandButton_005f0.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
+      return true;
+    }
+    _jspx_th_h_005fcommandButton_005f0.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandButton_005f0);
     return false;
   }
 }

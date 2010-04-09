@@ -9,6 +9,7 @@
 <%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@taglib prefix="rich" uri="http://richfaces.org/rich" %>
 <%@taglib prefix="a4j" uri="http://richfaces.org/a4j" %>
+<%@taglib prefix="stella" uri="http://stella.caelum.com.br/faces" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -30,8 +31,10 @@
                     <h:inputText size="4"/>
                     <h:inputText id="idpessoa" size="50" readonly="true" />
 
-                    <h:outputLabel for="cpf" value="C.N.P.J: "/>
-                    <h:inputText id="cpf" size="17" maxlength="16"/>
+                    <h:outputLabel for="cnpj" value="C.N.P.J: "/>
+                    <h:inputText id="cnpj" size="17" maxlength="16">
+                        <stella:validateCNPJ formatted="false"/>
+                    </h:inputText>
                     <h:outputText />
 
 
@@ -40,6 +43,8 @@
                     <h:outputText/>
 
                 </h:panelGrid>
+                <h:message for="cnpj"/>
+                <h:commandButton action="#{ClienteFaces.selectedClient.cpfcnpj}" value="Salva" />
         </fieldset>
     </h:form>
           </f:view>

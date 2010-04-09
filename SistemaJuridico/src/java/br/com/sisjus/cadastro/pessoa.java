@@ -4,7 +4,6 @@
  */
 package br.com.sisjus.cadastro;
 
-import br.com.sisjus.db.ConnectionDB;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -31,7 +30,7 @@ import javax.persistence.Temporal;
 public class pessoa implements Serializable {
     
     
-    @Id @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Id
     @Column(name="id")
     private Integer id;
 
@@ -41,40 +40,40 @@ public class pessoa implements Serializable {
     @Column(name="sobrenome")
     private String Sobrenome;
 
-    @Temporal(javax.persistence.TemporalType.DATE)
+    
     @Column(name="datanasc")
+    private String data_nasc;
 
-    private Date data_nasc;
     @Column(name="endereco")
-
     private String endereco;
+
     @Column(name="bairro")
-
     private String bairro;
+
     @Column(name="cep")
-
     private String cep;
+
     @Column(name="uf")
-
     private String uf;
+
     @Column(name="cidade")
-
     private String cidade;
+
     @Column(name="email")
-
     private String email;
+
     @Column(name="telefone")
-
     private String telefone;
-    @Column(name="celular")
 
+    @Column(name="celular")
     private String celular;
+
     @Column(name="profissao")
     private String profissao;
 
-    @Temporal(javax.persistence.TemporalType.DATE)
+    
     @Column(name="datacadastro")
-    private Date data_cadastro;
+    private String data_cadastro = br.com.sisjus.util.Data.Formatador;
 
     @Column(name="sexo")
     private char sexo;
@@ -150,19 +149,19 @@ public class pessoa implements Serializable {
         this.cidade = cidade;
     }
 
-    public Date getData_cadastro() {
+    public String getData_cadastro() {
         return data_cadastro;
     }
 
-    public void setData_cadastro(Date data_cadastro) {
+    public void setData_cadastro(String data_cadastro) {
         this.data_cadastro = data_cadastro;
     }
 
-    public Date getData_nasc() {
+    public String getData_nasc() {
         return data_nasc;
     }
 
-    public void setData_nasc(Date data_nasc) {
+    public void setData_nasc(String data_nasc) {
         this.data_nasc = data_nasc;
     }
 

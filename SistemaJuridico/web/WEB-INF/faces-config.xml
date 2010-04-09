@@ -107,15 +107,60 @@
             <to-view-id>/Cadastro/cadastrousuario.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>DoLoginSucessful</from-outcome>
-            <to-view-id>/Tela Incial.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>DonotLoginSucessful</from-outcome>
             <to-view-id>/welcomeJSF.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>DoLoginSucessful</from-outcome>
+            <to-view-id>/MsgDeEntrada.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/menu.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>gotoAddNewPerson</from-outcome>
+            <to-view-id>/Cadastro/cadastropessoa.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewLayer</from-outcome>
+            <to-view-id>/Cadastro/cadastroadvogadojuiz.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewCliente</from-outcome>
+            <to-view-id>/Cadastro/cadastrocliente.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewFuncionario</from-outcome>
+            <to-view-id>/Cadastro/cadastrofuncionario.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewProcess</from-outcome>
+            <to-view-id>/Cadastro/cadastroprocesso.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewUser</from-outcome>
+            <to-view-id>/Cadastro/cadastrousuario.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Cadastro/cadastrocliente.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>gotoAddNewClienteJuridico</from-outcome>
+            <to-view-id>/Cadastro/cadastroclientejuridico.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/MsgDeEntrada.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>WaitSucessful</from-outcome>
+            <to-view-id>/Tela Incial.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>
+
+
+
+
 
 
 
