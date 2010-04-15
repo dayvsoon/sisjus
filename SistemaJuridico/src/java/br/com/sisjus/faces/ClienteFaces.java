@@ -67,7 +67,7 @@ public String FinishUpdateLayer(){
     public List<SelectItem> getClientsOfSystem(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
         for(pessoa prs : pssDAO.getPeople()){
-            toReturn.add(new SelectItem(prs, prs.getNome()));
+            toReturn.add(new SelectItem(prs.getId(),prs.getId().toString()+" "+ prs.getNome()+" " + prs.getSobrenome()));
         }
         return toReturn;
     }

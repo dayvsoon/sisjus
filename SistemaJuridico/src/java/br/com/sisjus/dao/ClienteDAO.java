@@ -15,7 +15,7 @@ public class ClienteDAO extends GenericDAO {
 
 
 public ClienteDAO(){
-
+     super();
 }
 
 public int addCliente(cliente client){

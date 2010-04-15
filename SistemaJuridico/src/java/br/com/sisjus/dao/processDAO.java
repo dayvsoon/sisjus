@@ -40,11 +40,12 @@ public List<processo> getProcesses(){
 }
 
 public List<processo> getProcessesFinally(){
-   return  getCleanList(processo.class,"from processo process where status = 'Finalizado'");
+   return  (List<processo>) SearchProcess("select processnumber, processdescription from "+ processo.class +" where status = 'Finalizado'");
 
 }
 public List<processo> getProcessByUser(int userID){
     return getCleanList(processo.class, "from processo process where process.owner.id = ?1", userID);
 }
+
 
 }

@@ -27,8 +27,9 @@
 	        <legend>Cadastro de Funcionário</legend>
                 <h:panelGrid id="layerpanel" columns="3">
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <rich:comboBox defaultLabel="Pessoa">
-                        <f:selectItem itemLabel="#{FuncionarioFaces.selectedFuncionario.id_pessoa}" itemValue="#{FuncionarioFaces.selectedFuncionario.id}"/>
+                    <rich:comboBox defaultLabel="Pessoa" value="#{FuncionarioFaces.selectedFuncionario.id_pessoa}">
+                        <f:selectItems value="#{FuncionarioFaces.clientsOfSystem}"></f:selectItems>
+                        <a4j:support event="onchange" reRender="idpessoa"/>
                     </rich:comboBox>
                     <h:inputText id="idpessoa" size="50" readonly="true" />
 

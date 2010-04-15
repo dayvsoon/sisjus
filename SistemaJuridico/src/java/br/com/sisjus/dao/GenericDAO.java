@@ -6,6 +6,7 @@
 package br.com.sisjus.dao;
 
 import br.com.sisjus.cadastro.HibernateUtil;
+import br.com.sisjus.cadastro.processo;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Query;
@@ -78,6 +79,14 @@ protected <T extends Serializable> List<T> getCleanList(Class<T> classToCast, St
    sessao.close();
    return returnObject;
 }
+public processo SearchProcess(String query){
+      Session sessao = getSesseion();
+       Query q = sessao.createQuery(query);
+        sessao.getTransaction().commit();
+           sessao.close();
+		
 
+		return (processo)q.uniqueResult();
+	}
 
 }

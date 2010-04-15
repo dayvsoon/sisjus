@@ -27,9 +27,14 @@
             <fieldset>
 	        <legend>Cadastro de Cliente - Pessoa Juridica</legend>
                 <h:panelGrid id="layerpanel" columns="3">
+
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:inputText size="4"/>
-                    <h:inputText id="idpessoa" size="50" readonly="true" />
+                     <rich:comboBox value="#{ClienteFaces.selectedClient.id_pessoa_cliente}">
+                        <f:selectItems value="#{ClienteFaces.clientsOfSystem}"/>
+                        <a4j:support event="onselect" reRender="idpessoa"/>
+                    </rich:comboBox>
+                     
+                    <h:inputText id="idpessoa" size="50" readonly="true" value="#{ClienteFaces.selectedClient.id_pessoa_cliente}"/>
 
                     <h:outputLabel for="cnpj" value="C.N.P.J: "/>
                     <h:inputText id="cnpj" size="17" maxlength="16">
@@ -39,7 +44,7 @@
 
 
                     <h:outputLabel for="datainicio" value="Data de Cadastro: "/>
-                    <h:inputText id="descricaovara" size="10" maxlength="10"/>
+                    <h:inputText id="datainicio" size="10" value="#{cliente.datainicio}" readonly="true"/>
                     <h:outputText/>
 
                 </h:panelGrid>

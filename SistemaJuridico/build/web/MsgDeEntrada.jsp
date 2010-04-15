@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Bem vindo <h:outputText value="#{UserFaces.login}"/> </title>
         <style type="text/css">
             h6 { text-decoration: blink;
                  color: gray;
@@ -28,7 +28,7 @@
         </style>
     </head>
     <body>
-        <h1 align="center">BEM VINDO <h:outputText value="Usuário"></h:outputText> AO SISJUS v0.1 </h1>
+        <h1 align="center">BEM VINDO <h:outputText value="#{UserFaces.login}"></h:outputText> AO SISJUS v0.1 </h1>
          <h5 align="center" style="color: gray; font-style: italic; line-height: 4;">Login Realizado com sucesso!</h5>
            <h6 align="center">Em alguns instantes você entrará no sistema...</h6>
 

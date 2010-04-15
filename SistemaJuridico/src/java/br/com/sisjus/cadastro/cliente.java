@@ -46,6 +46,8 @@ public class cliente implements Serializable {
     @OneToMany(mappedBy="id_cliente", fetch=FetchType.LAZY)
     List<processo> ProcessOfUser;
 
+    /*@OneToOne(mappedBy="id", fetch=FetchType.LAZY)
+    List<pessoa> NomePessoa;*/
 
 
     public cliente(){
@@ -92,6 +94,10 @@ public class cliente implements Serializable {
         this.id_pessoa_cliente = id_pessoa_cliente;
     }
 
+
+
+
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -119,8 +125,12 @@ public class cliente implements Serializable {
     }
     
 
+/* @Override
+   public String toString(){
+       return id_pessoa_cliente.getNome();
+   }
 
-
+*/
     
 
 }

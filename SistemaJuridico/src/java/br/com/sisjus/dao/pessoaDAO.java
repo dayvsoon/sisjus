@@ -16,7 +16,7 @@ public class pessoaDAO extends GenericDAO {
 
 
 public pessoaDAO(){
-
+ super();
 }
 
 public int addPerson(pessoa person){

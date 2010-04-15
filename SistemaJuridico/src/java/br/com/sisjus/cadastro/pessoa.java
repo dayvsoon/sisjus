@@ -19,7 +19,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
+
 
 /**
  *
@@ -84,7 +84,7 @@ public class pessoa implements Serializable {
     @OneToMany(mappedBy = "id_pessoa",fetch=FetchType.LAZY)
     private List<advogadojuiz> nomeadvogadojuiz;
 
-    @OneToMany(mappedBy = "id_pessoa_cliente",fetch=FetchType.LAZY)
+   @OneToMany(mappedBy = "id_pessoa_cliente",fetch=FetchType.LAZY)
     private List<cliente> nomeCliente;
 
     @OneToMany(mappedBy="id_pessoa", fetch=FetchType.LAZY)
