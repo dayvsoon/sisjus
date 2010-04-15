@@ -84,8 +84,8 @@ public class pessoa implements Serializable {
     @OneToMany(mappedBy = "id_pessoa",fetch=FetchType.LAZY)
     private List<advogadojuiz> nomeadvogadojuiz;
 
-   @OneToMany(mappedBy = "id_pessoa_cliente",fetch=FetchType.LAZY)
-    private List<cliente> nomeCliente;
+  /* @OneToMany(mappedBy = "id_pessoa_cliente",fetch=FetchType.LAZY)
+    private List<cliente> nomeCliente;*/
 
     @OneToMany(mappedBy="id_pessoa", fetch=FetchType.LAZY)
     private List <funcionario> nomeFuncionario;
@@ -237,13 +237,13 @@ public class pessoa implements Serializable {
         this.nomeadvogadojuiz = nomeadvogadojuiz;
     }
 
-    public List<cliente> getNomeCliente() {
+  /*  public List<cliente> getNomeCliente() {
         return nomeCliente;
     }
 
     public void setNomeCliente(List<cliente> nomeCliente) {
         this.nomeCliente = nomeCliente;
-    }
+    }*/
 
     public List<funcionario> getNomeFuncionario() {
         return nomeFuncionario;

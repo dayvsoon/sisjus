@@ -32,9 +32,9 @@ public class cliente implements Serializable {
     @Column(name="id")
     private Integer id;
     
-    @JoinColumn(name="ID_PESSOA")
+    /*@JoinColumn(name="ID_PESSOA")
     @ManyToOne
-    private pessoa id_pessoa_cliente;
+    private pessoa id_pessoa_cliente;*/
 
     @Column(name="cpfcnpj")
     private String cpfcnpj;
@@ -42,6 +42,9 @@ public class cliente implements Serializable {
     
     @Column(name="datainicio")
     private String datainicio = br.com.sisjus.util.Data.Formatador;
+
+    @Column(name="nomepessoa")
+    private String nome_pessoa;
 
     @OneToMany(mappedBy="id_cliente", fetch=FetchType.LAZY)
     List<processo> ProcessOfUser;
@@ -86,15 +89,23 @@ public class cliente implements Serializable {
         this.datainicio = datainicio;
     }
 
-    public pessoa getId_pessoa_cliente() {
+ /*   public pessoa getId_pessoa_cliente() {
         return id_pessoa_cliente;
     }
 
     public void setId_pessoa_cliente(pessoa id_pessoa_cliente) {
         this.id_pessoa_cliente = id_pessoa_cliente;
     }
+*/
+    public String getNome_pessoa() {
+        return nome_pessoa;
+    }
 
+    public void setNome_pessoa(String nome_pessoa) {
+        this.nome_pessoa = nome_pessoa;
+    }
 
+/*
 
 
 
@@ -125,7 +136,7 @@ public class cliente implements Serializable {
     }
     
 
-/* @Override
+ @Override
    public String toString(){
        return id_pessoa_cliente.getNome();
    }

@@ -16,14 +16,14 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fpanelGrid_0026_005fid_005fcolumns;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005foutputLabel_0026_005fvalue_005ffor_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005fid_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005frich_005fcomboBox_0026_005fvalue;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fselectOneMenu_0026_005fvalue_005fid;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005ff_005fselectItems_0026_005fvalue_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005fmaxlength_005fid;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fstella_005fvalidateCPF_0026_005fformatted_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005freadonly_005fid_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fid_005faction_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fimmediate_005faction_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fmessage_0026_005ffor_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fh_005fmessage_0026_005fstyle_005ffor_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -38,14 +38,14 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
     _005fjspx_005ftagPool_005fh_005fpanelGrid_0026_005fid_005fcolumns = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005foutputLabel_0026_005fvalue_005ffor_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005fid_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005frich_005fcomboBox_0026_005fvalue = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fh_005fselectOneMenu_0026_005fvalue_005fid = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005ff_005fselectItems_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005fmaxlength_005fid = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fstella_005fvalidateCPF_0026_005fformatted_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005freadonly_005fid_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fid_005faction_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fimmediate_005faction_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fh_005fmessage_0026_005ffor_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fh_005fmessage_0026_005fstyle_005ffor_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
@@ -56,14 +56,14 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
     _005fjspx_005ftagPool_005fh_005fpanelGrid_0026_005fid_005fcolumns.release();
     _005fjspx_005ftagPool_005fh_005foutputLabel_0026_005fvalue_005ffor_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005fid_005fnobody.release();
-    _005fjspx_005ftagPool_005frich_005fcomboBox_0026_005fvalue.release();
+    _005fjspx_005ftagPool_005fh_005fselectOneMenu_0026_005fvalue_005fid.release();
     _005fjspx_005ftagPool_005ff_005fselectItems_0026_005fvalue_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005fmaxlength_005fid.release();
     _005fjspx_005ftagPool_005fstella_005fvalidateCPF_0026_005fformatted_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005finputText_0026_005fvalue_005fsize_005freadonly_005fid_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fid_005faction_005fnobody.release();
     _005fjspx_005ftagPool_005fh_005fcommandButton_0026_005fvalue_005fimmediate_005faction_005fnobody.release();
-    _005fjspx_005ftagPool_005fh_005fmessage_0026_005ffor_005fnobody.release();
+    _005fjspx_005ftagPool_005fh_005fmessage_0026_005fstyle_005ffor_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -195,7 +195,7 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
         if (_jspx_meth_h_005fpanelGrid_005f0(_jspx_th_h_005fform_005f0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("                ");
+        out.write("                    ");
         if (_jspx_meth_h_005fmessage_005f0(_jspx_th_h_005fform_005f0, _jspx_page_context))
           return true;
         out.write("\n");
@@ -257,7 +257,7 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
           return true;
         out.write("\n");
         out.write("                    ");
-        if (_jspx_meth_rich_005fcomboBox_005f0(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
+        if (_jspx_meth_h_005fselectOneMenu_005f0(_jspx_th_h_005fpanelGrid_005f0, _jspx_page_context))
           return true;
         out.write("\n");
         out.write("\n");
@@ -384,51 +384,53 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
     return false;
   }
 
-  private boolean _jspx_meth_rich_005fcomboBox_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_h_005fselectOneMenu_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fpanelGrid_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
-    //  rich:comboBox
-    org.richfaces.taglib.ComboBoxTag _jspx_th_rich_005fcomboBox_005f0 = new org.richfaces.taglib.ComboBoxTag();
-    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_rich_005fcomboBox_005f0);
-    _jspx_th_rich_005fcomboBox_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_rich_005fcomboBox_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
+    //  h:selectOneMenu
+    com.sun.faces.taglib.html_basic.SelectOneMenuTag _jspx_th_h_005fselectOneMenu_005f0 = new com.sun.faces.taglib.html_basic.SelectOneMenuTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fselectOneMenu_005f0);
+    _jspx_th_h_005fselectOneMenu_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_h_005fselectOneMenu_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fpanelGrid_005f0);
+    // /Cadastro/cadastrocliente.jsp(35,20) name = id type = null reqTime = true required = false fragment = false deferredValue = false deferredMethod = false expectedTypeName = null methodSignature = null 
+    _jspx_th_h_005fselectOneMenu_005f0.setId("somcliente");
     // /Cadastro/cadastrocliente.jsp(35,20) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
-    _jspx_th_rich_005fcomboBox_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrocliente.jsp(35,20) '#{ClienteFaces.selectedClient.id_pessoa_cliente}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{ClienteFaces.selectedClient.id_pessoa_cliente}",java.lang.Object.class)));
-    _jspx_th_rich_005fcomboBox_005f0.setJspId("jsp_1196027433_6");
-    int _jspx_eval_rich_005fcomboBox_005f0 = _jspx_th_rich_005fcomboBox_005f0.doStartTag();
-    if (_jspx_eval_rich_005fcomboBox_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      if (_jspx_eval_rich_005fcomboBox_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+    _jspx_th_h_005fselectOneMenu_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrocliente.jsp(35,20) '#{ClienteFaces.selectedClient.id_pessoa_cliente}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{ClienteFaces.selectedClient.id_pessoa_cliente}",java.lang.Object.class)));
+    _jspx_th_h_005fselectOneMenu_005f0.setJspId("jsp_1196027433_6");
+    int _jspx_eval_h_005fselectOneMenu_005f0 = _jspx_th_h_005fselectOneMenu_005f0.doStartTag();
+    if (_jspx_eval_h_005fselectOneMenu_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_h_005fselectOneMenu_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
         out = _jspx_page_context.pushBody();
-        _jspx_th_rich_005fcomboBox_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
-        _jspx_th_rich_005fcomboBox_005f0.doInitBody();
+        _jspx_th_h_005fselectOneMenu_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_h_005fselectOneMenu_005f0.doInitBody();
       }
       do {
         out.write("\n");
         out.write("                        ");
-        if (_jspx_meth_f_005fselectItems_005f0(_jspx_th_rich_005fcomboBox_005f0, _jspx_page_context))
+        if (_jspx_meth_f_005fselectItems_005f0(_jspx_th_h_005fselectOneMenu_005f0, _jspx_page_context))
           return true;
         out.write("\n");
         out.write("                    ");
-        int evalDoAfterBody = _jspx_th_rich_005fcomboBox_005f0.doAfterBody();
+        int evalDoAfterBody = _jspx_th_h_005fselectOneMenu_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
       } while (true);
-      if (_jspx_eval_rich_005fcomboBox_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+      if (_jspx_eval_h_005fselectOneMenu_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
         out = _jspx_page_context.popBody();
       }
     }
-    if (_jspx_th_rich_005fcomboBox_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_th_rich_005fcomboBox_005f0.release();
-      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_rich_005fcomboBox_005f0);
+    if (_jspx_th_h_005fselectOneMenu_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_h_005fselectOneMenu_005f0.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fselectOneMenu_005f0);
       return true;
     }
-    _jspx_th_rich_005fcomboBox_005f0.release();
-    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_rich_005fcomboBox_005f0);
+    _jspx_th_h_005fselectOneMenu_005f0.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fselectOneMenu_005f0);
     return false;
   }
 
-  private boolean _jspx_meth_f_005fselectItems_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_rich_005fcomboBox_005f0, PageContext _jspx_page_context)
+  private boolean _jspx_meth_f_005fselectItems_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_005fselectOneMenu_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
@@ -436,7 +438,7 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
     com.sun.faces.taglib.jsf_core.SelectItemsTag _jspx_th_f_005fselectItems_005f0 = new com.sun.faces.taglib.jsf_core.SelectItemsTag();
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_f_005fselectItems_005f0);
     _jspx_th_f_005fselectItems_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_f_005fselectItems_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_rich_005fcomboBox_005f0);
+    _jspx_th_f_005fselectItems_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fselectOneMenu_005f0);
     // /Cadastro/cadastrocliente.jsp(36,24) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
     _jspx_th_f_005fselectItems_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrocliente.jsp(36,24) '#{ClienteFaces.clientsOfSystem}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{ClienteFaces.clientsOfSystem}",java.lang.Object.class)));
     _jspx_th_f_005fselectItems_005f0.setJspId("jsp_1196027433_7");
@@ -663,8 +665,10 @@ public final class cadastrocliente_jsp extends org.apache.jasper.runtime.HttpJsp
     org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fmessage_005f0);
     _jspx_th_h_005fmessage_005f0.setPageContext(_jspx_page_context);
     _jspx_th_h_005fmessage_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_005fform_005f0);
-    // /Cadastro/cadastrocliente.jsp(52,16) name = for type = javax.el.ValueExpression reqTime = false required = true fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
-    _jspx_th_h_005fmessage_005f0.setFor(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrocliente.jsp(52,16) 'cpf'",_el_expressionfactory.createValueExpression("cpf",java.lang.String.class)));
+    // /Cadastro/cadastrocliente.jsp(52,20) name = for type = javax.el.ValueExpression reqTime = false required = true fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
+    _jspx_th_h_005fmessage_005f0.setFor(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrocliente.jsp(52,20) 'cpf'",_el_expressionfactory.createValueExpression("cpf",java.lang.String.class)));
+    // /Cadastro/cadastrocliente.jsp(52,20) name = style type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
+    _jspx_th_h_005fmessage_005f0.setStyle(new org.apache.jasper.el.JspValueExpression("/Cadastro/cadastrocliente.jsp(52,20) 'color: red'",_el_expressionfactory.createValueExpression("color: red",java.lang.String.class)));
     _jspx_th_h_005fmessage_005f0.setJspId("jsp_1196027433_14");
     int _jspx_eval_h_005fmessage_005f0 = _jspx_th_h_005fmessage_005f0.doStartTag();
     if (_jspx_th_h_005fmessage_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

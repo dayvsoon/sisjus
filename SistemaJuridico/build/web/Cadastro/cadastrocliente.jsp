@@ -32,7 +32,7 @@
                    
 
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:selectOneMenu id="somcliente" value="#{ClienteFaces.selectedClient.id_pessoa_cliente}">
+                    <h:selectOneMenu id="somcliente" value="#{ClienteFaces.selectedClient.nome_pessoa}">
                         <f:selectItems value="#{ClienteFaces.clientsOfSystem}"/>
                     </h:selectOneMenu>
 
@@ -49,7 +49,8 @@
                     <h:commandButton id="RecordDate" action="#{ClienteFaces.FinishedLayer}" value="Salvar"/>
                     <h:commandButton action="#{ClienteFaces.doAddClientJuridico}" value="Cliente - Pessoa Juridica" immediate="true" />
                 </h:panelGrid>
-                <h:message for="cpf"/>
+                <br/>
+                    <h:message for="cpf" style="color: red"/>
             </fieldset>
     </h:form>
           </f:view>

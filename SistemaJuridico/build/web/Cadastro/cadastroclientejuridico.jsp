@@ -28,16 +28,20 @@
 	        <legend>Cadastro de Cliente - Pessoa Juridica</legend>
                 <h:panelGrid id="layerpanel" columns="3">
 
+                    <h:outputLabel for="Idcliente" value="ID: "/>
+                    <h:inputText id="Idcliente" value="#{ClienteFaces.selectedClient.id}" size="3"/>
+                    <h:outputText/>
+                    
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                     <rich:comboBox value="#{ClienteFaces.selectedClient.id_pessoa_cliente}">
+                    <h:selectOneMenu value="#{ClienteFaces.selectedClient.nome_pessoa}">
                         <f:selectItems value="#{ClienteFaces.clientsOfSystem}"/>
-                        <a4j:support event="onselect" reRender="idpessoa"/>
-                    </rich:comboBox>
+                        <a4j:support event="onchange" reRender="idpessoa"/>
+                    </h:selectOneMenu>
                      
-                    <h:inputText id="idpessoa" size="50" readonly="true" value="#{ClienteFaces.selectedClient.id_pessoa_cliente}"/>
+                    <h:inputText id="idpessoa" size="50" readonly="true" value="#{ClienteFaces.selectedClient.nome_pessoa}"/>
 
                     <h:outputLabel for="cnpj" value="C.N.P.J: "/>
-                    <h:inputText id="cnpj" size="17" maxlength="16">
+                    <h:inputText id="cnpj" size="17" maxlength="16" value="#{ClienteFaces.selectedClient.cpfcnpj}">
                         <stella:validateCNPJ formatted="false"/>
                     </h:inputText>
                     <h:outputText />
@@ -49,7 +53,7 @@
 
                 </h:panelGrid>
                 <h:message for="cnpj"/>
-                <h:commandButton action="#{ClienteFaces.selectedClient.cpfcnpj}" value="Salva" />
+                <h:commandButton action="#{ClienteFaces.FinishedLayer}" value="Salva" />
         </fieldset>
     </h:form>
           </f:view>
