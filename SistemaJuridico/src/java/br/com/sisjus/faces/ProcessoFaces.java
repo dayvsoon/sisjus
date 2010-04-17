@@ -5,9 +5,17 @@
 
 package br.com.sisjus.faces;
 
+import br.com.sisjus.cadastro.advogadojuiz;
+import br.com.sisjus.cadastro.cliente;
+import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.cadastro.processo;
+import br.com.sisjus.dao.ClienteDAO;
+import br.com.sisjus.dao.advogadoJuizDAO;
 import br.com.sisjus.dao.processDAO;
+import java.util.LinkedList;
 import java.util.List;
+import javax.faces.model.SelectItem;
+import br.com.sisjus.dao.pessoaDAO;
 
 
 /**
@@ -19,12 +27,37 @@ public class ProcessoFaces {
         private List<processo> ListOfProcess = null;
         private processDAO processDAO = new processDAO();
         private processo selectedProcesso;
+        private ClienteDAO cltDAO = new ClienteDAO();
+        private advogadoJuizDAO adzDAO = new advogadoJuizDAO();
 
 
     /** Creates a new instance of ProcessoFaces */
     public ProcessoFaces() {
     }
 
+ public List<SelectItem> getClientOfSystem(){
+        List<SelectItem> toReturn = new LinkedList<SelectItem>();
+        for(cliente clt : cltDAO.getClients() ){
+            toReturn.add(new SelectItem(clt.getNome_pessoa() + " "+ clt.getId(),clt.getNome_pessoa() + " " + clt.getCpfcnpj() ));
+        }
+        return toReturn;
+    }
+ public List<SelectItem> getLayerOfSystem(){
+     List<SelectItem> toReturn = new LinkedList<SelectItem>();
+      for(advogadojuiz adz : adzDAO.getLayers() ){
+          toReturn.add(new SelectItem(adz.getId_advogadojuiz() + " " + adz.getId_pessoa(), adz.getId_pessoa() + " "+ adz.getCod_oab()));
+
+      }
+      return toReturn;
+ }
+public List<SelectItem> getMajorLayerOfSystem(){
+     List<SelectItem> toReturn = new LinkedList<SelectItem>();
+      for(advogadojuiz adz : adzDAO.getLayers() ){
+          toReturn.add(new SelectItem(adz.getId_advogadojuiz() + " " + adz.getId_pessoa(), adz.getId_pessoa() + " Nº "+ adz.getNvara() +" - "+ adz.getDescricaodaVara()));
+
+      }
+      return toReturn;
+ }
 
     public List<processo> getListOfProcess() {
        if (ListOfProcess == null){
@@ -63,6 +96,38 @@ public String FinishUpdateProcess(){
 
 
 }
+
+    public advogadoJuizDAO getAdzDAO() {
+        return adzDAO;
+    }
+
+    public void setAdzDAO(advogadoJuizDAO adzDAO) {
+        this.adzDAO = adzDAO;
+    }
+
+    public ClienteDAO getCltDAO() {
+        return cltDAO;
+    }
+
+    public void setCltDAO(ClienteDAO cltDAO) {
+        this.cltDAO = cltDAO;
+    }
+
+    public processDAO getProcessDAO() {
+        return processDAO;
+    }
+
+    public void setProcessDAO(processDAO processDAO) {
+        this.processDAO = processDAO;
+    }
+
+    public processo getSelectedProcesso() {
+        return selectedProcesso;
+    }
+
+    public void setSelectedProcesso(processo selectedProcesso) {
+        this.selectedProcesso = selectedProcesso;
+    }
 
 
 

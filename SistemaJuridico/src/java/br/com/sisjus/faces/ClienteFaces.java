@@ -12,6 +12,7 @@ import br.com.sisjus.dao.pessoaDAO;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -24,12 +25,13 @@ public class ClienteFaces {
         private ClienteDAO clienteDAO = new ClienteDAO();
         private cliente selectedClient;
         private pessoaDAO pssDAO = new pessoaDAO();
+        private int Choise;
 
     /** Creates a new instance of ClienteFaces */
     public ClienteFaces() {
     }
 
-    public List<cliente> getListOfLayer() {
+    public List<cliente> getListOfClient() {
        if (ListOfCliente == null){
            ListOfCliente = clienteDAO.getClients();
        }
@@ -43,21 +45,36 @@ public class ClienteFaces {
           selectedClient = new cliente();
           return "gotoAddNewClienteJuridico";
       }
-  public String FinishedLayer(){
-      clienteDAO.addCliente(selectedClient);
+  public String FinishedClient(){
+     Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
+     System.out.println("Valor da escolha: "+Choise);
+     if(Choise == 0){
+     clienteDAO.addCliente(selectedClient);
       ListOfCliente = null;
+      JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
       return "gotoListCliente";
+  }else
+      JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
+      return "DontGoListCliente";
   }
-  public String removeLayer(){
-      clienteDAO.removeClient(selectedClient);
-            ListOfCliente = null;
-      return "gotoListCliente";
+  public String removeClient(){
+       Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja remover?");
+        if(Choise == 0){
+             clienteDAO.removeClient(selectedClient);
+             ListOfCliente = null;
+             JOptionPane.showMessageDialog(null, "Dado removido no banco de dados com sucesso");
+             return "gotoListCliente";
+          }else
+             JOptionPane.showMessageDialog(null, "Dado não removido do banco de dados");
+              return "DontGoListCliente";
   }
-public String doUpdateLayer(){
+  
+public String doUpdateClient(){
 
     return "gotoUpdateClienter";
 }
-public String FinishUpdateLayer(){
+public String FinishUpdateClient(){
+
       clienteDAO.updateClient(selectedClient);
       ListOfCliente = null;
       return "gotoListCliente";
@@ -86,6 +103,30 @@ public String FinishUpdateLayer(){
 
     public void setSelectedClient(cliente selectedClient) {
         this.selectedClient = selectedClient;
+    }
+
+    public int getChoise() {
+        return Choise;
+    }
+
+    public void setChoise(int Choise) {
+        this.Choise = Choise;
+    }
+
+    public ClienteDAO getClienteDAO() {
+        return clienteDAO;
+    }
+
+    public void setClienteDAO(ClienteDAO clienteDAO) {
+        this.clienteDAO = clienteDAO;
+    }
+
+    public pessoaDAO getPssDAO() {
+        return pssDAO;
+    }
+
+    public void setPssDAO(pessoaDAO pssDAO) {
+        this.pssDAO = pssDAO;
     }
 
 }

@@ -17,6 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../Formatadores.js" type="text/javascript"></script>
         <title>JSP Page</title>
 
     </head>
@@ -33,18 +34,18 @@
                     <h:outputText/>
                     
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:selectOneMenu value="#{ClienteFaces.selectedClient.nome_pessoa}">
+                    <h:selectOneMenu id="idpessoa" value="#{ClienteFaces.selectedClient.nome_pessoa}">
+                        <f:selectItem itemLabel="- Selecione a Pessoa -"/>
                         <f:selectItems value="#{ClienteFaces.clientsOfSystem}"/>
-                        <a4j:support event="onchange" reRender="idpessoa"/>
+                        <a4j:support event="onchange" reRender="idpessoa" immediate="true"/>
                     </h:selectOneMenu>
-                     
-                    <h:inputText id="idpessoa" size="50" readonly="true" value="#{ClienteFaces.selectedClient.nome_pessoa}"/>
+                    <h:outputText/>
 
                     <h:outputLabel for="cnpj" value="C.N.P.J: "/>
-                    <h:inputText id="cnpj" size="17" maxlength="16" value="#{ClienteFaces.selectedClient.cpfcnpj}">
-                        <stella:validateCNPJ formatted="false"/>
+                    <h:inputText id="cnpj" size="18" maxlength="18" onkeyup="Telefone(this,3)"value="#{ClienteFaces.selectedClient.cpfcnpj}">
+                        <stella:validateCNPJ formatted="true"/>
                     </h:inputText>
-                    <h:outputText />
+                    <h:message for="cnpj" style="color: red"/>
 
 
                     <h:outputLabel for="datainicio" value="Data de Cadastro: "/>
@@ -52,8 +53,9 @@
                     <h:outputText/>
 
                 </h:panelGrid>
-                <h:message for="cnpj"/>
-                <h:commandButton action="#{ClienteFaces.FinishedLayer}" value="Salva" />
+              
+                <h:commandButton action="#{ClienteFaces.FinishedClient}" value="Salva" />
+                
         </fieldset>
     </h:form>
           </f:view>

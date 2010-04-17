@@ -5,19 +5,12 @@
 package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -85,13 +78,13 @@ public class pessoa implements Serializable {
     private List<advogadojuiz> nomeadvogadojuiz;
 
   /* @OneToMany(mappedBy = "id_pessoa_cliente",fetch=FetchType.LAZY)
-    private List<cliente> nomeCliente;*/
+    private List<cliente> nomeCliente;
 
     @OneToMany(mappedBy="id_pessoa", fetch=FetchType.LAZY)
     private List <funcionario> nomeFuncionario;
 
     @OneToMany(mappedBy="id_pessoa", fetch=FetchType.LAZY)
-    private List<processo> qProcesso;
+    private List<processo> qProcesso;*/
 
 
    public pessoa() {
@@ -243,7 +236,7 @@ public class pessoa implements Serializable {
 
     public void setNomeCliente(List<cliente> nomeCliente) {
         this.nomeCliente = nomeCliente;
-    }*/
+    }
 
     public List<funcionario> getNomeFuncionario() {
         return nomeFuncionario;
@@ -259,7 +252,7 @@ public class pessoa implements Serializable {
 
     public void setqProcesso(List<processo> qProcesso) {
         this.qProcesso = qProcesso;
-    }
+    }*/
 
     @Override
     public boolean equals(Object obj) {

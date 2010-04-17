@@ -13,8 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,28 +26,30 @@ import org.joda.time.LocalDate;
 @Table(name="process")
 public class processo implements Serializable {
     
-    @Id @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Id
     @Column(name="id")
     private Integer id;
 
-    @JoinColumn(name="id_person")
-    @ManyToOne
-    private pessoa id_pessoa;
+    @Column(name="pessoa_autor")
+    private String pessoa_autor;
 
-    @JoinColumn(name="id_cliente")
-    @ManyToOne
-    private cliente id_cliente;
+    @Column(name="advogado_autor")
+    private String advogado_autor;
 
-    @JoinColumn(name="id_layer")
-    @ManyToOne
-    private advogadojuiz id_advogadojuiz_process;
+    @Column(name="pessoa_reu")
+    private String pessoa_reu;
+
+    @Column(name="advogado_reu")
+    private String advogado_reu;
 
     @Column(name="processnumber")
     private Integer numero_processo;
 
     @Column(name="cod_direito")
     private String cod_direito; //Exemplo: Direito Civil
-    
+
+    @Column(name="juiz_sentenca")
+    private String juiz_sentenca;
     
     @Column(name="ID_OWNER")
     private Usuario owner;
@@ -129,30 +129,48 @@ public class processo implements Serializable {
         this.id = id;
     }
 
-    public advogadojuiz getId_advogadojuiz_process() {
-        return id_advogadojuiz_process;
+    public String getJuiz_sentenca() {
+        return juiz_sentenca;
     }
 
-    public void setId_advogadojuiz_process(advogadojuiz id_advogadojuiz_process) {
-        this.id_advogadojuiz_process = id_advogadojuiz_process;
+    public void setJuiz_sentenca(String juiz_sentenca) {
+        this.juiz_sentenca = juiz_sentenca;
     }
 
 
-    public cliente getId_cliente() {
-        return id_cliente;
+    public String getAdvogado_autor() {
+        return advogado_autor;
     }
 
-    public void setId_cliente(cliente id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setAdvogado_autor(String advogado_autor) {
+        this.advogado_autor = advogado_autor;
     }
 
-    public pessoa getId_pessoa() {
-        return id_pessoa;
+    public String getAdvogado_reu() {
+        return advogado_reu;
     }
 
-    public void setId_pessoa(pessoa id_pessoa) {
-        this.id_pessoa = id_pessoa;
+    public void setAdvogado_reu(String advogado_reu) {
+        this.advogado_reu = advogado_reu;
     }
+
+    public String getPessoa_autor() {
+        return pessoa_autor;
+    }
+
+    public void setPessoa_autor(String pessoa_autor) {
+        this.pessoa_autor = pessoa_autor;
+    }
+
+    public String getPessoa_reu() {
+        return pessoa_reu;
+    }
+
+    public void setPessoa_reu(String pessoa_reu) {
+        this.pessoa_reu = pessoa_reu;
+    }
+
+   
 
     public Integer getNumero_processo() {
         return numero_processo;

@@ -31,24 +31,22 @@ public class advogadojuiz implements Serializable {
     @Column(name="id" )
     private Integer id_advogadojuiz;
 
-
     
-    @ManyToOne
-    @JoinColumn(name="ID_PERSON")
-    private pessoa id_pessoa;
+    @Column(name="ID_PERSON")
+    private String id_pessoa;
 
     @Column(name="cod_oab")
     private String cod_oab;
 
     @Column(name="numerovara")
-    private Integer nvara;
+    private String nvara;
 
     @Column(name="descricaovara")
     private String descricaodaVara;
 
-    @OneToMany(mappedBy="id_advogadojuiz_process", fetch=FetchType.LAZY, targetEntity=processo.class)
+   /* @OneToMany(mappedBy="id_advogadojuiz_process", fetch=FetchType.LAZY, targetEntity=processo.class)
     List<processo> ProcessOfUser;
-
+*/
 
     public advogadojuiz(){
         
@@ -65,24 +63,8 @@ public class advogadojuiz implements Serializable {
         this.id_advogadojuiz = id_advogadojuiz;
     }
     
-    public List<processo> getProcessOfUser() {
-        return ProcessOfUser;
-    }
-
-    public void setProcessOfUser(List<processo> ProcessOfUser) {
-        this.ProcessOfUser = ProcessOfUser;
-    }
-    
     public void setCod_oab(String cod_oab) {
         this.cod_oab = cod_oab;
-    }
-
-    public pessoa getId_pessoa() {
-        return id_pessoa;
-    }
-
-    public void setId_pessoa(pessoa id_pessoa) {
-        this.id_pessoa = id_pessoa;
     }
 
     public String getDescricaodaVara() {
@@ -93,13 +75,23 @@ public class advogadojuiz implements Serializable {
         this.descricaodaVara = descricaodaVara;
     }
 
-    public Integer getNvara() {
+    public String getId_pessoa() {
+        return id_pessoa;
+    }
+
+    public void setId_pessoa(String id_pessoa) {
+        this.id_pessoa = id_pessoa;
+    }
+
+    public String getNvara() {
         return nvara;
     }
 
-    public void setNvara(Integer nvara) {
+    public void setNvara(String nvara) {
         this.nvara = nvara;
     }
+
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -122,10 +114,8 @@ public class advogadojuiz implements Serializable {
         hash = 71 * hash + (this.id_advogadojuiz != null ? this.id_advogadojuiz.hashCode() : 0);
         return hash;
     }
-@Override
-   public String toString(){
-       return id_pessoa.getNome();
-   }
+
+   
    /* public String toString(){
         return id;
     }**/

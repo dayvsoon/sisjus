@@ -156,7 +156,13 @@
             <to-view-id>/Tela Incial.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>GerarBanco</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.util.GerarBanco</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 </faces-config>
+
 
 
 

@@ -101,6 +101,17 @@
                         </rich:menuItem>
                     </rich:menuGroup>
                 </rich:dropDownMenu>
+                 <rich:dropDownMenu>
+                    <f:facet name="label">
+                        <h:panelGroup>
+                        <h:outputText value="Protocolo"/>
+                        </h:panelGroup>
+                    </f:facet>
+                    <rich:menuGroup value="Ação">
+                        <rich:menuItem submitMode="none" value="Cadastrar">
+                        </rich:menuItem>
+                    </rich:menuGroup>
+                </rich:dropDownMenu>
             </rich:toolBar>
         </h:form>
     </body>

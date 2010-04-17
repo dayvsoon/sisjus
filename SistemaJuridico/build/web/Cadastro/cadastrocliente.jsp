@@ -17,6 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../Formatadores.js" type="text/javascript"></script>
         <title>JSP Page</title>
         
     </head>
@@ -37,7 +38,7 @@
                     </h:selectOneMenu>
 
                     <h:outputLabel for="cpf" value="C.P.F: "/>
-                    <h:inputText id="cpf" size="14" maxlength="15" value="#{ClienteFaces.selectedClient.cpfcnpj}">
+                    <h:inputText id="cpf" size="14" maxlength="15" onkeyup="Telefone(this,2)" value="#{ClienteFaces.selectedClient.cpfcnpj}">
                         <stella:validateCPF formatted="true"/>
 
                     </h:inputText>
@@ -46,7 +47,7 @@
                     <h:inputText id="datainicio" size="10" value="#{cliente.datainicio}" readonly="true"/>
                    
 
-                    <h:commandButton id="RecordDate" action="#{ClienteFaces.FinishedLayer}" value="Salvar"/>
+                    <h:commandButton id="RecordDate" action="#{ClienteFaces.FinishedClient}" value="Salvar"/>
                     <h:commandButton action="#{ClienteFaces.doAddClientJuridico}" value="Cliente - Pessoa Juridica" immediate="true" />
                 </h:panelGrid>
                 <br/>

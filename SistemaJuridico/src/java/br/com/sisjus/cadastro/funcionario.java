@@ -6,16 +6,9 @@
 package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -26,13 +19,15 @@ import javax.persistence.Table;
 @Table(name="employeed")
 public class funcionario implements Serializable {
 
-    @Id @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Id 
     @Column(name="id")
     private Integer id;
 
-    @OneToOne()
-    @JoinColumn(name="ID_PERSON")
-    private pessoa id_pessoa;
+    
+    @Column(name="nome_pessoa")
+    private String nome_pessoa;
+
+
 
     @Column(name="cargo")
     private String cargo;
@@ -48,13 +43,15 @@ public class funcionario implements Serializable {
         this.cargo = cargo;
     }
 
-    public pessoa getId_pessoa() {
-        return id_pessoa;
+    public String getNome_pessoa() {
+        return nome_pessoa;
     }
 
-    public void setId_pessoa(pessoa id_pessoa) {
-        this.id_pessoa = id_pessoa;
+    public void setNome_pessoa(String nome_pessoa) {
+        this.nome_pessoa = nome_pessoa;
     }
+
+
 
     public Integer getId() {
         return id;
@@ -63,7 +60,7 @@ public class funcionario implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
+/*
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -87,8 +84,8 @@ public class funcionario implements Serializable {
     }
   @Override
    public String toString(){
-       return id_pessoa.getNome();
+       return nome_pessoa;
    }
-
+*/
 
 }

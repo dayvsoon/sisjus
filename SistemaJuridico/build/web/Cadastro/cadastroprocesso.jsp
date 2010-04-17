@@ -23,37 +23,49 @@
 
        <f:view>
         <h:form>
-            
+            <h:outputText id="idprocesso" value="ID: "/> <h:inputText size="4" id="IPTxTidprocesso" value="#{ProcessoFaces.selectedProcesso.id}"/>
                 <fieldset>
                     <legend>Autor</legend>
                 <h:panelGrid id="panelautor" columns="2">
                     <h:outputLabel for="idpessoa1" value="Id Pessoa: "/>
-                    <h:inputText id="idpessoa1"size="4"/>
+                    <h:selectOneMenu id="idpessoa1" value="#{ProcessoFaces.selectedProcesso.pessoa_autor}" >
+                        <f:selectItem itemLabel="- Selecione a Pessoa - " />
+                        <f:selectItems value="#{ProcessoFaces.clientOfSystem}"/>
+                    </h:selectOneMenu>
 
                     <h:outputLabel for="advogado" value="Id do Advogado: "/>
-                    <h:inputText id="advogado" size="4"/>
+                    <h:selectOneMenu id="advogado" value="#{ProcessoFaces.selectedProcesso.advogado_autor}">
+                        <f:selectItem itemLabel="- Selecione o Advogado - " />
+                        <f:selectItems value="#{ProcessoFaces.layerOfSystem}"/>
+                    </h:selectOneMenu>
                 </h:panelGrid>
             </fieldset>
           <fieldset>
 	        <legend>Réu</legend>
                 <h:panelGrid id="panelreu" columns="2">
                     <h:outputLabel for="idpessoa2" value="Id Pessoa: "/>
-                    <h:inputText id="idpessoa2" size="4"/>
+                    <h:selectOneMenu id="idpessoa2" value="#{ProcessoFaces.selectedProcesso.pessoa_reu}">
+                        <f:selectItem itemLabel="- Selecione a Pessoa - " />
+                         <f:selectItems value="#{ProcessoFaces.clientOfSystem}"/>
+                    </h:selectOneMenu>
 
 
                     <h:outputLabel for="advogado2" value="Id do Advogado: "/>
-                    <h:inputText id="advogado2" size="4"/>
+                    <h:selectOneMenu id="advogado2"  value="#{ProcessoFaces.selectedProcesso.advogado_reu}">
+                        <f:selectItem itemLabel="- Selecione o Advogado - " />
+                        <f:selectItems value="#{ProcessoFaces.layerOfSystem}"/>
+                    </h:selectOneMenu>
                 </h:panelGrid>
             </fieldset>
             <fieldset>
                 <legend>Dados Complementares</legend>
                 <h:panelGrid columns="3" id="dadoscomplementares">
                     <h:outputLabel for="nprocesso" value="Nº do Processo: "/>
-                    <h:inputText id="nprocesso" size="7"/>
+                    <h:inputText id="nprocesso" size="7" value="#{ProcessoFaces.selectedProcesso.numero_processo}"/>
                     <h:outputText/>
                     
                     <h:outputLabel for="coddir" value="Classificação do Direito: "/>
-                    <h:inputText id="coddir" size="16"/>
+                    <h:inputText id="coddir" size="16" value="#{ProcessoFaces.selectedProcesso.cod_direito}"/>
                     <h:outputText/>
                     
                     <h:outputLabel for="status" value="Status do Processo: "/>
@@ -65,35 +77,48 @@
 					<f:selectItem itemLabel="A ser revisado" itemValue="A ser revisado" />
 					<f:selectItem itemLabel="Concluso para decisão/Sentença" itemValue="Concluso para decisão/Sentença"/>
 					<f:selectItem itemLabel="Para expedição de alvará" itemValue="Para expedição de alvará" />
-					<f:selectItem  itemLabel="Para audiência de instrução e julgamento" itemValue="Para audiência de instrução e julgamento"/>
-					<f:selectItem  itemLabel="Para réplica" itemValue="Para réplica"/>
+					<f:selectItem itemLabel="Para audiência de instrução e julgamento" itemValue="Para audiência de instrução e julgamento"/>
+					<f:selectItem itemLabel="Para réplica" itemValue="Para réplica"/>
 					
 	        
                     </h:selectOneMenu>
                     <h:outputText/>
                 
                     <h:outputLabel for="idjuiz" value="ID do Juiz: "/>
-                    <h:inputText id="idjuiz" size="5"/>
+                    <h:selectOneMenu id="idjuiz" value="#{ProcessoFaces.selectedProcesso.juiz_sentenca}">
+                        <f:selectItem itemLabel="- Selecione o Juiz - " />
+                        <f:selectItems value="#{ProcessoFaces.majorLayerOfSystem}"/>
+
+                    </h:selectOneMenu>
                     <h:outputText/>
 
                     <h:outputLabel for="dataincial" value="Data Inicial: "/>
-                    <h:inputText id="datainicial" size="10"/>
-                    <h:outputText/>
+                    <rich:calendar  id="datainicial" value="#{ProcessoFaces.selectedProcesso.datainicial}" datePattern="dd/MM/yyyy" >
+                      
+                        <a4j:support event="onchanged" reRender="dataini"/>
+                    </rich:calendar>
+                    <h:outputText id="dataini" value="#{ProcessoFaces.selectedProcesso.datainicial}">
+                     
+                    </h:outputText>
 
                     <h:outputLabel for="datafinal" value="Data Final: "/>
-                    <h:inputText id="datafinal" size="10"/>
-                    <h:outputText/>
+                    <rich:calendar id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" datePattern="dd/MM/yyyy">
+                        <a4j:support event="onchanged" reRender="datafi"/>
+                    </rich:calendar>
+                    <h:outputText id="datafi" value="#{ProcessoFaces.selectedProcesso.datafinal}">
+                         <f:convertDateTime pattern="dd/MM/yyyy"/>
+                    </h:outputText>
 
                 </h:panelGrid>
                     
             </fieldset>
             <fieldset>
                 <legend>Descrição do Processo</legend>
-                <h:inputTextarea cols="70" rows="8" style="width: 1000px; height: 390px"></h:inputTextarea>
+                <h:inputTextarea cols="70" rows="8" style="width: 1000px; height: 390px" value="#{ProcessoFaces.selectedProcesso.descricao_processo}"></h:inputTextarea>
             </fieldset>
               <fieldset>
                 <legend>Observações do Processo</legend>
-                <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;"></h:inputTextarea>
+                <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;" value="#{ProcessoFaces.selectedProcesso.observacao_processo}"></h:inputTextarea>
             </fieldset>
                 <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}"/>
                 <h:commandButton value="Voltar" />

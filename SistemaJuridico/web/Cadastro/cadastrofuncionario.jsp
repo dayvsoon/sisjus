@@ -26,20 +26,25 @@
             <fieldset>
 	        <legend>Cadastro de Funcionário</legend>
                 <h:panelGrid id="layerpanel" columns="3">
+                    <h:outputLabel for="idfuncionario" value="ID: "/>
+                    <h:inputText id="idfuncionario" value="#{FuncionarioFaces.selectedFuncionario.id}" size="4"/>
+                        <h:outputText/>
+                        
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <rich:comboBox defaultLabel="Pessoa" value="#{FuncionarioFaces.selectedFuncionario.id_pessoa}">
+                    <h:selectOneMenu value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}">
+                        <f:selectItem itemLabel="- Selecionar a Pessoa - "/>
                         <f:selectItems value="#{FuncionarioFaces.clientsOfSystem}"></f:selectItems>
                         <a4j:support event="onchange" reRender="idpessoa"/>
-                    </rich:comboBox>
-                    <h:inputText id="idpessoa" size="50" readonly="true" />
+                    </h:selectOneMenu>
+                    <h:outputText id="idpessoa" value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}" />
 
                     <h:outputLabel for="cargo" value="Cargo: "/>
-                    <h:inputText id="cargo" size="12" maxlength="11"/>
+                    <h:inputText id="cargo" size="18"value="#{FuncionarioFaces.selectedFuncionario.cargo}"/>
                     <h:outputText />
 
 
                 </h:panelGrid>
-                <h:commandButton value="Salvar"/>
+                <h:commandButton value="Salvar" action="#{FuncionarioFaces.FinishedFuncionario}"/>
         </fieldset>
     </h:form>
           </f:view>

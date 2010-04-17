@@ -46,10 +46,10 @@ public class cliente implements Serializable {
     @Column(name="nomepessoa")
     private String nome_pessoa;
 
-    @OneToMany(mappedBy="id_cliente", fetch=FetchType.LAZY)
+    /*@OneToMany(mappedBy="id_cliente", fetch=FetchType.LAZY)
     List<processo> ProcessOfUser;
 
-    /*@OneToOne(mappedBy="id", fetch=FetchType.LAZY)
+    @OneToOne(mappedBy="id", fetch=FetchType.LAZY)
     List<pessoa> NomePessoa;*/
 
 
@@ -67,14 +67,6 @@ public class cliente implements Serializable {
 
     public String getCpfcnpj() {
         return cpfcnpj;
-    }
-
-    public List<processo> getProcessOfUser() {
-        return ProcessOfUser;
-    }
-
-    public void setProcessOfUser(List<processo> ProcessOfUser) {
-        this.ProcessOfUser = ProcessOfUser;
     }
 
     public void setCpfcnpj(String cpfcnpj) {

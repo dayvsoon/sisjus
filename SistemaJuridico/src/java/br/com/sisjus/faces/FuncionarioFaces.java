@@ -12,6 +12,7 @@ import br.com.sisjus.dao.pessoaDAO;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -24,6 +25,7 @@ public class FuncionarioFaces {
         private FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         private funcionario selectedFuncionario;
         private pessoaDAO pssDAO = new pessoaDAO();
+        private int Choise;
 
 
     /** Creates a new instance of FuncionarioFaces */
@@ -40,7 +42,7 @@ public class FuncionarioFaces {
     public List<SelectItem> getClientsOfSystem(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
         for(pessoa prs : pssDAO.getPeople()){
-            toReturn.add(new SelectItem(prs, prs.getNome()));
+            toReturn.add(new SelectItem(prs.getNome()+" "+prs.getSobrenome(),prs.getNome()+" "+prs.getSobrenome()));
         }
         return toReturn;
     }
@@ -50,9 +52,16 @@ public class FuncionarioFaces {
         return "gotoAddNewFuncionario";
     }
   public String FinishedFuncionario(){
+       Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
+     System.out.println("Valor da escolha: "+Choise);
+     if(Choise == 0){
       funcionarioDAO.addfuncionario(selectedFuncionario);
       ListOfFuncionario = null;
+      JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
       return "gotoListFuncionario";
+  }else
+       JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
+      return "DontGoListCliente";
   }
   public String removeFuncionario(){
       funcionarioDAO.removefuncionario(selectedFuncionario);
@@ -70,6 +79,22 @@ public String FinishUpdateLayer(){
 
 
 }
+
+    public int getChoise() {
+        return Choise;
+    }
+
+    public void setChoise(int Choise) {
+        this.Choise = Choise;
+    }
+
+    public pessoaDAO getPssDAO() {
+        return pssDAO;
+    }
+
+    public void setPssDAO(pessoaDAO pssDAO) {
+        this.pssDAO = pssDAO;
+    }
 
     public FuncionarioDAO getFuncionarioDAO() {
         return funcionarioDAO;

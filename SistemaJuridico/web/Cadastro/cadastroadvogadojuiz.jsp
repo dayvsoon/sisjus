@@ -30,22 +30,30 @@
                     <h:outputText/>
                     
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:inputText id="idpessoa" size="4" value="#{AdvogadoJuizFaces.selectedLayer.id_pessoa}"/>
+                    <h:selectOneMenu id="idpessoa" value="#{AdvogadoJuizFaces.selectedLayer.id_pessoa}">
+                        <f:selectItem itemLabel="- Selecione a Pessoa - "/>
+                        <f:selectItems value="#{AdvogadoJuizFaces.clientsOfSystem}"/>
+                    </h:selectOneMenu>
                     <h:outputText/>
 
                     <h:outputLabel for="codoab" value="Código da OAB: "/>
-                    <h:inputText id="codoab" size="12"/>
+                    <h:inputText id="codoab" size="12" value="#{AdvogadoJuizFaces.selectedLayer.cod_oab}"/>
                     <h:outputText id="msgoab" style="color: red" value="*Para quem é advogado" />
-
-                    <h:outputLabel for="nvara" value="Nº da Vara: "/>
-                    <h:inputText id="nvara" size="4"/>
-                    <h:outputText />
-
-                    <h:outputLabel for="descricaovara" value="Descrição da Vara: "/>
-                    <h:inputText id="descricaovara" size="16"/>
-                    <h:outputText/>
-
                 </h:panelGrid>
+            </fieldset>
+            <fieldset>
+                <legend>Complemento para cadastro de Juiz</legend>
+                <h:panelGrid id="Layerpnaelcomplemento" columns="2">
+
+                        <h:outputLabel for="nvara" value="Nº da Vara: "/>
+                        <h:inputText id="nvara" size="4" value="#{AdvogadoJuizFaces.selectedLayer.nvara}"/>
+
+
+                        <h:outputLabel for="descricaovara" value="Descrição da Vara: "/>
+                        <h:inputText id="descricaovara" size="16" value="#{AdvogadoJuizFaces.selectedLayer.descricaodaVara}"/>
+                   
+
+                    </h:panelGrid>
                 <h:commandButton value="Salvar" action="#{AdvogadoJuizFaces.FinishedLayer}"/>
         </fieldset>
     </h:form>
