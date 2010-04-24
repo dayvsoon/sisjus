@@ -56,6 +56,7 @@
 
 					
                                         <h:commandButton value="Salvar" id="inserir" action="#{UserFaces.FinishedUser}" />
+                                        <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
 		    	</h:panelGrid>
 		    </fieldset>
 	</h:form>

@@ -74,7 +74,7 @@ public class UserDAO extends GenericDAO {
     }
     
     public List<Usuario> getUsers(){
-        return getCleanList(Usuario.class, "from usuario user");
+        return getCleanList(Usuario.class, "from usuario users");
     }
 
 }

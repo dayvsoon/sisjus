@@ -55,6 +55,7 @@
 
                     </h:panelGrid>
                 <h:commandButton value="Salvar" action="#{AdvogadoJuizFaces.FinishedLayer}"/>
+                <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
         </fieldset>
     </h:form>
           </f:view>

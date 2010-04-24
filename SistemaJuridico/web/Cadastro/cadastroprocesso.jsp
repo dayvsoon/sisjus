@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>SisCadastro - Cadastro de Pessoa</title>
 
     </head>
    <body style="background-color: #e7e7e7">
@@ -93,20 +93,22 @@
                     <h:outputText/>
 
                     <h:outputLabel for="dataincial" value="Data Inicial: "/>
-                    <rich:calendar  id="datainicial" value="#{ProcessoFaces.selectedProcesso.datainicial}" datePattern="dd/MM/yyyy" >
-                      
-                        <a4j:support event="onchanged" reRender="dataini"/>
-                    </rich:calendar>
+                    <h:inputText id="datainicial" size="10" maxlength="10" value="#{ProcessoFaces.selectedProcesso.datainicial}" >
+                        <f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+                         <a4j:support event="onchanged" reRender="dataini"/>
+                    </h:inputText>
+
                     <h:outputText id="dataini" value="#{ProcessoFaces.selectedProcesso.datainicial}">
-                     
+                     <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>
 
                     <h:outputLabel for="datafinal" value="Data Final: "/>
-                    <rich:calendar id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" datePattern="dd/MM/yyyy">
+                    <h:inputText id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" size="10" maxlength="10">
+                        <f:convertDateTime pattern="dd/MM/yyyy" type="date"/>
                         <a4j:support event="onchanged" reRender="datafi"/>
-                    </rich:calendar>
+                    </h:inputText>
                     <h:outputText id="datafi" value="#{ProcessoFaces.selectedProcesso.datafinal}">
-                         <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>
 
                 </h:panelGrid>
@@ -121,7 +123,7 @@
                 <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;" value="#{ProcessoFaces.selectedProcesso.observacao_processo}"></h:inputTextarea>
             </fieldset>
                 <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}"/>
-                <h:commandButton value="Voltar" />
+                <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
 
         </h:form>
           </f:view>

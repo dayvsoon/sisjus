@@ -22,6 +22,10 @@
     <f:view>
     <body>
         <h:form id="form1">
+            
+            <h:outputText value="#{UserFaces.login}" style="font-size: 6pt; text-align: right ; padding-left: 1350px "/>, <h:commandLink style="font-size: 6pt; text-align: right" value="Sing Out"/>
+       
+            <hr style="color: blue ">
             <rich:toolBar>
                 <rich:dropDownMenu>
                     <f:facet name="label">
@@ -61,7 +65,8 @@
                         </h:panelGroup>
                     </f:facet>
                     <rich:menuGroup value="Buscar">
-                        <rich:menuItem submitMode="none" value="Pessoa">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{PersonFaces.DoSearch}" value="Pessoa"/>
                         </rich:menuItem>
                         <rich:menuItem submitMode="none" value="Cliente">
                         </rich:menuItem>
@@ -85,19 +90,26 @@
                         </h:panelGroup>
                     </f:facet>
                     <rich:menuGroup value="Visualizar">
-                        <rich:menuItem submitMode="none" value="Pessoa">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{PersonFaces.doUpdatePerson}" value="Pessoa"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Cliente">
+                        <rich:menuItem submitMode="none" >
+                            <h:commandLink action="#{ClienteFaces.doUpdateClient}" value="Cliente"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Funcionário">
+                        <rich:menuItem submitMode="none" >
+                            <h:commandLink action="#{FuncionarioFaces.doUpdateLayer}" value="Funcionário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Usuário">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{UserFaces.DoLinkedWithMenu}" value="Usuário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Advogado">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{AdvogadoJuizFaces.doUpdateLayer}" value="Advogado"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Juiz">
+                        <rich:menuItem submitMode="none" >
+                             <h:commandLink action="#{AdvogadoJuizFaces.doUpdateLayer}" value="Juiz"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Processo">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{ProcessoFaces.doUpdateProcess}" value="Processo"/>
                         </rich:menuItem>
                     </rich:menuGroup>
                 </rich:dropDownMenu>
@@ -113,6 +125,8 @@
                     </rich:menuGroup>
                 </rich:dropDownMenu>
             </rich:toolBar>
+
+            <h4>Testando a nova página inicial</h4>
         </h:form>
     </body>
     </f:view>

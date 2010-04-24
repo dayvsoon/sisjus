@@ -20,7 +20,7 @@ import org.hibernate.Session;
 
 public abstract class GenericDAO {
 
-
+ protected Session session;
 protected Session getSesseion(){
 
     return HibernateUtil.getInstance().getSession();
@@ -88,5 +88,8 @@ public processo SearchProcess(String query){
 
 		return (processo)q.uniqueResult();
 	}
-
+//@SuppressWarnings("unchecked")
+ //public T load(int id){
+   //  return (T) session.load(persistentClass, id);
+ //}
 }

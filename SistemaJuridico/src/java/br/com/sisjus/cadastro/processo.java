@@ -7,6 +7,7 @@ package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
 
+
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,14 +49,12 @@ public class processo implements Serializable {
     @Column(name="cod_direito")
     private String cod_direito; //Exemplo: Direito Civil
 
+    @Column(name="status")
+    private String status;
+
     @Column(name="juiz_sentenca")
     private String juiz_sentenca;
     
-    @Column(name="ID_OWNER")
-    private Usuario owner;
-
-    @Column(name="status")
-    private String status;
 
     @Temporal(TemporalType.DATE)
     @Column(name="datainicial")
@@ -72,6 +71,9 @@ public class processo implements Serializable {
 
     @Column(name="processobservation")
     private String observacao_processo;
+
+    @Column(name="ID_OWNER")
+    private Usuario owner;
 
     public Usuario getOwner() {
         return owner;

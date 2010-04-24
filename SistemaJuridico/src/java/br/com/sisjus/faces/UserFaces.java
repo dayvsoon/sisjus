@@ -40,6 +40,9 @@ public class UserFaces {
             return "DonotLoginSucessful";
         }
     }
+    public String DoLinkedWithMenu(){
+        return "gotoDisplayEE";
+    }
     public void setListOfUsers(List<Usuario> ListOfUsers) {
         this.ListOfUsers = ListOfUsers;
     }
@@ -51,6 +54,13 @@ public class UserFaces {
     public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
+    public String LinkFromMSGEnterToMenu(){
+        return "WaitSucessful";
+    }
+    public String BacktoMenu(){
+        return "gotobacktotheMenu";
+    }
+
     public String doAddUser(){
         selectedUser = new Usuario();
         return "gotoAddNewUser";

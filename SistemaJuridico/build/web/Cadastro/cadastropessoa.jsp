@@ -84,6 +84,7 @@
                                     <h:inputText id="profissao" size="40" value="#{PersonFaces.selectedPerson.profissao}"/>
 
                                     <h:commandButton value="Salvar" action="#{PersonFaces.FinishedPerson}" />
+                                    <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
 		    	</h:panelGrid>
 		    </fieldset>
 	</h:form>

@@ -21,7 +21,16 @@ public class PersonFaces {
         private pessoa selectedPerson;
 
 
-
+    public String DoSearch(){
+     selectedPerson = new pessoa();
+     return "gotoSearch";
+}
+    public String pesquisarByID(){
+        
+        pessoaDAO pssDAO = new pessoaDAO();
+        pssDAO.getPerson(selectedPerson.getId());
+        return "PesquisaConcluida";
+    }
     public List<pessoa> getListOfPerson() {
        if (ListOfPerson == null){
            ListOfPerson = personDAO.getPeople();
@@ -54,6 +63,7 @@ public class PersonFaces {
 
 
 }
+
     public pessoaDAO getPersonDAO() {
         return personDAO;
     }

@@ -49,6 +49,7 @@ public class HibernateUtil {
                   .addAnnotatedClass(Usuario.class)
                   .addAnnotatedClass(advogadojuiz.class)
                   .addAnnotatedClass(processo.class)
+                  .addAnnotatedClass(Protocolo.class)
                   .buildSessionFactory();
     }
 

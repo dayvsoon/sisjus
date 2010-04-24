@@ -7,7 +7,6 @@ package br.com.sisjus.faces;
 
 import br.com.sisjus.cadastro.advogadojuiz;
 import br.com.sisjus.cadastro.cliente;
-import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.cadastro.processo;
 import br.com.sisjus.dao.ClienteDAO;
 import br.com.sisjus.dao.advogadoJuizDAO;
@@ -15,7 +14,7 @@ import br.com.sisjus.dao.processDAO;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
-import br.com.sisjus.dao.pessoaDAO;
+
 
 
 /**
