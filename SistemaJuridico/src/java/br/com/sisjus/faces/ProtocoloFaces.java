@@ -21,11 +21,12 @@ import javax.swing.JOptionPane;
  */
 public class ProtocoloFaces {
 
-    private List<Protocolo> ListOfProtocolo = null;
+        private List<Protocolo> ListOfProtocolo = null;
         private ProtocoloDAO protocoloDAO = new ProtocoloDAO();
         private Protocolo selectedProtocolo;
-         private processDAO processDAO = new processDAO();
+        private processDAO procDAO = new processDAO();
         private int Choise;
+
     /** Creates a new instance of ProtocoloFaces */
     public ProtocoloFaces() {
     }
@@ -40,10 +41,7 @@ public class ProtocoloFaces {
         selectedProtocolo = new Protocolo();
         return "gotoAddNewProtocolo";
     }
-      public String doAddProtocoloJuridico(){
-          selectedProtocolo = new Protocolo();
-          return "gotoAddNewProtocoloJuridico";
-      }
+     
   public String FinishedProtocolo(){
      Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
      System.out.println("Valor da escolha: "+Choise);
@@ -80,9 +78,13 @@ public String FinishUpdateProtocolo(){
 
 
 }
-    public List<SelectItem> getProtocolosOfSystem(){
+public String BackingToMenu(){
+    return "goToMenu";
+}
+
+public List<SelectItem> getProtocolosOfSystem(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
-        for(processo prc : processDAO.getProcesses()){
+        for(processo prc : procDAO.getProcesses() ){
             toReturn.add(new SelectItem(prc.getNumero_processo()));
         }
         return toReturn;
@@ -96,13 +98,15 @@ public String FinishUpdateProtocolo(){
         this.Choise = Choise;
     }
 
-    public processDAO getProcessDAO() {
-        return processDAO;
+    public processDAO getProcDAO() {
+        return procDAO;
     }
 
-    public void setProcessDAO(processDAO processDAO) {
-        this.processDAO = processDAO;
+    public void setProcDAO(processDAO procDAO) {
+        this.procDAO = procDAO;
     }
+
+
 
     public ProtocoloDAO getProtocoloDAO() {
         return protocoloDAO;

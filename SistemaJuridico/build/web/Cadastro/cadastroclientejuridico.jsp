@@ -55,6 +55,7 @@
                 </h:panelGrid>
               
                 <h:commandButton action="#{ClienteFaces.FinishedClient}" value="Salva" />
+                <h:commandButton value="Voltar" action="#{ClienteFaces.GotoMenu}"/>
                 
         </fieldset>
     </h:form>

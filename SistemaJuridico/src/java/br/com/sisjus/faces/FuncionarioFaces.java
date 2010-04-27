@@ -79,7 +79,9 @@ public String FinishUpdateLayer(){
 
 
 }
-
+   public String GotoMenu(){
+      return "GotoMenu";
+    }
     public int getChoise() {
         return Choise;
     }

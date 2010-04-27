@@ -47,9 +47,11 @@
                     <h:inputText id="datainicio" size="10" value="#{cliente.datainicio}" readonly="true"/>
                    
 
-                    <h:commandButton id="RecordDate" action="#{ClienteFaces.FinishedClient}" value="Salvar"/>
-                    <h:commandButton action="#{ClienteFaces.doAddClientJuridico}" value="Cliente - Pessoa Juridica" immediate="true" />
+                    
                 </h:panelGrid>
+                <h:commandButton id="RecordDate" action="#{ClienteFaces.FinishedClient}" value="Salvar"/>
+                    <h:commandButton action="#{ClienteFaces.doAddClientJuridico}" value="Cliente - Pessoa Juridica" immediate="true" />
+                    <h:commandButton value="Voltar" action="#{ClienteFaces.GotoMenu}"/>
                 <br/>
                     <h:message for="cpf" style="color: red"/>
             </fieldset>

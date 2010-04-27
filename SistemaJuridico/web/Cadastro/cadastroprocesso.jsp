@@ -69,7 +69,7 @@
                     <h:outputText/>
                     
                     <h:outputLabel for="status" value="Status do Processo: "/>
-                    <h:selectOneMenu id="status">
+                    <h:selectOneMenu id="status" value="#{ProcessoFaces.selectedProcesso.status}">
                                         <f:selectItem itemLabel="Status..." />
                                         <f:selectItem itemLabel="Concluso para despacho" itemValue="Concluso para despacho" />
 					<f:selectItem itemLabel="Em Andamento" itemValue="Em Andamento" />
@@ -93,20 +93,20 @@
                     <h:outputText/>
 
                     <h:outputLabel for="dataincial" value="Data Inicial: "/>
-                    <h:inputText id="datainicial" size="10" maxlength="10" value="#{ProcessoFaces.selectedProcesso.datainicial}" >
-                        <f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+                    <rich:calendar id="datainicial"  value="#{ProcessoFaces.selectedProcesso.datainicial}" >
+                        <f:convertDateTime pattern="yyyy-MM-dd"></f:convertDateTime>
                          <a4j:support event="onchanged" reRender="dataini"/>
-                    </h:inputText>
+                    </rich:calendar>
 
                     <h:outputText id="dataini" value="#{ProcessoFaces.selectedProcesso.datainicial}">
                      <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>
 
                     <h:outputLabel for="datafinal" value="Data Final: "/>
-                    <h:inputText id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" size="10" maxlength="10">
-                        <f:convertDateTime pattern="dd/MM/yyyy" type="date"/>
+                    <rich:calendar id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" >
+                        <f:convertDateTime pattern="yyyy-MM-dd" type="date"/>
                         <a4j:support event="onchanged" reRender="datafi"/>
-                    </h:inputText>
+                    </rich:calendar>
                     <h:outputText id="datafi" value="#{ProcessoFaces.selectedProcesso.datafinal}">
                         <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>

@@ -2449,8 +2449,6 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_rich_005fmenuItem_005f21.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_rich_005fmenuGroup_005f3);
     // /menu.jsp(123,24) name = submitMode type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
     _jspx_th_rich_005fmenuItem_005f21.setSubmitMode(new org.apache.jasper.el.JspValueExpression("/menu.jsp(123,24) 'none'",_el_expressionfactory.createValueExpression("none",java.lang.String.class)));
-    // /menu.jsp(123,24) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
-    _jspx_th_rich_005fmenuItem_005f21.setValue(new org.apache.jasper.el.JspValueExpression("/menu.jsp(123,24) 'Cadastrar'",_el_expressionfactory.createValueExpression("Cadastrar",java.lang.Object.class)));
     _jspx_th_rich_005fmenuItem_005f21.setJspId("jsp_1103020515_57");
     int _jspx_eval_rich_005fmenuItem_005f21 = _jspx_th_rich_005fmenuItem_005f21.doStartTag();
     if (_jspx_eval_rich_005fmenuItem_005f21 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -2460,6 +2458,10 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
         _jspx_th_rich_005fmenuItem_005f21.doInitBody();
       }
       do {
+        out.write("\n");
+        out.write("                            ");
+        if (_jspx_meth_h_005fcommandLink_005f16(_jspx_th_rich_005fmenuItem_005f21, _jspx_page_context))
+          return true;
         out.write("\n");
         out.write("                        ");
         int evalDoAfterBody = _jspx_th_rich_005fmenuItem_005f21.doAfterBody();
@@ -2477,6 +2479,31 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
     _jspx_th_rich_005fmenuItem_005f21.release();
     org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_rich_005fmenuItem_005f21);
+    return false;
+  }
+
+  private boolean _jspx_meth_h_005fcommandLink_005f16(javax.servlet.jsp.tagext.JspTag _jspx_th_rich_005fmenuItem_005f21, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  h:commandLink
+    com.sun.faces.taglib.html_basic.CommandLinkTag _jspx_th_h_005fcommandLink_005f16 = new com.sun.faces.taglib.html_basic.CommandLinkTag();
+    org.apache.jasper.runtime.AnnotationHelper.postConstruct(_jsp_annotationprocessor, _jspx_th_h_005fcommandLink_005f16);
+    _jspx_th_h_005fcommandLink_005f16.setPageContext(_jspx_page_context);
+    _jspx_th_h_005fcommandLink_005f16.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_rich_005fmenuItem_005f21);
+    // /menu.jsp(124,28) name = action type = javax.el.MethodExpression reqTime = false required = false fragment = false deferredValue = false deferredMethod = true expectedTypeName = null methodSignature = java.lang.Object action() 
+    _jspx_th_h_005fcommandLink_005f16.setAction(new org.apache.jasper.el.JspMethodExpression("/menu.jsp(124,28) '#{ProtocoloFaces.doAddProtocolo}'",_el_expressionfactory.createMethodExpression(_jspx_page_context.getELContext(),"#{ProtocoloFaces.doAddProtocolo}",java.lang.Object.class,new Class[] {})));
+    // /menu.jsp(124,28) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
+    _jspx_th_h_005fcommandLink_005f16.setValue(new org.apache.jasper.el.JspValueExpression("/menu.jsp(124,28) 'Cadastrar'",_el_expressionfactory.createValueExpression("Cadastrar",java.lang.Object.class)));
+    _jspx_th_h_005fcommandLink_005f16.setJspId("jsp_1103020515_58");
+    int _jspx_eval_h_005fcommandLink_005f16 = _jspx_th_h_005fcommandLink_005f16.doStartTag();
+    if (_jspx_th_h_005fcommandLink_005f16.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_th_h_005fcommandLink_005f16.release();
+      org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandLink_005f16);
+      return true;
+    }
+    _jspx_th_h_005fcommandLink_005f16.release();
+    org.apache.jasper.runtime.AnnotationHelper.preDestroy(_jsp_annotationprocessor, _jspx_th_h_005fcommandLink_005f16);
     return false;
   }
 }

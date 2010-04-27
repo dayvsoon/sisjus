@@ -120,7 +120,8 @@
                         </h:panelGroup>
                     </f:facet>
                     <rich:menuGroup value="Ação">
-                        <rich:menuItem submitMode="none" value="Cadastrar">
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink action="#{ProtocoloFaces.doAddProtocolo}" value="Cadastrar"/>
                         </rich:menuItem>
                     </rich:menuGroup>
                 </rich:dropDownMenu>

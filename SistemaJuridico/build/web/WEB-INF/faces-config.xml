@@ -167,12 +167,20 @@
             <from-outcome>gotoSearch</from-outcome>
             <to-view-id>/Busca/BuscaPessoa.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewProtocolo</from-outcome>
+            <to-view-id>/Cadastro/protocolo.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/Cadastro/cadastrocliente.jsp</from-view-id>
         <navigation-case>
             <from-outcome>gotoAddNewClienteJuridico</from-outcome>
             <to-view-id>/Cadastro/cadastroclientejuridico.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>GotoMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <managed-bean>
@@ -223,7 +231,31 @@
         <managed-bean-class>br.com.sisjus.faces.ProtocoloFaces</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <navigation-rule>
+        <from-view-id>/Cadastro/protocolo.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>goToMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Cadastro/cadastroclientejuridico.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>GotoMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Cadastro/cadastrofuncionario.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>GotoMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
+
+
+
 
 
 

@@ -19,15 +19,16 @@ public class ProtocoloDAO extends GenericDAO {
     /** Creates a new instance of ProtocoloDAO */
     public ProtocoloDAO() {
     }
-    public int addProtocolo(Protocolo protocolo){
-  savingPojo(protocolo);
+
+    public String addProtocolo(Protocolo protocolo){
+        savingPojo(protocolo);
   return protocolo.getNumeroProcesso();
-
-
 }
+
 public void removeProtocolo(Protocolo protocolo){
     removePojo(protocolo);
 }
+
 public void updateProtocolo(Protocolo protocolo){
     savingPojo(protocolo);
 }
@@ -38,7 +39,7 @@ public Protocolo getProtocolo(int ProtocoloId){
 }
 
 public List<Protocolo> getProtocolos(){
-   return  getCleanList(Protocolo.class, "from Protocolo protocolo");
+   return  getCleanList(Protocolo.class, "from protocolo protocolo");
 }
 
     public Session getSession() {

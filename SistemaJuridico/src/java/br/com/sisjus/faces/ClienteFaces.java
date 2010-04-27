@@ -78,9 +78,13 @@ public String FinishUpdateClient(){
       clienteDAO.updateClient(selectedClient);
       ListOfCliente = null;
       return "gotoListCliente";
-
-
 }
+
+    public String GotoMenu(){
+      return "GotoMenu";
+    }
+
+
     public List<SelectItem> getClientsOfSystem(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
         for(pessoa prs : pssDAO.getPeople()){

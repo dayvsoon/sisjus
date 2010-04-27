@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 
 /**
@@ -26,9 +27,10 @@ public class Protocolo implements  Serializable {
     /** Creates a new instance of Protocolo */
     public Protocolo() {
     }
+
     @Id
     @Column(name="id")
-    private int NumeroProcesso;
+    private String NumeroProcesso;
     @Column(name="arquivado")
     private String Arquivado;
     @Column(name="arquivadoonde")
@@ -46,6 +48,8 @@ public class Protocolo implements  Serializable {
     private String Origem;
     @Column(name="destino")
     private String Destino;
+    @Transient
+    private int CountWordOfResenha;
 
     public String getArquivado() {
         return Arquivado;
@@ -87,13 +91,15 @@ public class Protocolo implements  Serializable {
         this.LugarOndeEstaOProcesso = LugarOndeEstaOProcesso;
     }
 
-    public int getNumeroProcesso() {
+    public String getNumeroProcesso() {
         return NumeroProcesso;
     }
 
-    public void setNumeroProcesso(int NumeroProcesso) {
+    public void setNumeroProcesso(String NumeroProcesso) {
         this.NumeroProcesso = NumeroProcesso;
     }
+
+
 
     public String getOrigem() {
         return Origem;
@@ -107,8 +113,10 @@ public class Protocolo implements  Serializable {
         return Resenha;
     }
 
-    public void setResenha(String Resenha) {
+    public void setResenha(String Resenha)
+    {
         this.Resenha = Resenha;
+        this.CountWordOfResenha = Resenha.length();
     }
 
     public Date getData_tramite() {
@@ -117,6 +125,14 @@ public class Protocolo implements  Serializable {
 
     public void setData_tramite(Date data_tramite) {
         this.data_tramite = data_tramite;
+    }
+
+    public int getCountWordOfResenha() {
+        return CountWordOfResenha;
+    }
+
+    public void setCountWordOfResenha(int CountWordOfResenha) {
+        this.CountWordOfResenha = CountWordOfResenha;
     }
 
 

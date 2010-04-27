@@ -44,7 +44,7 @@ public class processo implements Serializable {
     private String advogado_reu;
 
     @Column(name="processnumber")
-    private Integer numero_processo;
+    private String numero_processo;
 
     @Column(name="cod_direito")
     private String cod_direito; //Exemplo: Direito Civil
@@ -56,11 +56,11 @@ public class processo implements Serializable {
     private String juiz_sentenca;
     
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="datainicial")
     private Date datainicial;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="datafinal")
     private Date datafinal;
 
@@ -172,13 +172,11 @@ public class processo implements Serializable {
         this.pessoa_reu = pessoa_reu;
     }
 
-   
-
-    public Integer getNumero_processo() {
+    public String getNumero_processo() {
         return numero_processo;
     }
 
-    public void setNumero_processo(Integer numero_processo) {
+    public void setNumero_processo(String numero_processo) {
         this.numero_processo = numero_processo;
     }
 
