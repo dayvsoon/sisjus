@@ -5,8 +5,8 @@
         <Node id="menu.jsp" x="940" y="200" zoom="true"/>
         <Node id="ExclusaoEdicao/EEpessoa.jsp" x="310" y="6" zoom="true"/>
         <Node id="novojsp.jsp" x="150" y="600" zoom="true"/>
-        <Node id="Tela Incial.jsp" x="400" y="150" zoom="false"/>
         <Node id="Cadastro/protocolo.jsp" x="574" y="299" zoom="true"/>
+        <Node id="Tela Incial.jsp" x="400" y="150" zoom="false"/>
         <Node id="error.jsp" x="400" y="300" zoom="true"/>
         <Node id="Cadastro/cadastroadvogadojuiz.jsp" x="562" y="384" zoom="true"/>
         <Node id="Cadastro/cadastrocliente.jsp" x="566" y="338" zoom="true"/>

@@ -18,6 +18,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SisMenu - Menu Principal do SisJus</title>
+        <style>
+          .pic {
+        margin-bottom: -4px;
+        margin-right: 2px;
+               }
+        </style>
     </head>
     <f:view>
     <body>
@@ -30,29 +36,30 @@
                 <rich:dropDownMenu>
                     <f:facet name="label">
                         <h:panelGroup>
+                        <h:graphicImage value="./images/file.png" styleClass="pic"/>
                         <h:outputText value="File"/>
                         </h:panelGroup>
                     </f:facet>
-                    <rich:menuGroup value="Cadastro">
-                        <rich:menuItem submitMode="none">
+                    <rich:menuGroup value="Cadastro" icon="./images/cadastro.png">
+                        <rich:menuItem submitMode="none"icon="./images/pessoa.png">
                             <h:commandLink action="#{PersonFaces.doAddPerson}" value="Pessoa"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/clientes.png">
                             <h:commandLink action="#{ClienteFaces.doAddCliente}" value="Cliente"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none"icon="./images/funcionario.png">
                             <h:commandLink action="#{FuncionarioFaces.doAddEmployee}" value="Funcionário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/usuario.png">
                             <h:commandLink action="#{UserFaces.doAddUser}" value="Usuário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/layer.png">
                             <h:commandLink action="#{AdvogadoJuizFaces.doAddLayer}" value="Advogado"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/juiz.png">
                             <h:commandLink action="#{AdvogadoJuizFaces.doAddLayer}" value="Juiz"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/Newdoc.png">
                             <h:commandLink action="#{ProcessoFaces.doAddProcesso}" value="Processo"/>
                         </rich:menuItem>
                     </rich:menuGroup>
@@ -61,24 +68,25 @@
                 <rich:dropDownMenu>
                     <f:facet name="label">
                         <h:panelGroup>
+                        <h:graphicImage value="./images/search.png" styleClass="pic"/>
                         <h:outputText value="Search"/>
                         </h:panelGroup>
                     </f:facet>
-                    <rich:menuGroup value="Buscar">
-                        <rich:menuItem submitMode="none">
+                    <rich:menuGroup value="Buscar" icon="./images/busca.png">
+                        <rich:menuItem submitMode="none" icon="./images/pessoa.png">
                             <h:commandLink action="#{PersonFaces.DoSearch}" value="Pessoa"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Cliente">
+                        <rich:menuItem submitMode="none" value="Cliente" icon="./images/clientes.png">
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Funcionário">
+                        <rich:menuItem submitMode="none" value="Funcionário" icon="./images/funcionario.png">
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Usuário">
+                        <rich:menuItem submitMode="none" value="Usuário" icon="./images/usuario.png">
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Advogado">
+                        <rich:menuItem submitMode="none" value="Advogado" icon="./images/layer.png">
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Juiz">
+                        <rich:menuItem submitMode="none" value="Juiz" icon="./images/juiz.png">
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Processo">
+                        <rich:menuItem submitMode="none" value="Processo" icon="./images/Newdoc.png">
                         </rich:menuItem>
                     </rich:menuGroup>
                 </rich:dropDownMenu>
@@ -86,29 +94,30 @@
             <rich:dropDownMenu>
                     <f:facet name="label">
                         <h:panelGroup>
+                        <h:graphicImage value="./images/viewmain.png" styleClass="pic"/>
                         <h:outputText value="View"/>
                         </h:panelGroup>
                     </f:facet>
-                    <rich:menuGroup value="Visualizar">
-                        <rich:menuItem submitMode="none">
+                <rich:menuGroup value="Visualizar" icon="./images/view.png">
+                        <rich:menuItem submitMode="none" icon="./images/pessoa.png">
                             <h:commandLink action="#{PersonFaces.doUpdatePerson}" value="Pessoa"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" >
+                        <rich:menuItem submitMode="none" icon="./images/clientes.png">
                             <h:commandLink action="#{ClienteFaces.doUpdateClient}" value="Cliente"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" >
+                        <rich:menuItem submitMode="none" icon="./images/funcionario.png">
                             <h:commandLink action="#{FuncionarioFaces.doUpdateLayer}" value="Funcionário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/usuario.png">
                             <h:commandLink action="#{UserFaces.DoLinkedWithMenu}" value="Usuário"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/layer.png">
                             <h:commandLink action="#{AdvogadoJuizFaces.doUpdateLayer}" value="Advogado"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none" >
+                        <rich:menuItem submitMode="none" icon="./images/juiz.png">
                              <h:commandLink action="#{AdvogadoJuizFaces.doUpdateLayer}" value="Juiz"/>
                         </rich:menuItem>
-                        <rich:menuItem submitMode="none">
+                        <rich:menuItem submitMode="none" icon="./images/Newdoc.png">
                             <h:commandLink action="#{ProcessoFaces.doUpdateProcess}" value="Processo"/>
                         </rich:menuItem>
                     </rich:menuGroup>
@@ -116,11 +125,12 @@
                  <rich:dropDownMenu>
                     <f:facet name="label">
                         <h:panelGroup>
+                        <h:graphicImage value="./images/protocol.png" styleClass="pic"/>
                         <h:outputText value="Protocolo"/>
                         </h:panelGroup>
                     </f:facet>
-                    <rich:menuGroup value="Ação">
-                        <rich:menuItem submitMode="none">
+                    <rich:menuGroup value="Ação"  icon="./images/acao.png">
+                        <rich:menuItem submitMode="none" icon="./images/protocolo.png">
                             <h:commandLink action="#{ProtocoloFaces.doAddProtocolo}" value="Cadastrar"/>
                         </rich:menuItem>
                     </rich:menuGroup>

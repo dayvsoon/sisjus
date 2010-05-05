@@ -13,17 +13,33 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
-<f:view>
+
 <html>
+    <f:view>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body bgcolor="lightgreen">
         <h:form>
-        <h1>JSF</h1>
-        <h:commandButton value="Clicar aqui" action="#{TesteManagerBean.dotest}"/>
+            <fieldset  style="border-style: outset;width: 200px; background-color: silver; height: 200px;">
+                <h:graphicImage url="./images/bgbox.png">
+                <legend>Configurações do twitter</legend>
+             <div id="promocao2"  style="display: block; width: 228px;" >
+                 <div style="margin: 0pt; padding: 0pt;" align="center">
+                     <br>
+                     <h:outputLabel for="Twitter" value="Login: "/>
+                     <h:inputText id="Twitter" value="#{AcessoTwitter.user}"/>
+                      <h:outputLabel for="SenhaTwitter" value="Senha: "/>
+                     <h:inputSecret id="SenhaTwitter" value="#{AcessoTwitter.password}"/>
+                <p>
+                </h:graphicImage>
+                  
+
+             </div>
+             </div>
+        </fieldset>
         </h:form>
     </body>
+    </f:view>
 </html>
-</f:view>
