@@ -9,6 +9,11 @@ import java.io.Serializable;
 
 
 import java.util.Date;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +22,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.swing.JOptionPane;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 /**
@@ -28,6 +35,7 @@ import org.joda.time.LocalDate;
 public class processo implements Serializable {
     
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
 
@@ -74,6 +82,8 @@ public class processo implements Serializable {
 
     @Column(name="ID_OWNER")
     private Usuario owner;
+    @Transient
+    public int ContadorRegressivo;
 
     public Usuario getOwner() {
         return owner;
@@ -83,13 +93,38 @@ public class processo implements Serializable {
         this.owner = owner;
     }
 
-    public static int ContadorDeDatas(Date dataInicial, Date dataFinal){
+    public int ContadorDeDatas(Date dataInicial, Date dataFinal){
         LocalDate localDateInicial = LocalDate.fromDateFields(dataInicial);
         LocalDate localDateFinal = LocalDate.fromDateFields(dataFinal);
 
-        return Days.daysBetween(localDateInicial, localDateFinal).getDays();
+        ContadorRegressivo = Days.daysBetween(localDateInicial, localDateFinal).getDays();
+
+        return ContadorRegressivo;
     }
 
+    public void validateBeginDate(FacesContext context, UIComponent component, Object value) {
+
+             datainicial = (Date) value;
+
+     }
+
+    public void validateEndDate(FacesContext context, UIComponent component, Object value) {
+
+            datafinal = (Date) value;
+
+          if (! datafinal.after(datainicial)) {
+
+              
+             throw new ValidatorException(new FacesMessage("Data final maior que data inicial"));
+              
+
+           } else {
+             
+             throw new ValidatorException(new FacesMessage("Datas OK"));
+
+     }
+
+}
     public String getCod_direito() {
         return cod_direito;
     }
@@ -195,7 +230,17 @@ public class processo implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-/*
+
+    public int getContadorRegressivo() {
+        return ContadorRegressivo;
+    }
+
+    public void setContadorRegressivo(int ContadorRegressivo) {
+        this.ContadorRegressivo = ContadorRegressivo;
+    }
+
+
+    /*
     public Integer getDataregressiva() {
         return Dataregressiva;
     }

@@ -27,7 +27,8 @@ import javax.persistence.Table;
 @Table(name="layer")
 public class advogadojuiz implements Serializable {
 
-    @Id 
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id" )
     private Integer id_advogadojuiz;
 

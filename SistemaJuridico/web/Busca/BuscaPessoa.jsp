@@ -27,9 +27,9 @@
                          <h:panelGrid columns="2" id="PanelPesquisa">
 
 					    <h:outputLabel for="nomeLabel" value="Digite o ID: " />
-                                            <h:inputText id="nomeLabel" value="#{PersonFaces.selectedPerson.id}" size="5" style=" width : 321px;" />
+                                            <h:inputText id="nomeLabel" value="#{PersonFaces.selectedPerson.id}" size="5"  />
 
-                                            <h:commandButton value="Pesquisar" action="#{PersonFaces.pesquisarByID}"/>
+                                            <h:commandButton value="Pesquisar" action="#{PersonFaces.listarPessoas}"/>
                                         </h:panelGrid>
                                             <h:panelGrid columns="2" id="PanelInputs">
                                                 <h:outputLabel for="nome" value="Nome "  />

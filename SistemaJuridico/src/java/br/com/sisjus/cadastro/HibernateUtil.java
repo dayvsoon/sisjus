@@ -34,7 +34,7 @@ public class HibernateUtil {
                   .setProperty("hibernate.connection.username","manager")
                   .setProperty("hibernate.connection.password","manager")
                   .setProperty("hibernate.default_schema","APP" )
-                  .setProperty("hibernate.hbm2ddl.auto","none")
+                  .setProperty("hibernate.hbm2ddl.auto","create")
                   .setProperty("hibernate.show_sql","true")
                   .setProperty("hibernate.format_sql","true")
                   .setProperty("hibernate.c3p0.acquire_increment","1")
@@ -68,6 +68,22 @@ public class HibernateUtil {
        }
       return hu;
    }
+
+    public static HibernateUtil getHu() {
+        return hu;
+    }
+
+    public static void setHu(HibernateUtil hu) {
+        HibernateUtil.hu = hu;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
 
 

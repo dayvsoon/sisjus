@@ -28,8 +28,7 @@
 		 <fieldset>
 	        <legend>Cadastro de Usuário</legend>
 				<h:panelGrid columns="2">
-                                    <h:outputLabel for="id" value="ID: "/>
-                                    <h:inputText id="id" size="3" value="#{UserFaces.selectedUser.id_user}"/>
+                                   
                                     
                                     <h:outputLabel for="nomepessoa" value="Nome: "/>
                                     <h:inputText id="nomepessoa" size="25" value="#{UserFaces.selectedUser.nome}"/>

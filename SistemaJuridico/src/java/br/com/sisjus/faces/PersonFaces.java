@@ -8,6 +8,11 @@ package br.com.sisjus.faces;
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.pessoaDAO;
 import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.Example;
 
 
 /**
@@ -19,18 +24,13 @@ public class PersonFaces {
         private List<pessoa> ListOfPerson = null;
         private  pessoaDAO personDAO = new pessoaDAO();
         private pessoa selectedPerson;
-
+        protected Session session;
 
     public String DoSearch(){
      selectedPerson = new pessoa();
      return "gotoSearch";
 }
-    public String pesquisarByID(){
-        
-        pessoaDAO pssDAO = new pessoaDAO();
-        pssDAO.getPerson(selectedPerson.getId());
-        return "PesquisaConcluida";
-    }
+    
     public List<pessoa> getListOfPerson() {
        if (ListOfPerson == null){
            ListOfPerson = personDAO.getPeople();
@@ -63,6 +63,17 @@ public class PersonFaces {
 
 
 }
+    public pessoa listarPessoas(Integer id){
+
+
+    selectedPerson = new pessoa();
+    selectedPerson.setId(id);
+    Criteria criteria = session.createCriteria(pessoa.class);
+    criteria.add(Example.create(selectedPerson));
+    return (pessoa) session.load(pessoa.class, id);
+
+}
+
 
     public pessoaDAO getPersonDAO() {
         return personDAO;

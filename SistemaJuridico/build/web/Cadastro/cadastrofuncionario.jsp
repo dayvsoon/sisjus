@@ -26,9 +26,7 @@
             <fieldset>
 	        <legend>Cadastro de Funcionário</legend>
                 <h:panelGrid id="layerpanel" columns="3">
-                    <h:outputLabel for="idfuncionario" value="ID: "/>
-                    <h:inputText id="idfuncionario" value="#{FuncionarioFaces.selectedFuncionario.id}" size="4"/>
-                        <h:outputText/>
+                    
                         
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
                     <h:selectOneMenu value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}">

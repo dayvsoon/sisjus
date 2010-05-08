@@ -29,9 +29,7 @@
 	        <legend>Cadastro de Cliente - Pessoa Juridica</legend>
                 <h:panelGrid id="layerpanel" columns="3">
 
-                    <h:outputLabel for="Idcliente" value="ID: "/>
-                    <h:inputText id="Idcliente" value="#{ClienteFaces.selectedClient.id}" size="3"/>
-                    <h:outputText/>
+                   
                     
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
                     <h:selectOneMenu id="idpessoa" value="#{ClienteFaces.selectedClient.nome_pessoa}">

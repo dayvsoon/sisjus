@@ -23,7 +23,7 @@
 
        <f:view>
         <h:form>
-            <h:outputText id="idprocesso" value="ID: "/> <h:inputText size="4" id="IPTxTidprocesso" value="#{ProcessoFaces.selectedProcesso.id}"/>
+            
                 <fieldset>
                     <legend>Autor</legend>
                 <h:panelGrid id="panelautor" columns="2">
@@ -93,17 +93,19 @@
                     <h:outputText/>
 
                     <h:outputLabel for="dataincial" value="Data Inicial: "/>
-                    <rich:calendar id="datainicial"  value="#{ProcessoFaces.selectedProcesso.datainicial}" >
+                    <rich:calendar id="datainicial"  value="#{ProcessoFaces.selectedProcesso.datainicial}" validator="#{processo.validateBeginDate}" >
                         <f:convertDateTime pattern="yyyy-MM-dd"></f:convertDateTime>
                          <a4j:support event="onchanged" reRender="dataini"/>
                     </rich:calendar>
 
-                    <h:outputText id="dataini" value="#{ProcessoFaces.selectedProcesso.datainicial}">
+                    <h:outputText id="dataini" value="#{ProcessoFaces.selectedProcesso.datainicial}" >
                      <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>
 
+                   
+
                     <h:outputLabel for="datafinal" value="Data Final: "/>
-                    <rich:calendar id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" >
+                    <rich:calendar id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" validator="#{processo.validateEndDate}" >
                         <f:convertDateTime pattern="yyyy-MM-dd" type="date"/>
                         <a4j:support event="onchanged" reRender="datafi"/>
                     </rich:calendar>
@@ -122,8 +124,10 @@
                 <legend>Observações do Processo</legend>
                 <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;" value="#{ProcessoFaces.selectedProcesso.observacao_processo}"></h:inputTextarea>
             </fieldset>
+               
                 <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}"/>
                 <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
+                <h:messages/>
 
         </h:form>
           </f:view>

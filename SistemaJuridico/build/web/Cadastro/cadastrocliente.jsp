@@ -28,8 +28,7 @@
             <fieldset>
 	        <legend>Cadastro de Cliente - Pessoa Física</legend>
                 <h:panelGrid id="layerpanel" columns="2">
-                    <h:outputLabel for="Idcliente" value="ID: "/>
-                    <h:inputText id="Idcliente" value="#{ClienteFaces.selectedClient.id}" size="3"/>
+                   
                    
 
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
