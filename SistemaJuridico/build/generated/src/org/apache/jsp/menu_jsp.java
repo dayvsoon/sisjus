@@ -246,7 +246,7 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /menu.jsp(32,12) name = value type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.Object methodSignature = null 
     _jspx_th_h_005foutputText_005f0.setValue(new org.apache.jasper.el.JspValueExpression("/menu.jsp(32,12) '#{UserFaces.login}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"#{UserFaces.login}",java.lang.Object.class)));
     // /menu.jsp(32,12) name = style type = javax.el.ValueExpression reqTime = false required = false fragment = false deferredValue = true deferredMethod = false expectedTypeName = java.lang.String methodSignature = null 
-    _jspx_th_h_005foutputText_005f0.setStyle(new org.apache.jasper.el.JspValueExpression("/menu.jsp(32,12) 'font-size: 6pt; text-align: right ; padding-left: 1350px '",_el_expressionfactory.createValueExpression("font-size: 6pt; text-align: right ; padding-left: 1350px ",java.lang.String.class)));
+    _jspx_th_h_005foutputText_005f0.setStyle(new org.apache.jasper.el.JspValueExpression("/menu.jsp(32,12) 'font-size: 6pt; text-align: right ; padding-left: 1330px '",_el_expressionfactory.createValueExpression("font-size: 6pt; text-align: right ; padding-left: 1330px ",java.lang.String.class)));
     _jspx_th_h_005foutputText_005f0.setJspId("jsp_1103020515_2");
     int _jspx_eval_h_005foutputText_005f0 = _jspx_th_h_005foutputText_005f0.doStartTag();
     if (_jspx_th_h_005foutputText_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

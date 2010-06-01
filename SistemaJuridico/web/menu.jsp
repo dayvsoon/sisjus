@@ -17,6 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="refresh" content="30" >
         <title>SisMenu - Menu Principal do SisJus</title>
         <style>
           .pic {
@@ -29,7 +30,7 @@
     <body>
         <h:form id="form1">
             
-            <h:outputText value="#{UserFaces.login}" style="font-size: 6pt; text-align: right ; padding-left: 1350px "/>, <h:commandLink style="font-size: 6pt; text-align: right" value="Sing Out"/>
+            <h:outputText value="#{UserFaces.login}" style="font-size: 6pt; text-align: right ; padding-left: 1330px "/>, <h:commandLink style="font-size: 6pt; text-align: right" value="Sing Out"/>
        
             <hr style="color: blue ">
             <rich:toolBar>

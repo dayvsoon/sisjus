@@ -17,6 +17,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bem vindo <h:outputText value="#{UserFaces.login}"/> </title>
+        
+
         <style type="text/css">
             h6 { text-decoration: blink;
                  color: gray;
@@ -31,6 +33,26 @@
         <h1 align="center">BEM VINDO <h:outputText value="#{UserFaces.login}"></h:outputText> AO SISJUS v0.1 </h1>
          <h5 align="center" style="color: gray; font-style: italic; line-height: 4;">Login Realizado com sucesso!</h5>
            <h6 align="center">Em alguns instantes você entrará no sistema...</h6>
+           <div id="contagem" align="center" style="color: gray; font-style: italic; line-height: 4;"></div>
+
+             <script  language="JavaScript" type="text/javascript">
+<!--
+var targetURL="menu.jsp"
+var countdownfrom=10
+var currentsecond=document.getElementById("contagem").innerHTML=countdownfrom+1
+function countredirect(){
+if (currentsecond!=1){
+currentsecond-=1
+document.getElementById("contagem").innerHTML=currentsecond + " segundos"
+}else{
+window.location=targetURL
+return
+}
+setTimeout("countredirect()",1000)
+}
+countredirect()
+//-->
+</script>
 
 
     </body>

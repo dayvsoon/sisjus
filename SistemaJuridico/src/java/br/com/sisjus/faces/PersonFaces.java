@@ -63,15 +63,8 @@ public class PersonFaces {
 
 
 }
-    public pessoa listarPessoas(Integer id){
-
-
-    selectedPerson = new pessoa();
-    selectedPerson.setId(id);
-    Criteria criteria = session.createCriteria(pessoa.class);
-    criteria.add(Example.create(selectedPerson));
-    return (pessoa) session.load(pessoa.class, id);
-
+    public List<pessoa> listarPessoas(Integer id){
+    return this.session.createCriteria(pessoa.class).setFirstResult(id).list();
 }
 
 

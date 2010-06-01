@@ -107,9 +107,10 @@
                     <h:outputLabel for="datafinal" value="Data Final: "/>
                     <rich:calendar id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}" validator="#{processo.validateEndDate}" >
                         <f:convertDateTime pattern="yyyy-MM-dd" type="date"/>
-                        <a4j:support event="onchanged" reRender="datafi"/>
+                        <a4j:support event="onchanged" reRender="datafin"/>
                     </rich:calendar>
-                    <h:outputText id="datafi" value="#{ProcessoFaces.selectedProcesso.datafinal}">
+                    
+                    <h:outputText id="datafin" value="#{ProcessoFaces.selectedProcesso.datafinal}">
                         <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>
 
