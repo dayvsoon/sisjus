@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Exclusão/Edição  - Advogado ou Juiz - SisJus </title>
+        <title>Exclusão/Edição  - Pessoa - SisJus </title>
     </head>
     <body>
         <h:form id="FormDeExclusaoEdicao">
@@ -129,6 +129,7 @@
 
     </rich:column>
         </rich:dataTable>
+                 <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
         </h:form>
     </body>
 </html>

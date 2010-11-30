@@ -37,6 +37,12 @@ public class ProtocoloFaces {
        }
         return ListOfProtocolo;
     }
+       public List<Protocolo> getListOfTramiteOfProtocolo() {
+       if (ListOfProtocolo == null){
+           ListOfProtocolo = protocoloDAO.getTramiteProtocolos();
+       }
+        return ListOfProtocolo;
+    }
       public String doAddProtocolo(){
         selectedProtocolo = new Protocolo();
         return "gotoAddNewProtocolo";

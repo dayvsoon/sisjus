@@ -21,7 +21,7 @@
         <script src="../Formatadores.js" type="text/javascript"></script>
         <script src="../validadores.js" type="text/javascript"></script>
         
-        <title>SisJus - Cadastro de Pessoa</title>
+        <title>SisCadastro - Cadastro de Pessoa</title>
     </head>
 <body style="background-color: #e7e7e7">
         <f:view>

@@ -18,6 +18,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -45,6 +46,15 @@ public class advogadojuiz implements Serializable {
     @Column(name="descricaovara")
     private String descricaodaVara;
 
+    @Column(name="tipoad")
+    private String tipo;
+
+    @Transient
+    private boolean bloqueio;
+
+    @Transient
+    private boolean bloqueiojuiz;
+
    /* @OneToMany(mappedBy="id_advogadojuiz_process", fetch=FetchType.LAZY, targetEntity=processo.class)
     List<processo> ProcessOfUser;
 */
@@ -69,10 +79,12 @@ public class advogadojuiz implements Serializable {
     }
 
     public String getDescricaodaVara() {
+          
         return descricaodaVara;
     }
 
     public void setDescricaodaVara(String descricaodaVara) {
+        
         this.descricaodaVara = descricaodaVara;
     }
 
@@ -92,6 +104,41 @@ public class advogadojuiz implements Serializable {
         this.nvara = nvara;
     }
 
+    public boolean isBloqueio() {
+        return bloqueio;
+    }
+
+    public void setBloqueio(boolean bloqueio) {
+        this.bloqueio = bloqueio;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        if (tipo.equals("A")){
+              bloqueio = true;
+          }else{
+            if(tipo.equals("J")){
+                bloqueio = false;
+                bloqueiojuiz = true;
+            }else
+               
+               bloqueiojuiz = false;
+          }
+
+        this.tipo = tipo;
+    }
+
+    public boolean isBloqueiojuiz() {
+        return bloqueiojuiz;
+    }
+
+    public void setBloqueiojuiz(boolean bloqueiojuiz) {
+        this.bloqueiojuiz = bloqueiojuiz;
+    }
+    
     
 
     @Override

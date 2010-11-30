@@ -13,7 +13,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import br.com.sisjus.cadastro.HibernateUtil;
 import org.hibernate.Criteria;
-import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 
 /**
@@ -22,7 +23,8 @@ import org.hibernate.criterion.Example;
  */
 public class pessoaDAO extends GenericDAO {
 
-    protected Session session;
+    private Integer Id;
+    
 
 public pessoaDAO(){
  super();
@@ -45,13 +47,29 @@ public pessoa getPerson(Integer personId){
     pessoa person = gettingPojo(pessoa.class, personId);
     return person;
 }
-public pessoa pesquisaPessoaById(int id){
-    pessoa pss = new pessoa();
-    pss.setId(id);
-    Criteria criteria = session.createCriteria(pessoa.class);
-    criteria.add(Example.create(pss));
-    return (pessoa) session.load(pessoa.class, id);
-}
+/*
+public pessoa pesquisaPessoaById(pessoa pes){
+         
+        pes = new pessoa();
+        Session sessao = getSesseion();
+        pes.setNome(pes.getNome());
+
+        System.out.println("Valor: " +pes);
+        pes = (pessoa) this.session.load(pessoa.class, pes.getId());
+        
+        sessao.close();
+
+        return pes;
+}*/
+public List<pessoa> getPesquisarPessoa(Integer personId){
+      Criteria c = getSession().createCriteria(pessoa.class);
+	        c.add(Restrictions.ilike("id", personId));
+	pessoa pes = (pessoa) c.uniqueResult();
+                c.addOrder(Order.asc("id"));
+
+        return c.list();
+	    }
+     
 
 public List<pessoa> getPeople(){
    return  getCleanList(pessoa.class,"from pessoa person");
@@ -63,6 +81,14 @@ public List<pessoa> getPeople(){
 
     public void setSession(Session session) {
         this.session = session;
+    }
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer Id) {
+        this.Id = Id;
     }
 
 

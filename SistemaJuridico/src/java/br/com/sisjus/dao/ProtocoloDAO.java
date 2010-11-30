@@ -41,7 +41,9 @@ public Protocolo getProtocolo(int ProtocoloId){
 public List<Protocolo> getProtocolos(){
    return  getCleanList(Protocolo.class, "from protocolo protocolo");
 }
-
+public List<Protocolo> getTramiteProtocolos(){
+   return  getCleanList(Protocolo.class, "from protocolo protocolo where numeroProcesso = :numeroProcesso");
+}
     public Session getSession() {
         return session;
     }

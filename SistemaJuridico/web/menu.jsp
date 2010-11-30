@@ -25,14 +25,34 @@
         margin-right: 2px;
                }
         </style>
+        <script LANGUAGE="JavaScript">
+function showTimer() {
+  var time=new Date();
+  var hour=time.getHours();
+  var minute=time.getMinutes();
+  var second=time.getSeconds();
+  if(hour<10)   hour  ="0"+hour;
+  if(minute<10) minute="0"+minute;
+  if(second<10) second="0"+second;
+  var st=hour+":"+minute+":"+second;
+  document.getElementById("timer").innerHTML=st;
+ }
+ function initTimer() {
+  // O metodo nativo setInterval executa uma determinada funcao em um determinado tempo
+  setInterval(showTimer,1000);
+ }
+
+        </script>
+
     </head>
     <f:view>
-    <body>
+    <body onload="initTimer();">
         <h:form id="form1">
-            
-            <h:outputText value="#{UserFaces.login}" style="font-size: 6pt; text-align: right ; padding-left: 1330px "/>, <h:commandLink style="font-size: 6pt; text-align: right" value="Sing Out"/>
+      
+            <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 6pt; text-align: right ; padding-left: 1300px; padding-bottom: 2em "/>, <span id="timer">Relógio</span> , <h:commandLink style="font-size: 6pt; text-align: right" value="Sing Out"/>
        
-            <hr style="color: blue ">
+            
+            <h:outputText></h:outputText>
             <rich:toolBar>
                 <rich:dropDownMenu>
                     <f:facet name="label">
@@ -63,34 +83,14 @@
                         <rich:menuItem submitMode="none" icon="./images/Newdoc.png">
                             <h:commandLink action="#{ProcessoFaces.doAddProcesso}" value="Processo"/>
                         </rich:menuItem>
-                    </rich:menuGroup>
-                </rich:dropDownMenu>
+                        </rich:menuGroup>
+                    
+                        <rich:menuItem submitMode="none" >
+                            <h:commandLink  value="Sair / Log Out"/>
+                        </rich:menuItem>
+                    </rich:dropDownMenu>
 
-                <rich:dropDownMenu>
-                    <f:facet name="label">
-                        <h:panelGroup>
-                        <h:graphicImage value="./images/search.png" styleClass="pic"/>
-                        <h:outputText value="Search"/>
-                        </h:panelGroup>
-                    </f:facet>
-                    <rich:menuGroup value="Buscar" icon="./images/busca.png">
-                        <rich:menuItem submitMode="none" icon="./images/pessoa.png">
-                            <h:commandLink action="#{PersonFaces.DoSearch}" value="Pessoa"/>
-                        </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Cliente" icon="./images/clientes.png">
-                        </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Funcionário" icon="./images/funcionario.png">
-                        </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Usuário" icon="./images/usuario.png">
-                        </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Advogado" icon="./images/layer.png">
-                        </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Juiz" icon="./images/juiz.png">
-                        </rich:menuItem>
-                        <rich:menuItem submitMode="none" value="Processo" icon="./images/Newdoc.png">
-                        </rich:menuItem>
-                    </rich:menuGroup>
-                </rich:dropDownMenu>
+                
            
             <rich:dropDownMenu>
                     <f:facet name="label">
@@ -134,11 +134,15 @@
                         <rich:menuItem submitMode="none" icon="./images/protocolo.png">
                             <h:commandLink action="#{ProtocoloFaces.doAddProtocolo}" value="Cadastrar"/>
                         </rich:menuItem>
+                        <rich:menuItem submitMode="none" icon="./images/tramite.png">
+                            <h:commandLink value="Ver Trâmite"/>
+                        </rich:menuItem>
                     </rich:menuGroup>
                 </rich:dropDownMenu>
             </rich:toolBar>
-
-            <h4>Testando a nova página inicial</h4>
+            <br/>
+            <h4>Sisjus versão <h:outputText id="Version" value="#{Sistema.version}" /> </h4>
+          
         </h:form>
     </body>
     </f:view>

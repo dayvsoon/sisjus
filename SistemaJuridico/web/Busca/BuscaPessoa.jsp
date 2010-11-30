@@ -10,6 +10,7 @@
 <%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@taglib prefix="rich" uri="http://richfaces.org/rich" %>
 <%@taglib prefix="a4j" uri="http://richfaces.org/a4j" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -27,9 +28,9 @@
                          <h:panelGrid columns="2" id="PanelPesquisa">
 
 					    <h:outputLabel for="nomeLabel" value="Digite o ID: " />
-                                            <h:inputText id="nomeLabel" value="#{PersonFaces.selectedPerson.id}" size="5"  />
+                                            <h:inputText id="nomeLabel" value="#{PersonFaces.id}" size="5"  />
 
-                                            <h:commandButton value="Pesquisar" action="#{PersonFaces.listarPessoas}"/>
+                                            <h:commandButton value="Pesquisar" action="#{PersonFaces.DoSearch}"/>
                                         </h:panelGrid>
                                             <h:panelGrid columns="2" id="PanelInputs">
                                                 <h:outputLabel for="nome" value="Nome "  />

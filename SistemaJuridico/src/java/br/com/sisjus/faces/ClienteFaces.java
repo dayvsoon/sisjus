@@ -88,7 +88,7 @@ public String FinishUpdateClient(){
     public List<SelectItem> getClientsOfSystem(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
         for(pessoa prs : pssDAO.getPeople()){
-            toReturn.add(new SelectItem(prs.getId()+" "+prs.getNome(),prs.getId().toString()+" "+ prs.getNome()+" " + prs.getSobrenome()));
+            toReturn.add(new SelectItem(prs.getId()+" "+prs.getNome(),prs.getNome()+" " + prs.getSobrenome()));
         }
         return toReturn;
     }

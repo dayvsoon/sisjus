@@ -38,7 +38,7 @@ public funcionario getfuncionario(int funId){
 }
 
 public List<funcionario> getEmployees(){
-   return  getCleanList(funcionario.class, null, "from funcionario fun");
+   return  getCleanList(funcionario.class,"from funcionario fun");
 }
 
 

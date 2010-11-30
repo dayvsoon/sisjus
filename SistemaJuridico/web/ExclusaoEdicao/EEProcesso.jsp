@@ -22,7 +22,9 @@
         <h:form id="FormDeExclusaoEdicao">
         <h1 align="center">SisJus - Sistema Sistema de Organização De Processos Jurídicos </h1>
         <h3 align="center">Tabela De Processo</h3>
-        <rich:dataTable var="dados" value="#{ProcessoFaces.listOfProcess}" align="center">
+        
+
+        <rich:dataTable id="dtTable" var="dados" value="#{ProcessoFaces.listOfProcess}" align="center">
             <rich:column>
             <f:facet name="header">
             <h:outputText  value="Id"  />
@@ -108,11 +110,12 @@
             <f:facet name="header">
             <h:outputText  value="Ação"  />
         </f:facet>
-                <h:commandLink value="Excluir"  action="#{UserFaces.removeUser}"></h:commandLink> &nbsp;
+                <h:commandLink value="Excluir"  action="#{ProcessoFaces.removeProcess}"></h:commandLink> &nbsp;
                 
 
     </rich:column>
         </rich:dataTable>
+                 <h:commandButton value="Voltar" action="menu.jsp" />
         </h:form>
     </body>
 </html>

@@ -17,6 +17,10 @@ public class Sistema {
     public String SiglaDoSistema = "SJ v0.1";
     public String Autor = "Undifined";
 
+/**    public void LogOut(){
+        System.exit(0);
+    }*/
+
     public String getAutor() {
         return Autor;
     }

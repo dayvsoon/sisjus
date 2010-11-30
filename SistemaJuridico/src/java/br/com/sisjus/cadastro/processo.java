@@ -6,6 +6,7 @@
 package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 
 import java.util.Date;
@@ -82,6 +83,9 @@ public class processo implements Serializable {
 
     @Column(name="ID_OWNER")
     private Usuario owner;
+
+    @Column(name="prazo")
+    private Integer prazo;
     @Transient
     public int ContadorRegressivo;
 
@@ -102,29 +106,11 @@ public class processo implements Serializable {
         return ContadorRegressivo;
     }
 
-    public void validateBeginDate(FacesContext context, UIComponent component, Object value) {
+    
 
-             datainicial = (Date) value;
+    
 
-     }
 
-    public void validateEndDate(FacesContext context, UIComponent component, Object value) {
-
-            datafinal = (Date) value;
-
-          if (! datafinal.after(datainicial)) {
-
-              
-             throw new ValidatorException(new FacesMessage("Data final maior que data inicial"));
-              
-
-           } else {
-             
-             throw new ValidatorException(new FacesMessage("Datas OK"));
-
-     }
-
-}
     public String getCod_direito() {
         return cod_direito;
     }
@@ -134,6 +120,10 @@ public class processo implements Serializable {
     }
 
     public Date getDatafinal() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(datainicial);
+        cal.add(Calendar.DATE, prazo);
+        datafinal = cal.getTime();
         return datafinal;
     }
 
@@ -237,6 +227,15 @@ public class processo implements Serializable {
 
     public void setContadorRegressivo(int ContadorRegressivo) {
         this.ContadorRegressivo = ContadorRegressivo;
+    }
+
+    public Integer getPrazo() {
+
+        return prazo;
+    }
+
+    public void setPrazo(Integer prazo) {
+        this.prazo = prazo;
     }
 
 

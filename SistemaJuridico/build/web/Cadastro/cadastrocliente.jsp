@@ -18,7 +18,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../Formatadores.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>SisCadastro - Cadastro de Cliente - Pessoa Fisica</title>
         
     </head>
    <body style="background-color: #e7e7e7">

@@ -41,5 +41,10 @@ public List<advogadojuiz> getLayers(){
    return  getCleanList(advogadojuiz.class, "from advogadojuiz layer");
 }
 
-
+public List<advogadojuiz> getSelectedLayers(){
+   return  getCleanList(advogadojuiz.class, "from advogadojuiz layer where tipoad = 'A' ");
+}
+public List<advogadojuiz> getSelectedMajorLayers(){
+   return  getCleanList(advogadojuiz.class, "from advogadojuiz layer where tipoad = 'J' ");
+}
 }

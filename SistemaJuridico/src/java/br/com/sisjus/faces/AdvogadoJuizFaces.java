@@ -53,7 +53,8 @@ public class AdvogadoJuizFaces {
       AdvogadoJuizDAO.addLayer(selectedLayer);
       ListOfLayer = null;
        JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
-      return "gotoListLayer";
+
+      return "menu.jsp";
   }else
        JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
       return "DontGoListCliente";

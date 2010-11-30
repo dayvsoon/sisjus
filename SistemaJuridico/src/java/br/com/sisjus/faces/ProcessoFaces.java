@@ -43,7 +43,7 @@ public class ProcessoFaces {
     }
  public List<SelectItem> getLayerOfSystem(){
      List<SelectItem> toReturn = new LinkedList<SelectItem>();
-      for(advogadojuiz adz : adzDAO.getLayers() ){
+      for(advogadojuiz adz : adzDAO.getSelectedLayers() ){
           toReturn.add(new SelectItem(adz.getId_advogadojuiz() + " " + adz.getId_pessoa(), adz.getId_pessoa() + " "+ adz.getCod_oab()));
 
       }
@@ -51,7 +51,7 @@ public class ProcessoFaces {
  }
 public List<SelectItem> getMajorLayerOfSystem(){
      List<SelectItem> toReturn = new LinkedList<SelectItem>();
-      for(advogadojuiz adz : adzDAO.getLayers() ){
+      for(advogadojuiz adz : adzDAO.getSelectedMajorLayers() ){
           toReturn.add(new SelectItem(adz.getId_advogadojuiz() + " " + adz.getId_pessoa(), adz.getId_pessoa() + " Nº "+ adz.getNvara() +" - "+ adz.getDescricaodaVara()));
 
       }

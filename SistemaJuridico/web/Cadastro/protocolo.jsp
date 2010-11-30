@@ -36,10 +36,11 @@
                 <f:selectItem itemLabel="Selecione..."/>
                 <f:selectItem itemLabel="Sim" itemValue="Sim"/>
                 <f:selectItem itemLabel="Não" itemValue="Não"/>
+                <a4j:support event="onchange" reRender="ArquivadoOnde,MovelNumero"/>
             </h:selectOneMenu>
 
             <h:outputLabel for="ArquivadoOnde" value="Está na: "/>
-            <h:selectOneMenu id="ArquivadoOnde" value="#{ProtocoloFaces.selectedProtocolo.arquivadoOnde}">
+            <h:selectOneMenu id="ArquivadoOnde" value="#{ProtocoloFaces.selectedProtocolo.arquivadoOnde}" disabled="#{ProtocoloFaces.selectedProtocolo.acesso}">
                 <f:selectItem itemLabel="Selecione..."/>
                 <f:selectItem itemLabel="Armário" itemValue="Armário"/>
                 <f:selectItem itemLabel="Gaveta" itemValue="Gaveta"/>
@@ -50,7 +51,7 @@
             </h:selectOneMenu>
 
             <h:outputText id="NumeroMovel" value="#{ProtocoloFaces.selectedProtocolo.arquivadoOnde} Nº: "/>
-            <h:inputText id="MovelNumero" value="#{ProtocoloFaces.selectedProtocolo.lugarOndeEstaOProcesso}"/>
+            <h:inputText id="MovelNumero" value="#{ProtocoloFaces.selectedProtocolo.lugarOndeEstaOProcesso}" disabled="#{ProtocoloFaces.selectedProtocolo.acesso}"/>
 
             <h:outputLabel for="datatramite" value="Data: "/>
             <rich:calendar id="datatramite" value="#{ProtocoloFaces.selectedProtocolo.data_tramite}" datePattern="dd/MM/yyyy"/>
@@ -75,6 +76,7 @@
              </fieldset>
             <h:outputText id="LabelContador" value="Quantidade de caractere: "/> <h:outputText id="Contador" value="#{ProtocoloFaces.selectedProtocolo.countWordOfResenha}"/>
             <h:outputText id="LabelContadorAviso" style="color: red" value=" Max. de 320 caractere "/>
+            <h:outputText id="teste" value="#{ProtocoloFaces.selectedProtocolo.acesso}"/>
         </h:form>
     </body>
     </f:view>

@@ -39,6 +39,7 @@ public List<processo> getProcesses(){
 
 }
 
+
 public List<processo> getProcessesFinally(){
    return  (List<processo>) SearchProcess("select processnumber, processdescription from "+ processo.class +" where status = 'Finalizado'");
 

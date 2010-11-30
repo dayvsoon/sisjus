@@ -25,12 +25,29 @@ public class PersonFaces {
         private  pessoaDAO personDAO = new pessoaDAO();
         private pessoa selectedPerson;
         protected Session session;
+        private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+        
 
     public String DoSearch(){
-     selectedPerson = new pessoa();
-     return "gotoSearch";
+         if (ListOfPerson == null){
+           ListOfPerson = personDAO.getPesquisarPessoa(id);
+       }
+    return "gotoSearch";
 }
-    
+    public List<pessoa> getPessoaPesquisa(Integer id){
+        if (ListOfPerson == null){
+           ListOfPerson = personDAO.getPesquisarPessoa(id);
+       }
+        return ListOfPerson;
+    }
     public List<pessoa> getListOfPerson() {
        if (ListOfPerson == null){
            ListOfPerson = personDAO.getPeople();
@@ -63,10 +80,7 @@ public class PersonFaces {
 
 
 }
-    public List<pessoa> listarPessoas(Integer id){
-    return this.session.createCriteria(pessoa.class).setFirstResult(id).list();
-}
-
+    
 
     public pessoaDAO getPersonDAO() {
         return personDAO;
@@ -85,7 +99,6 @@ public class PersonFaces {
     }
 
     /** Creates a new instance of PersonFaces */
-    public PersonFaces() {
-    }
+
 
 }

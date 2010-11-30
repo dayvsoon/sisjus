@@ -50,13 +50,27 @@ public class Protocolo implements  Serializable {
     private String Destino;
     @Transient
     private int CountWordOfResenha;
+    @Transient
+    public boolean Acesso;
+
+    public boolean isAcesso() {
+        return Acesso;
+    }
+
+    public void setAcesso(boolean Acesso) {
+        this.Acesso = Acesso;
+    }
+
 
     public String getArquivado() {
         return Arquivado;
     }
 
     public void setArquivado(String Arquivado) {
+
+
         this.Arquivado = Arquivado;
+    
     }
 
     public String getArquivadoOnde() {
@@ -65,6 +79,13 @@ public class Protocolo implements  Serializable {
 
     public void setArquivadoOnde(String ArquivadoOnde) {
         this.ArquivadoOnde = ArquivadoOnde;
+        if (Arquivado.equals("Sim")){
+            Acesso = false;
+        }else{
+            if (Arquivado.equals("Não")){
+               Acesso = true;
+            }
+        }
     }
 
     public String getAssunto() {

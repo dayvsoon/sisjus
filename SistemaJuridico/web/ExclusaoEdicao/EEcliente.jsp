@@ -58,6 +58,7 @@
 
     </rich:column>
         </rich:dataTable>
+                 <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
         </h:form>
     </body>
 </html>
