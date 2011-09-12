@@ -27,7 +27,7 @@ public String password;
         String usuario = this.User;
         String senha = this.password;
         //conectando
-        Twitter twitter = new TwitterFactory().getInstance(User,password);
+        Twitter twitter = new TwitterFactory().getInstance();
 
         //recuperando a timeline
         List<Status> timeline = twitter.getFriendsTimeline();

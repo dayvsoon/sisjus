@@ -71,16 +71,8 @@
                     <h:outputLabel for="status" value="Status do Processo: "/>
                     <h:selectOneMenu id="status" value="#{ProcessoFaces.selectedProcesso.status}">
                                         <f:selectItem itemLabel="Status..." />
-                                        <f:selectItem itemLabel="Concluso para despacho" itemValue="Concluso para despacho" />
-					<f:selectItem itemLabel="Em Andamento" itemValue="Em Andamento" />
-					<f:selectItem itemLabel="Arquivado" itemValue="Em Revisão" />
-					<f:selectItem itemLabel="A ser revisado" itemValue="A ser revisado" />
-					<f:selectItem itemLabel="Concluso para decisão/Sentença" itemValue="Concluso para decisão/Sentença"/>
-					<f:selectItem itemLabel="Para expedição de alvará" itemValue="Para expedição de alvará" />
-					<f:selectItem itemLabel="Para audiência de instrução e julgamento" itemValue="Para audiência de instrução e julgamento"/>
-					<f:selectItem itemLabel="Para réplica" itemValue="Para réplica"/>
-					
-	        
+                                        <f:selectItems value="#{ProcessoFaces.statusOfBase}" />
+      
                     </h:selectOneMenu>
                     <h:outputText/>
                 
@@ -93,7 +85,7 @@
                     <h:outputText/>
 
                     <h:outputLabel for="dataincial" value="Data Inicial: "/>
-                    <rich:calendar id="datainicial"  value="#{ProcessoFaces.selectedProcesso.datainicial}" >
+                    <rich:calendar id="datainicial"  value="#{ProcessoFaces.selectedProcesso.datainicial}" datePattern="dd/MM/yyyy" >
                         <f:convertDateTime pattern="yyyy-MM-dd"></f:convertDateTime>
                          <a4j:support event="onchanged" reRender="dataini"/>
                     </rich:calendar>
@@ -117,6 +109,7 @@
                         <f:selectItem itemLabel="180 Dias" itemValue="180" />
                         <f:selectItem itemLabel="240 Dias" itemValue="240" />
                         <f:selectItem itemLabel="365 Dias" itemValue="365" />
+                        <a4j:support event="onchange" reRender="datafinal"/>
                     </h:selectOneMenu>
                     
 
@@ -138,8 +131,8 @@
                 <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;" value="#{ProcessoFaces.selectedProcesso.observacao_processo}"></h:inputTextarea>
             </fieldset>
                
-                <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}"immediate="true"/>
-                <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" immediate="true"/>
+                <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}" immediate="true" />
+                <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" immediate="true" />
                 <h:messages/>
 
         </h:form>

@@ -190,9 +190,9 @@
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>GerarBanco</managed-bean-name>
-        <managed-bean-class>br.com.sisjus.util.GerarBanco</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
+        <managed-bean-class>br.com.sisjus.cadastro.GerarBanco</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
     <navigation-rule>
         <from-view-id>/MsgDeEntrada.jsp</from-view-id>
         <navigation-case>
@@ -290,6 +290,11 @@
             <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>statusProcessoFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.StatusProcessoFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 </faces-config>
 
 

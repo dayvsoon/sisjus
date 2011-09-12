@@ -7,6 +7,7 @@ package br.com.sisjus.faces;
 
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.pessoaDAO;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -21,7 +22,7 @@ import org.hibernate.criterion.Example;
  */
 public class PersonFaces {
 
-        private List<pessoa> ListOfPerson = null;
+        private List<pessoa> ListOfPerson = new ArrayList<pessoa>();
         private  pessoaDAO personDAO = new pessoaDAO();
         private pessoa selectedPerson;
         protected Session session;
