@@ -3,7 +3,9 @@
  * and open the template in the editor.
  */
 
-package br.com.sisjus.util;
+package br.com.sisjus.cadastro;
+
+
 
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
@@ -16,8 +18,8 @@ public class GerarBanco {
 
     public static void main(String[] args) {
 		Configuration cfg = new AnnotationConfiguration();
-		cfg.configure();
-
+                cfg.getClassMapping("HibernateUtil.class");
+                
 		SchemaExport SE = new SchemaExport(cfg);
 		SE.create(true, true);
 

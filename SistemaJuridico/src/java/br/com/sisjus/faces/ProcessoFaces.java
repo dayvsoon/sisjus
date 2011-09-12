@@ -5,10 +5,12 @@
 
 package br.com.sisjus.faces;
 
+import br.com.sisjus.cadastro.StatusProcesso;
 import br.com.sisjus.cadastro.advogadojuiz;
 import br.com.sisjus.cadastro.cliente;
 import br.com.sisjus.cadastro.processo;
 import br.com.sisjus.dao.ClienteDAO;
+import br.com.sisjus.dao.StatusProcessoDAO;
 import br.com.sisjus.dao.advogadoJuizDAO;
 import br.com.sisjus.dao.processDAO;
 import java.util.LinkedList;
@@ -28,6 +30,7 @@ public class ProcessoFaces {
         private processo selectedProcesso;
         private ClienteDAO cltDAO = new ClienteDAO();
         private advogadoJuizDAO adzDAO = new advogadoJuizDAO();
+        private StatusProcessoDAO statusDao = new StatusProcessoDAO();
 
 
     /** Creates a new instance of ProcessoFaces */
@@ -58,6 +61,14 @@ public List<SelectItem> getMajorLayerOfSystem(){
       return toReturn;
  }
 
+ public List<SelectItem> getStatusOfBase(){
+        List<SelectItem> toReturnStatus = new LinkedList<SelectItem>();
+        for(StatusProcesso status : statusDao.getListStatus()){
+            toReturnStatus.add(new SelectItem(status.getId(),status.getId()+" - "+status.getDescricao()));
+        }
+        return toReturnStatus;
+    }
+ 
     public List<processo> getListOfProcess() {
        if (ListOfProcess == null){
            ListOfProcess = processDAO.getProcesses();

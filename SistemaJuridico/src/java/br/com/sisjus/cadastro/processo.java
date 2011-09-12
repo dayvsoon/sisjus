@@ -59,7 +59,7 @@ public class processo implements Serializable {
     private String cod_direito; //Exemplo: Direito Civil
 
     @Column(name="status")
-    private String status;
+    private Integer status;
 
     @Column(name="juiz_sentenca")
     private String juiz_sentenca;
@@ -120,10 +120,6 @@ public class processo implements Serializable {
     }
 
     public Date getDatafinal() {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(datainicial);
-        cal.add(Calendar.DATE, prazo);
-        datafinal = cal.getTime();
         return datafinal;
     }
 
@@ -213,11 +209,11 @@ public class processo implements Serializable {
         this.observacao_processo = observacao_processo;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -236,6 +232,11 @@ public class processo implements Serializable {
 
     public void setPrazo(Integer prazo) {
         this.prazo = prazo;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(datainicial);
+        cal.add(Calendar.DATE, prazo);
+        datafinal = cal.getTime();
+        System.out.println("Data Final: "+datafinal);
     }
 
 
