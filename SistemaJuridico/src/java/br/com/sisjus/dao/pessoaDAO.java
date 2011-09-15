@@ -5,13 +5,10 @@
 
 package br.com.sisjus.dao;
 
-import br.com.sisjus.cadastro.HibernateUtil;
+
 import br.com.sisjus.cadastro.pessoa;
 import java.util.List;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
-import br.com.sisjus.cadastro.HibernateUtil;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -47,20 +44,7 @@ public pessoa getPerson(Integer personId){
     pessoa person = gettingPojo(pessoa.class, personId);
     return person;
 }
-/*
-public pessoa pesquisaPessoaById(pessoa pes){
-         
-        pes = new pessoa();
-        Session sessao = getSesseion();
-        pes.setNome(pes.getNome());
 
-        System.out.println("Valor: " +pes);
-        pes = (pessoa) this.session.load(pessoa.class, pes.getId());
-        
-        sessao.close();
-
-        return pes;
-}*/
 public List<pessoa> getPesquisarPessoa(Integer personId){
       Criteria c = getSession().createCriteria(pessoa.class);
 	        c.add(Restrictions.ilike("id", personId));

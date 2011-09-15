@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.hibernate.Session;
 
 
 /**
@@ -231,6 +232,15 @@ public class pessoa implements Serializable {
 
     public void setNomeadvogadojuiz(List<advogadojuiz> nomeadvogadojuiz) {
         this.nomeadvogadojuiz = nomeadvogadojuiz;
+    }
+    
+    public pessoa pesquisarPorId(Integer Id){
+        Session sessao = HibernateUtil.getInstance().getSession();
+        try{
+            return (pessoa) sessao.get(pessoa.class,id);
+        }finally{
+            sessao.close();
+        }
     }
 
   /*  public List<cliente> getNomeCliente() {

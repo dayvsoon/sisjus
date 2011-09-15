@@ -52,6 +52,8 @@ public class Protocolo implements  Serializable {
     private int CountWordOfResenha;
     @Transient
     public boolean Acesso;
+    @Transient
+    public boolean Disable;
 
     public boolean isAcesso() {
         return Acesso;
@@ -81,9 +83,12 @@ public class Protocolo implements  Serializable {
         this.ArquivadoOnde = ArquivadoOnde;
         if (Arquivado.equals("Sim")){
             Acesso = false;
+            Disable = true;
+            Destino = "Arquivo";
         }else{
             if (Arquivado.equals("Não")){
                Acesso = true;
+               
             }
         }
     }
@@ -154,6 +159,14 @@ public class Protocolo implements  Serializable {
 
     public void setCountWordOfResenha(int CountWordOfResenha) {
         this.CountWordOfResenha = CountWordOfResenha;
+    }
+
+    public boolean isDisable() {
+        return Disable;
+    }
+
+    public void setDisable(boolean Disable) {
+        this.Disable = Disable;
     }
 
 

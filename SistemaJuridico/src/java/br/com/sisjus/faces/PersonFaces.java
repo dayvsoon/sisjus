@@ -8,13 +8,10 @@ package br.com.sisjus.faces;
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.pessoaDAO;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
+import javax.faces.model.SelectItem;
 import org.hibernate.Session;
-import org.hibernate.criterion.Example;
-
 
 /**
  *
@@ -39,15 +36,23 @@ public class PersonFaces {
 
     public String DoSearch(){
          if (ListOfPerson == null){
-           ListOfPerson = personDAO.getPesquisarPessoa(id);
+            selectedPerson = new pessoa().pesquisarPorId(id); 
+          // ListOfPerson = (List<pessoa>) personDAO.getPerson(selectedPerson.getId());
        }
     return "gotoSearch";
 }
+    
     public List<pessoa> getPessoaPesquisa(Integer id){
         if (ListOfPerson == null){
            ListOfPerson = personDAO.getPesquisarPessoa(id);
        }
         return ListOfPerson;
+    }
+    public List<pessoa> DadosPessoa(){
+         if (ListOfPerson == null){
+            ListOfPerson = (List<pessoa>) selectedPerson.pesquisarPorId(id);
+    }
+         return ListOfPerson;
     }
     public List<pessoa> getListOfPerson() {
        if (ListOfPerson == null){
@@ -71,16 +76,38 @@ public class PersonFaces {
             ListOfPerson = null;
       return "gotoListPerson";
   }
+      public String EditPerson(){
+          return "EditPerson";
+      }
       public String doUpdatePerson(){
-      return "gotoUpdatePerson";
+       return "gotoUpdatePerson";
+}
+        public String UpdatePerson(){
+          selectedPerson = new pessoa();
+          personDAO.addPerson(selectedPerson);
+          ListOfPerson = null;
+       return "gotoUpdatePerson";
 }
     public String FinishUpdatePerson(){
       personDAO.updatePerson(selectedPerson);
       ListOfPerson = null;
       return "gotoListPerson";
-
-
 }
+
+    public List<SelectItem> getPeopleBD(){
+        List<SelectItem> toReturn = new LinkedList<SelectItem>();
+        for(pessoa prs : personDAO.getPeople()){
+             toReturn.add(new SelectItem(prs.getId(),prs.getNome()+" " + prs.getSobrenome()));
+        }
+         return toReturn;
+    }
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
     
 
     public pessoaDAO getPersonDAO() {

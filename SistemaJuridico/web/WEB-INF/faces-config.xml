@@ -149,10 +149,6 @@
             <to-view-id>/Cadastro/cadastroprocesso.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>gotoAddNewUser</from-outcome>
-            <to-view-id>/Cadastro/cadastrousuario.jsp</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>gotoUpdateLayer</from-outcome>
             <to-view-id>/ExclusaoEdicao/EEAdvogadoJuiz.jsp</to-view-id>
         </navigation-case>
@@ -169,7 +165,7 @@
             <to-view-id>/ExclusaoEdicao/EEProcesso.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>gotoSearch</from-outcome>
+            <from-outcome>gotoUpdatePerson</from-outcome>
             <to-view-id>/Busca/BuscaPessoa.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -265,7 +261,7 @@
     <navigation-rule>
         <from-view-id>/ExclusaoEdicao/EEAdvogadoJuiz.jsp</from-view-id>
         <navigation-case>
-            <from-outcome>gotobacktotheMenu</from-outcome>
+            <from-outcome>EditPerson</from-outcome>
             <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -295,6 +291,24 @@
         <managed-bean-class>br.com.sisjus.faces.StatusProcessoFaces</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <navigation-rule>
+        <from-view-id>/Busca/BuscaPessoa.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>gotobacktotheMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Cadastro/cadastrousuario.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>gotobacktotheMenu</from-outcome>
+            <to-view-id>/welcomeJSF.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>MainMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
 
 

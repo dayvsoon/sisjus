@@ -58,7 +58,7 @@
             <f:facet name="header">
             <h:outputText  value="Ação"  />
         </f:facet>
-                <h:commandLink value="Editar"  action="#{AdvogadoJuizFaces.FinishUpdateLayer}"></h:commandLink> &nbsp;
+                <h:commandLink value="Editar"  action="#{AdvogadoJuizFaces.finishedLayer}"></h:commandLink> &nbsp;
                 <h:commandLink value="Excluir" action="#{AdvogadoJuizFaces.removeLayer}"></h:commandLink>
 
     </rich:column>

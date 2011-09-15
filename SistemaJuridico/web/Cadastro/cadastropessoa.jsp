@@ -48,7 +48,7 @@
 
 
                                     <h:outputLabel for="txtDate" value="Data de nascimento: "/>
-                                    <h:inputText validatorMessage="Data de nascimento com formato inválido!"id="txtDate" size="10" maxlength="10" onkeydown="return validar(event)" onblur="validaDat(this,this.value)"  onkeyup="Formatadata(this,event)" value="#{PersonFaces.selectedPerson.data_nasc}" >
+                                    <h:inputText validatorMessage="Data de nascimento com formato inválido!" id="txtDate" size="10" maxlength="10" onkeydown="return validar(event)" onblur="validaDat(this,this.value)"  onkeyup="Formatadata(this,event)" value="#{PersonFaces.selectedPerson.data_nasc}" >
 					
 	     			    </h:inputText>
 
@@ -62,7 +62,7 @@
                                     <h:inputText id="cep" value="#{PersonFaces.selectedPerson.cep}"  onkeydown="MascaraCEP(this, event);" onkeyup="return validar(event)" size="14" maxlength="9"/>
 
                                     <h:outputLabel for="uf" value="UF: "/>
-                                    <h:inputText id="uf" size="3" maxlength="2"value="#{PersonFaces.selectedPerson.uf}"/>
+                                    <h:inputText id="uf" size="3" maxlength="2" value="#{PersonFaces.selectedPerson.uf}" />
 
                                     <h:outputLabel for="cidade" value="Cidade: "/>
                                     <h:inputText  id="cidade" value="#{PersonFaces.selectedPerson.cidade}"/>

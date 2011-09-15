@@ -49,10 +49,6 @@
         <body onload="initTimer();">
             <h:form id="form1">
 
-                <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 6pt; text-align: right ; padding-left: 1300px; padding-bottom: 2em "/>, <span style="font-size: 6pt; text-align: right" id="timer">Relógio</span> , <h:commandLink style="font-size: 6pt; text-align: right" value="Sing Out"/>
-
-
-                <h:outputText></h:outputText>
                 <rich:toolBar>
                     <rich:dropDownMenu>
                         <f:facet name="label">
@@ -84,7 +80,11 @@
                                 <h:commandLink action="#{ProcessoFaces.doAddProcesso}" value="Processo"/>
                             </rich:menuItem>
                         </rich:menuGroup>
-
+                        <rich:menuGroup value="Editar">
+                            <rich:menuItem submitMode="none" icon="./images/pessoa.png">
+                                <h:commandLink action="#{PersonFaces.doUpdatePerson}" value="Pessoa"/>
+                            </rich:menuItem>
+                        </rich:menuGroup>
                         <rich:menuItem submitMode="none" >
                             <h:commandLink  value="Sair / Log Out"/>
                         </rich:menuItem>
@@ -101,7 +101,7 @@
                         </f:facet>
                         <rich:menuGroup value="Visualizar" icon="./images/view.png">
                             <rich:menuItem submitMode="none" icon="./images/pessoa.png">
-                                <h:commandLink action="#{PersonFaces.doUpdatePerson}" value="Pessoa"/>
+                                <h:commandLink action="#{PersonFaces.editPerson}" value="Pessoa"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/clientes.png">
                                 <h:commandLink action="#{ClienteFaces.doUpdateClient}" value="Cliente"/>
@@ -139,10 +139,30 @@
                             </rich:menuItem>
                         </rich:menuGroup>
                     </rich:dropDownMenu>
+                    <rich:dropDownMenu>
+                        <f:facet name="label">
+                            <h:panelGroup>
+                                <h:graphicImage value="./images/protocol.png" styleClass="pic"/>
+                                <h:outputText value="E-mail"/>
+                            </h:panelGroup>
+                        </f:facet>
+                            <rich:menuItem submitMode="none" icon="./images/toemail.png">
+                                <h:commandLink  value="Enviar"/>
+                            </rich:menuItem>
+                    </rich:dropDownMenu>
+                    <rich:dropDownMenu>
+                        <f:facet name="label">
+                            <h:panelGroup>
+                                <h:outputText value="Ajuda"/>
+                            </h:panelGroup>
+                        </f:facet>
+                        <rich:menuItem submitMode="none" />
+                        <h:commandLink  value="Sobre"/>
+                    </rich:dropDownMenu>
                 </rich:toolBar>
                 <br/>
                 <h4>Sisjus versão <h:outputText id="Version" value="#{Sistema.version}" /> </h4>
-
+                <h5>  <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 10pt; text-align: left ; padding-left: 1px; padding-bottom: 2em "/>, <span style="font-size: 9pt; text-align: left" id="timer">Relógio</span> , <h:commandLink style="font-size: 9pt; text-align: left" value="Sing Out"/>    </h5>
             </h:form>
         </body>
     </f:view>

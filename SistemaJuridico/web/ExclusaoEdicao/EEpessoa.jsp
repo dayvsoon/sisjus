@@ -17,12 +17,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Exclusão/Edição  - Pessoa - SisJus </title>
+         <link rel="stylesheet" type="text/css" href="./estilo.css"/>
     </head>
     <body>
         <h:form id="FormDeExclusaoEdicao">
         <h1 align="center">SisJus - Sistema Sistema de Organização De Processos Jurídicos </h1>
         <h3 align="center">Tabela Do Cadastro de Pessoa</h3>
-        <rich:dataTable var="dados" value="#{PersonFaces.listOfPerson}" align="center" id="PessoaPart1">
+        <rich:dataTable var="dados" value="#{PersonFaces.listOfPerson}" align="center" id="PessoaPart1" styleClass="tabela" headerClass="cabecalhoTabela" rowClasses="linha1Tabela, linha2Tabela">
             <rich:column>
             <f:facet name="header">
             <h:outputText  value="Id"  />
@@ -45,7 +46,7 @@
                <f:facet name="header">
                 <h:outputText  value="Data de Nascimento"  />
                </f:facet>
-                <h:inputText size="11"value="#{dados.data_nasc}" ></h:inputText>
+                <h:inputText size="11" value="#{dados.data_nasc}" ></h:inputText>
             </rich:column>
              <rich:column>
                <f:facet name="header">
@@ -124,7 +125,7 @@
             <f:facet name="header">
             <h:outputText  value="Ação"  />
         </f:facet>
-                <h:commandLink value="Editar"  action="#{PersonFaces.FinishUpdatePerson}"></h:commandLink> &nbsp;
+                <h:commandLink value="Editar"  action="#{PersonFaces.finishedPerson}"></h:commandLink> &nbsp;
                 <h:commandLink value="Excluir" action="#{PersonFaces.removePerson}"></h:commandLink>
 
     </rich:column>
