@@ -40,7 +40,7 @@
                     <h:outputText/>
 
                     <h:outputLabel for="cnpj" value="C.N.P.J: "/>
-                    <h:inputText id="cnpj" size="18" maxlength="18" onkeyup="Telefone(this,3)"value="#{ClienteFaces.selectedClient.cpfcnpj}">
+                    <h:inputText id="cnpj" size="18" maxlength="18" onkeyup="Telefone(this,3)" value="#{ClienteFaces.selectedClient.cpfcnpj}">
                         <stella:validateCNPJ formatted="true"/>
                     </h:inputText>
                     <h:message for="cnpj" style="color: red"/>

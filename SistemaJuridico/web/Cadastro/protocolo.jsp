@@ -36,7 +36,7 @@
                 <f:selectItem itemLabel="Selecione..."/>
                 <f:selectItem itemLabel="Sim" itemValue="Sim"/>
                 <f:selectItem itemLabel="Não" itemValue="Não"/>
-                <a4j:support event="onchange" reRender="ArquivadoOnde,MovelNumero"/>
+                <a4j:support event="onchange" reRender="ArquivadoOnde,MovelNumero, destino"/>
             </h:selectOneMenu>
 
             <h:outputLabel for="ArquivadoOnde" value="Está na: "/>
@@ -68,10 +68,10 @@
             <h:inputText id="origem" value="#{ProtocoloFaces.selectedProtocolo.origem}"/>
 
             <h:outputLabel for="destino" value="Destino: "/>
-            <h:inputText id="destino" value="#{ProtocoloFaces.selectedProtocolo.destino}"/>
+            <h:inputText id="destino" value="#{ProtocoloFaces.selectedProtocolo.destino}" disabled="#{Protocolo.disable}"/>
 
             <h:commandButton action="#{ProtocoloFaces.FinishedProtocolo}" value="Salvar"/>
-            <h:commandButton value="Voltar" action="#{ProtocoloFaces.BackingToMenu}"/>
+            <h:commandButton value="Voltar" action="#{ProtocoloFaces.BackingToMenu}" />
         </h:panelGrid>
              </fieldset>
             <h:outputText id="LabelContador" value="Quantidade de caractere: "/> <h:outputText id="Contador" value="#{ProtocoloFaces.selectedProtocolo.countWordOfResenha}"/>

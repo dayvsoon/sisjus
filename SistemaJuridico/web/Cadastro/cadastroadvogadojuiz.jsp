@@ -55,7 +55,7 @@
 
 
                         <h:outputLabel for="descricaovara" value="Descrição da Vara: "/>
-                        <h:inputText id="descricaovara" size="16" value="#{AdvogadoJuizFaces.selectedLayer.descricaodaVara}"disabled="#{AdvogadoJuizFaces.selectedLayer.bloqueio}"/>
+                        <h:inputText id="descricaovara" size="16" value="#{AdvogadoJuizFaces.selectedLayer.descricaodaVara}" disabled="#{AdvogadoJuizFaces.selectedLayer.bloqueio}"/>
                    
 
                     </h:panelGrid>

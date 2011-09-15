@@ -7,6 +7,7 @@ package br.com.sisjus.dao;
 
 import br.com.sisjus.cadastro.Protocolo;
 import java.util.List;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 
 
@@ -52,6 +53,11 @@ public List<Protocolo> getTramiteProtocolos(){
         this.session = session;
     }
 
-
-
+    
+    public String Analise(String SQL, String Value){      
+        // getSession().createQuery("FROM Protocolo WHERE id= 'sim' ").list();  
+        SQLQuery result = session.createSQLQuery(SQL);
+        Value =  result.toString();
+        return Value;
+}
 }

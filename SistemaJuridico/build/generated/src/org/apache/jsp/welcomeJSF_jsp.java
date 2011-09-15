@@ -16,11 +16,10 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_outputText_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_outputText_value_id_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_inputText_value_requiredMessage_required_onkeypress_onkeydown_onfocus_onblur_id_nobody;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_message_styleClass_for_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_inputSecret_value_requiredMessage_required_onkeypress_onkeydown_id_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_commandButton_value_styleClass_action_nobody;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_messages_styleClass_globalOnly_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_commandButton_value_styleClass_immediate_action_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_h_messages_styleClass_nobody;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -34,11 +33,10 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_h_outputText_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_h_outputText_value_id_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_h_inputText_value_requiredMessage_required_onkeypress_onkeydown_onfocus_onblur_id_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_h_message_styleClass_for_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_h_inputSecret_value_requiredMessage_required_onkeypress_onkeydown_id_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_h_commandButton_value_styleClass_action_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_h_messages_styleClass_globalOnly_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_h_commandButton_value_styleClass_immediate_action_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_h_messages_styleClass_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
@@ -47,11 +45,10 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_h_outputText_value_nobody.release();
     _jspx_tagPool_h_outputText_value_id_nobody.release();
     _jspx_tagPool_h_inputText_value_requiredMessage_required_onkeypress_onkeydown_onfocus_onblur_id_nobody.release();
-    _jspx_tagPool_h_message_styleClass_for_nobody.release();
     _jspx_tagPool_h_inputSecret_value_requiredMessage_required_onkeypress_onkeydown_id_nobody.release();
     _jspx_tagPool_h_commandButton_value_styleClass_action_nobody.release();
-    _jspx_tagPool_h_messages_styleClass_globalOnly_nobody.release();
     _jspx_tagPool_h_commandButton_value_styleClass_immediate_action_nobody.release();
+    _jspx_tagPool_h_messages_styleClass_nobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -327,10 +324,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_h_inputText_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
           return true;
         out.write("\n");
-        out.write("                                        <br>");
-        if (_jspx_meth_h_message_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
-          return true;
-        out.write("\n");
+        out.write("                                        <br>\n");
         out.write("                                    </td>\n");
         out.write("                                </tr>\n");
         out.write("                                <tr height=\"30px\">\n");
@@ -339,10 +333,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_h_inputSecret_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
           return true;
         out.write("&nbsp;\n");
-        out.write("                                        <br>");
-        if (_jspx_meth_h_message_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
-          return true;
-        out.write("\n");
+        out.write("                                        <br>\n");
         out.write("                                    </td>\n");
         out.write("                                </tr>\n");
         out.write("                                <tr height=\"50px\">\n");
@@ -353,13 +344,12 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
           return true;
         out.write("&nbsp;\n");
         out.write("                                        ");
-        if (_jspx_meth_h_messages_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
-          return true;
-        out.write("\n");
-        out.write("                                        ");
         if (_jspx_meth_h_commandButton_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
           return true;
         out.write("&nbsp;\n");
+        out.write("                                        ");
+        if (_jspx_meth_h_messages_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_h_form_0, _jspx_page_context))
+          return true;
         out.write("\n");
         out.write("                                        </td>\n");
         out.write("                                    </tr>                                                       \n");
@@ -511,26 +501,6 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_h_message_0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  h:message
-    com.sun.faces.taglib.html_basic.MessageTag _jspx_th_h_message_0 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.MessageTag.class) : new com.sun.faces.taglib.html_basic.MessageTag();
-    _jspx_th_h_message_0.setPageContext(_jspx_page_context);
-    _jspx_th_h_message_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_message_0.setJspId("id54");
-    _jspx_th_h_message_0.setFor(org.apache.jasper.runtime.PageContextImpl.getValueExpression("userID", (PageContext)_jspx_page_context, java.lang.String.class, null));
-    _jspx_th_h_message_0.setStyleClass(org.apache.jasper.runtime.PageContextImpl.getValueExpression("mensagemErro", (PageContext)_jspx_page_context, java.lang.String.class, null));
-    int _jspx_eval_h_message_0 = _jspx_th_h_message_0.doStartTag();
-    if (_jspx_th_h_message_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_h_message_styleClass_for_nobody.reuse(_jspx_th_h_message_0);
-      return true;
-    }
-    _jspx_tagPool_h_message_styleClass_for_nobody.reuse(_jspx_th_h_message_0);
-    return false;
-  }
-
   private boolean _jspx_meth_h_inputSecret_0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -539,7 +509,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     com.sun.faces.taglib.html_basic.InputSecretTag _jspx_th_h_inputSecret_0 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.InputSecretTag.class) : new com.sun.faces.taglib.html_basic.InputSecretTag();
     _jspx_th_h_inputSecret_0.setPageContext(_jspx_page_context);
     _jspx_th_h_inputSecret_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_inputSecret_0.setJspId("id64");
+    _jspx_th_h_inputSecret_0.setJspId("id62");
     _jspx_th_h_inputSecret_0.setOnkeypress(org.apache.jasper.runtime.PageContextImpl.getValueExpression("this.style.backgroundColor='lightgreen'", (PageContext)_jspx_page_context, java.lang.String.class, null));
     _jspx_th_h_inputSecret_0.setOnkeydown(org.apache.jasper.runtime.PageContextImpl.getValueExpression("this.style.backgroundColor='white'", (PageContext)_jspx_page_context, java.lang.String.class, null));
     _jspx_th_h_inputSecret_0.setValue(org.apache.jasper.runtime.PageContextImpl.getValueExpression("#{UserFaces.password}", (PageContext)_jspx_page_context, java.lang.Object.class, null));
@@ -555,26 +525,6 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_h_message_1(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  h:message
-    com.sun.faces.taglib.html_basic.MessageTag _jspx_th_h_message_1 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.MessageTag.class) : new com.sun.faces.taglib.html_basic.MessageTag();
-    _jspx_th_h_message_1.setPageContext(_jspx_page_context);
-    _jspx_th_h_message_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_message_1.setJspId("id67");
-    _jspx_th_h_message_1.setFor(org.apache.jasper.runtime.PageContextImpl.getValueExpression("passwordID", (PageContext)_jspx_page_context, java.lang.String.class, null));
-    _jspx_th_h_message_1.setStyleClass(org.apache.jasper.runtime.PageContextImpl.getValueExpression("mensagemErro", (PageContext)_jspx_page_context, java.lang.String.class, null));
-    int _jspx_eval_h_message_1 = _jspx_th_h_message_1.doStartTag();
-    if (_jspx_th_h_message_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_h_message_styleClass_for_nobody.reuse(_jspx_th_h_message_1);
-      return true;
-    }
-    _jspx_tagPool_h_message_styleClass_for_nobody.reuse(_jspx_th_h_message_1);
-    return false;
-  }
-
   private boolean _jspx_meth_h_commandButton_0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -583,7 +533,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     com.sun.faces.taglib.html_basic.CommandButtonTag _jspx_th_h_commandButton_0 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.CommandButtonTag.class) : new com.sun.faces.taglib.html_basic.CommandButtonTag();
     _jspx_th_h_commandButton_0.setPageContext(_jspx_page_context);
     _jspx_th_h_commandButton_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_commandButton_0.setJspId("id75");
+    _jspx_th_h_commandButton_0.setJspId("id71");
     _jspx_th_h_commandButton_0.setStyleClass(org.apache.jasper.runtime.PageContextImpl.getValueExpression("button", (PageContext)_jspx_page_context, java.lang.String.class, null));
     _jspx_th_h_commandButton_0.setValue(org.apache.jasper.runtime.PageContextImpl.getValueExpression("Acessar", (PageContext)_jspx_page_context, java.lang.Object.class, null));
     _jspx_th_h_commandButton_0.setAction(org.apache.jasper.runtime.PageContextImpl.getMethodExpression("#{UserFaces.doAutenthicLogin}", (PageContext)_jspx_page_context, null, java.lang.Object.class, new Class[] {}));
@@ -596,26 +546,6 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_h_messages_0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  h:messages
-    com.sun.faces.taglib.html_basic.MessagesTag _jspx_th_h_messages_0 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.MessagesTag.class) : new com.sun.faces.taglib.html_basic.MessagesTag();
-    _jspx_th_h_messages_0.setPageContext(_jspx_page_context);
-    _jspx_th_h_messages_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_messages_0.setJspId("id77");
-    _jspx_th_h_messages_0.setGlobalOnly(org.apache.jasper.runtime.PageContextImpl.getValueExpression("true", (PageContext)_jspx_page_context, boolean.class, null));
-    _jspx_th_h_messages_0.setStyleClass(org.apache.jasper.runtime.PageContextImpl.getValueExpression("mensagemErro", (PageContext)_jspx_page_context, java.lang.String.class, null));
-    int _jspx_eval_h_messages_0 = _jspx_th_h_messages_0.doStartTag();
-    if (_jspx_th_h_messages_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_h_messages_styleClass_globalOnly_nobody.reuse(_jspx_th_h_messages_0);
-      return true;
-    }
-    _jspx_tagPool_h_messages_styleClass_globalOnly_nobody.reuse(_jspx_th_h_messages_0);
-    return false;
-  }
-
   private boolean _jspx_meth_h_commandButton_1(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -624,7 +554,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     com.sun.faces.taglib.html_basic.CommandButtonTag _jspx_th_h_commandButton_1 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.CommandButtonTag.class) : new com.sun.faces.taglib.html_basic.CommandButtonTag();
     _jspx_th_h_commandButton_1.setPageContext(_jspx_page_context);
     _jspx_th_h_commandButton_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_commandButton_1.setJspId("id79");
+    _jspx_th_h_commandButton_1.setJspId("id73");
     _jspx_th_h_commandButton_1.setStyleClass(org.apache.jasper.runtime.PageContextImpl.getValueExpression("button", (PageContext)_jspx_page_context, java.lang.String.class, null));
     _jspx_th_h_commandButton_1.setValue(org.apache.jasper.runtime.PageContextImpl.getValueExpression("Cadastrar", (PageContext)_jspx_page_context, java.lang.Object.class, null));
     _jspx_th_h_commandButton_1.setAction(org.apache.jasper.runtime.PageContextImpl.getMethodExpression("#{UserFaces.doAddUser}", (PageContext)_jspx_page_context, null, java.lang.Object.class, new Class[] {}));
@@ -638,6 +568,25 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_h_messages_0(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  h:messages
+    com.sun.faces.taglib.html_basic.MessagesTag _jspx_th_h_messages_0 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.MessagesTag.class) : new com.sun.faces.taglib.html_basic.MessagesTag();
+    _jspx_th_h_messages_0.setPageContext(_jspx_page_context);
+    _jspx_th_h_messages_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
+    _jspx_th_h_messages_0.setJspId("id75");
+    _jspx_th_h_messages_0.setStyleClass(org.apache.jasper.runtime.PageContextImpl.getValueExpression("mensagemErro", (PageContext)_jspx_page_context, java.lang.String.class, null));
+    int _jspx_eval_h_messages_0 = _jspx_th_h_messages_0.doStartTag();
+    if (_jspx_th_h_messages_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_h_messages_styleClass_nobody.reuse(_jspx_th_h_messages_0);
+      return true;
+    }
+    _jspx_tagPool_h_messages_styleClass_nobody.reuse(_jspx_th_h_messages_0);
+    return false;
+  }
+
   private boolean _jspx_meth_h_outputText_5(javax.servlet.jsp.tagext.JspTag _jspx_th_h_form_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -646,7 +595,7 @@ public final class welcomeJSF_jsp extends org.apache.jasper.runtime.HttpJspBase
     com.sun.faces.taglib.html_basic.OutputTextTag _jspx_th_h_outputText_5 = (_jspx_resourceInjector != null) ? _jspx_resourceInjector.createTagHandlerInstance(com.sun.faces.taglib.html_basic.OutputTextTag.class) : new com.sun.faces.taglib.html_basic.OutputTextTag();
     _jspx_th_h_outputText_5.setPageContext(_jspx_page_context);
     _jspx_th_h_outputText_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_h_form_0);
-    _jspx_th_h_outputText_5.setJspId("id85");
+    _jspx_th_h_outputText_5.setJspId("id81");
     _jspx_th_h_outputText_5.setValue(org.apache.jasper.runtime.PageContextImpl.getValueExpression("#{Sistema.autor}", (PageContext)_jspx_page_context, java.lang.Object.class, null));
     int _jspx_eval_h_outputText_5 = _jspx_th_h_outputText_5.doStartTag();
     if (_jspx_th_h_outputText_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

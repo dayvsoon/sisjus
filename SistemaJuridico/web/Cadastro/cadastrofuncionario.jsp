@@ -37,7 +37,7 @@
                     <h:outputText id="idpessoa" value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}" />
 
                     <h:outputLabel for="cargo" value="Cargo: "/>
-                    <h:inputText id="cargo" size="18"value="#{FuncionarioFaces.selectedFuncionario.cargo}"/>
+                    <h:inputText id="cargo" size="18" value="#{FuncionarioFaces.selectedFuncionario.cargo}"/>
                     <h:outputText />
 
 

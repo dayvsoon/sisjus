@@ -26,6 +26,7 @@ public class ProtocoloFaces {
         private Protocolo selectedProtocolo;
         private processDAO procDAO = new processDAO();
         private int Choise;
+        private boolean permitir;
 
     /** Creates a new instance of ProtocoloFaces */
     public ProtocoloFaces() {
@@ -47,16 +48,33 @@ public class ProtocoloFaces {
         selectedProtocolo = new Protocolo();
         return "gotoAddNewProtocolo";
     }
-     
+    
+      
+      
+      public List<Protocolo> getProtocolo(Integer id){
+          id = Integer.parseInt( selectedProtocolo.getNumeroProcesso());
+          ListOfProtocolo = (List<Protocolo>) protocoloDAO.getProtocolo(id);
+          return ListOfProtocolo;
+      }
+      
+   
   public String FinishedProtocolo(){
+      String Comparator;
+      if(selectedProtocolo.getNumeroProcesso() == null){
+        Comparator = protocoloDAO.Analise("select Arquivado from APP.PROTOCOLO where ID ="+selectedProtocolo.getNumeroProcesso()+"", "Sim");
+       if(Comparator.equals("Sim")){
+           permitir = false;
+       }else{
+           permitir = true;
+    }}else
      Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
      System.out.println("Valor da escolha: "+Choise);
-     if(Choise == 0){
+     if((Choise == 0)&& (permitir = true)){
      protocoloDAO.addProtocolo(selectedProtocolo);
       ListOfProtocolo = null;
       JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
       return "gotoListProtocolo";
-  }else
+     }else
       JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
       return "DontGoListProtocolo";
   }

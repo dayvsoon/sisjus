@@ -34,7 +34,7 @@ public class HibernateUtil {
                   .setProperty("hibernate.connection.username","manager")
                   .setProperty("hibernate.connection.password","manager")
                   .setProperty("hibernate.default_schema","APP" )
-                  .setProperty("hibernate.hbm2ddl.auto","create-drop")
+                  .setProperty("hibernate.hbm2ddl.auto","create")
                   .setProperty("hibernate.show_sql","true")
                   .setProperty("hibernate.format_sql","true")
                   .setProperty("hibernate.c3p0.acquire_increment","1")

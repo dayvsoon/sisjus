@@ -8,6 +8,8 @@ package br.com.sisjus.faces;
 import br.com.sisjus.cadastro.Usuario;
 import br.com.sisjus.dao.UserDAO;
 import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 
 /**
@@ -37,6 +39,8 @@ public class UserFaces {
             return "DoLoginSucessful";
 
         }else {
+            FacesMessage msg = new FacesMessage("Usuário ou senha inválido!");
+            FacesContext.getCurrentInstance().addMessage("erro", msg);
             return "DonotLoginSucessful";
         }
     }
@@ -60,7 +64,9 @@ public class UserFaces {
     public String BacktoMenu(){
         return "gotobacktotheMenu";
     }
-
+    public String BackToMainMenu(){
+        return "MainMenu";
+    }
     public String doAddUser(){
         selectedUser = new Usuario();
         return "gotoAddNewUser";

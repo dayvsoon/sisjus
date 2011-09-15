@@ -52,11 +52,12 @@
                                         <h:inputText id="dataDeCadastro" size="10" value="#{Usuario.dataDeCadastro}" readonly="true"></h:inputText>
 
 
-
-					
-                                        <h:commandButton value="Salvar" id="inserir" action="#{UserFaces.FinishedUser}" />
-                                        <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
 		    	</h:panelGrid>
+                        <h:panelGrid columns="3">
+                            <h:commandButton value="Salvar" id="inserir" action="#{UserFaces.FinishedUser}" />
+                            <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
+                            <h:commandButton value="Voltar ao Menu Principal" action="#{UserFaces.backToMainMenu}"/>
+                        </h:panelGrid>
 		    </fieldset>
 	</h:form>
         </f:view>
