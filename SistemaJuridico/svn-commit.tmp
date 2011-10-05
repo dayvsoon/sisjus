@@ -1,0 +1,42 @@
+O funcionamento do protocolo está legal, agora começando a implementar o historico do protocolo, o menu foi adicionado novos componentes, outra alteração nesta revisão é o caso da inserção da ideia do e-mail(mala direta) a partir do cadastro e modificação do processo.Agora faltando 5 pontos para finalização do projeto: 1. A edição 2. Historico Protocolo 3. E-mail. 4. O menu Ajuda 5. relatórios.
+---English---
+The operation of protocol is cool now beginning to implement the historic protocol, the new menu was added components, other changes in this revision is the case of insertion of the idea of ​​e-mail (direct mail) from the registration and modification process . now missing 5 points for completion of the project: 1.Edition. History Protocol 3. E-mail. 4. The Help menu 5. reports
+--Esta linha, e as abaixo, serão ignoradas--
+
+M    SistemaJuridico/build/web/menu.jsp
+M    SistemaJuridico/build/web/Cadastro/cadastroadvogadojuiz.jsp
+M    SistemaJuridico/build/web/Cadastro/cadastrousuario.jsp
+M    SistemaJuridico/build/web/Cadastro/cadastropessoa.jsp
+M    SistemaJuridico/build/web/Cadastro/cadastroclientejuridico.jsp
+M    SistemaJuridico/build/web/Cadastro/cadastrofuncionario.jsp
+M    SistemaJuridico/build/web/WEB-INF/faces-config.xml
+M    SistemaJuridico/build/web/WEB-INF/classes/br/com/sisjus/cadastro/HibernateUtil.class
+M    SistemaJuridico/build/web/WEB-INF/classes/br/com/sisjus/cadastro/pessoa.class
+M    SistemaJuridico/build/web/WEB-INF/classes/br/com/sisjus/faces/UserFaces.class
+M    SistemaJuridico/build/web/WEB-INF/classes/br/com/sisjus/faces/PersonFaces.class
+M    SistemaJuridico/build/web/WEB-INF/classes/br/com/sisjus/dao/pessoaDAO.class
+M    SistemaJuridico/build/generated/src/org/apache/jsp/menu_jsp.java
+M    SistemaJuridico/build/generated/src/org/apache/jsp/menu_jsp.class.smap
+M    SistemaJuridico/build/generated/classes/org/apache/jsp/menu_jsp.class
+M    SistemaJuridico/nbproject/faces-config.NavData
+M    SistemaJuridico/src/java/br/com/sisjus/cadastro/HibernateUtil.java
+M    SistemaJuridico/src/java/br/com/sisjus/cadastro/Protocolo.java
+M    SistemaJuridico/src/java/br/com/sisjus/cadastro/pessoa.java
+M    SistemaJuridico/src/java/br/com/sisjus/faces/UserFaces.java
+M    SistemaJuridico/src/java/br/com/sisjus/faces/ProtocoloFaces.java
+M    SistemaJuridico/src/java/br/com/sisjus/faces/PersonFaces.java
+M    SistemaJuridico/src/java/br/com/sisjus/dao/ProtocoloDAO.java
+M    SistemaJuridico/src/java/br/com/sisjus/dao/pessoaDAO.java
+M    SistemaJuridico/web/WEB-INF/faces-config.xml
+M    SistemaJuridico/web/ExclusaoEdicao/EEpessoa.jsp
+M    SistemaJuridico/web/Busca/BuscaPessoa.jsp
+M    SistemaJuridico/web/menu.jsp
+M    SistemaJuridico/web/Cadastro/cadastroadvogadojuiz.jsp
+M    SistemaJuridico/web/Cadastro/cadastrousuario.jsp
+M    SistemaJuridico/web/Cadastro/cadastropessoa.jsp
+M    SistemaJuridico/web/Cadastro/cadastroclientejuridico.jsp
+M    SistemaJuridico/web/Cadastro/cadastrofuncionario.jsp
+M    SistemaJuridico/web/Cadastro/protocolo.jsp
+AM   SistemaJuridico/web/images/sendemail.png
+AM   SistemaJuridico/web/images/tramite.png
+AM   SistemaJuridico/web/images/toemail.png

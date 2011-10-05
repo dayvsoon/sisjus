@@ -5,6 +5,7 @@
 
 package br.com.sisjus.faces;
 
+import br.com.sisjus.cadastro.HibernateUtil;
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.pessoaDAO;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import org.hibernate.Session;
  * @author miguel
  */
 public class PersonFaces {
-
+    
         private List<pessoa> ListOfPerson = new ArrayList<pessoa>();
         private  pessoaDAO personDAO = new pessoaDAO();
         private pessoa selectedPerson;
@@ -34,21 +35,21 @@ public class PersonFaces {
     }
         
 
-    public String DoSearch(){
+    public String doSearch(){
          if (ListOfPerson == null){
-            selectedPerson = new pessoa().pesquisarPorId(id); 
-          // ListOfPerson = (List<pessoa>) personDAO.getPerson(selectedPerson.getId());
+          //  selectedPerson = new pessoa().pesquisarPorId(id); 
+           ListOfPerson = (List<pessoa>) personDAO.getPesquisarPessoa();
        }
     return "gotoSearch";
 }
     
     public List<pessoa> getPessoaPesquisa(Integer id){
         if (ListOfPerson == null){
-           ListOfPerson = personDAO.getPesquisarPessoa(id);
+           ListOfPerson = (List<pessoa>) personDAO.getPerson(id);
        }
         return ListOfPerson;
     }
-    public List<pessoa> DadosPessoa(){
+    public List<pessoa> dadosPessoa(){
          if (ListOfPerson == null){
             ListOfPerson = (List<pessoa>) selectedPerson.pesquisarPorId(id);
     }
@@ -76,24 +77,26 @@ public class PersonFaces {
             ListOfPerson = null;
       return "gotoListPerson";
   }
-      public String EditPerson(){
+      public String editPerson(){
           return "EditPerson";
       }
       public String doUpdatePerson(){
-       return "gotoUpdatePerson";
+           personDAO.addPerson(selectedPerson);
+          ListOfPerson = null;
+       return "gotoUpdatePerson1";
 }
-        public String UpdatePerson(){
-          selectedPerson = new pessoa();
+        public String updatePerson(){
           personDAO.addPerson(selectedPerson);
           ListOfPerson = null;
        return "gotoUpdatePerson";
 }
-    public String FinishUpdatePerson(){
+    public String finishUpdatePerson(){
       personDAO.updatePerson(selectedPerson);
       ListOfPerson = null;
+      //selectedPerson = new pessoa();
       return "gotoListPerson";
 }
-
+   
     public List<SelectItem> getPeopleBD(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
         for(pessoa prs : personDAO.getPeople()){

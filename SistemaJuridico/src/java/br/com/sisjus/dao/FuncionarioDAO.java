@@ -28,8 +28,9 @@ public class FuncionarioDAO extends GenericDAO {
 public void removefuncionario(funcionario fun){
     removePojo(fun);
 }
-public void updatefuncionario(funcionario fun){
+public int updatefuncionario(funcionario fun){
     savingPojo(fun);
+    return fun.getId();
 }
 
 public funcionario getfuncionario(int funId){

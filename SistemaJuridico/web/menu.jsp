@@ -80,9 +80,14 @@
                                 <h:commandLink action="#{ProcessoFaces.doAddProcesso}" value="Processo"/>
                             </rich:menuItem>
                         </rich:menuGroup>
-                        <rich:menuGroup value="Editar">
-                            <rich:menuItem submitMode="none" icon="./images/pessoa.png">
-                                <h:commandLink action="#{PersonFaces.doUpdatePerson}" value="Pessoa"/>
+                        <rich:menuGroup value="Andamento Processo">
+                            <rich:menuItem submitMode="none" icon="./images/Newdoc.png">
+                                <h:commandLink action="#{andamentoProcessoFaces.doAddAndamento}" value="Andamento"/>
+                            </rich:menuItem>
+                        </rich:menuGroup>
+                        <rich:menuGroup value="Ferramentas">
+                            <rich:menuItem submitMode="none" icon="./images/config.png">
+                                <h:commandLink  value="Configuração" action="#{Sistema.goConfig}"/>
                             </rich:menuItem>
                         </rich:menuGroup>
                         <rich:menuItem submitMode="none" >
@@ -101,13 +106,13 @@
                         </f:facet>
                         <rich:menuGroup value="Visualizar" icon="./images/view.png">
                             <rich:menuItem submitMode="none" icon="./images/pessoa.png">
-                                <h:commandLink action="#{PersonFaces.editPerson}" value="Pessoa"/>
+                                <h:commandLink action="#{PersonFaces.doUpdatePerson}" value="Pessoa"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/clientes.png">
                                 <h:commandLink action="#{ClienteFaces.doUpdateClient}" value="Cliente"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/funcionario.png">
-                                <h:commandLink action="#{FuncionarioFaces.doUpdateLayer}" value="Funcionário"/>
+                                <h:commandLink action="#{FuncionarioFaces.doUpdateEmployee}" value="Funcionário"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/usuario.png">
                                 <h:commandLink action="#{UserFaces.DoLinkedWithMenu}" value="Usuário"/>
@@ -156,8 +161,9 @@
                                 <h:outputText value="Ajuda"/>
                             </h:panelGroup>
                         </f:facet>
-                        <rich:menuItem submitMode="none" />
-                        <h:commandLink  value="Sobre"/>
+                        <rich:menuItem submitMode="none">
+                        <h:commandLink  value="Sobre" action="#{Sistema.goAbout()}"/>
+                        </rich:menuItem>
                     </rich:dropDownMenu>
                 </rich:toolBar>
                 <br/>

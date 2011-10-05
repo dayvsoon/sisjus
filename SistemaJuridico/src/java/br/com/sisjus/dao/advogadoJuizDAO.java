@@ -28,8 +28,9 @@ public class advogadoJuizDAO extends GenericDAO {
 public void removeLayer(advogadojuiz layer){
     removePojo(layer);
 }
-public void updateLayer(advogadojuiz layer){
+public int updateLayer(advogadojuiz layer){
     savingPojo(layer);
+    return layer.getId_advogadojuiz();
 }
 
 public advogadojuiz getLayer(int layerId){

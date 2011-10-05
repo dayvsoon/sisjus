@@ -68,12 +68,9 @@
                     <h:inputText id="coddir" size="16" value="#{ProcessoFaces.selectedProcesso.cod_direito}"/>
                     <h:outputText/>
                     
-                    <h:outputLabel for="status" value="Status do Processo: "/>
-                    <h:selectOneMenu id="status" value="#{ProcessoFaces.selectedProcesso.status}">
-                                        <f:selectItem itemLabel="Status..." />
-                                        <f:selectItems value="#{ProcessoFaces.statusOfBase}" />
+                    
       
-                    </h:selectOneMenu>
+                    
                     <h:outputText/>
                 
                     <h:outputLabel for="idjuiz" value="ID do Juiz: "/>
@@ -126,13 +123,10 @@
                 <legend>Descrição do Processo</legend>
                 <h:inputTextarea cols="70" rows="8" style="width: 1000px; height: 390px" value="#{ProcessoFaces.selectedProcesso.descricao_processo}"></h:inputTextarea>
             </fieldset>
-              <fieldset>
-                <legend>Observações do Processo</legend>
-                <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;" value="#{ProcessoFaces.selectedProcesso.observacao_processo}"></h:inputTextarea>
-            </fieldset>
+             
                
                 <h:commandButton value="Salvar" action="#{ProcessoFaces.FinishedProcess}" immediate="true" />
-                <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" immediate="true" />
+                <h:commandButton value="Voltar" action="#{UserFaces.backtoMenu}" immediate="true" />
                 <h:messages/>
 
         </h:form>

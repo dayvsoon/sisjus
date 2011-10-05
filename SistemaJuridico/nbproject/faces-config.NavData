@@ -3,26 +3,29 @@
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
         <Node id="menu.jsp" x="940" y="200" zoom="true"/>
-        <Node id="ExclusaoEdicao/EEpessoa.jsp" x="310" y="6" zoom="true"/>
+        <Node id="ExclusaoEdicao/EEpessoa.jsp" x="269" y="-2" zoom="true"/>
         <Node id="novojsp.jsp" x="150" y="600" zoom="true"/>
-        <Node id="Cadastro/protocolo.jsp" x="574" y="299" zoom="true"/>
         <Node id="Tela Incial.jsp" x="400" y="150" zoom="false"/>
+        <Node id="Cadastro/protocolo.jsp" x="574" y="299" zoom="true"/>
+        <Node id="Cadastro/andamento.jsp" x="921" y="495" zoom="true"/>
         <Node id="error.jsp" x="400" y="300" zoom="true"/>
         <Node id="Cadastro/cadastroadvogadojuiz.jsp" x="562" y="384" zoom="true"/>
-        <Node id="ExclusaoEdicao/EEcliente.jsp" x="1070" y="52" zoom="true"/>
         <Node id="Cadastro/cadastrocliente.jsp" x="566" y="338" zoom="true"/>
-        <Node id="welcomeJSF.jsp" x="118" y="143" zoom="false"/>
-        <Node id="MsgDeEntrada.jsp" x="184" y="254" zoom="false"/>
+        <Node id="ExclusaoEdicao/EEcliente.jsp" x="1252" y="-65" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="93" y="62" zoom="false"/>
         <Node id="Cadastro/cadastrofuncionario.jsp" x="560" y="494" zoom="true"/>
-        <Node id="ExclusaoEdicao/EEfuncionario.jsp" x="855" y="3" zoom="true"/>
+        <Node id="MsgDeEntrada.jsp" x="184" y="254" zoom="false"/>
+        <Node id="ExclusaoEdicao/EEfuncionario.jsp" x="907" y="-65" zoom="true"/>
         <Node id="Cadastro/cadastrousuario.jsp" x="14" y="367" zoom="true"/>
-        <Node id="Cadastro/cadastropessoa.jsp" x="559" y="444" zoom="true"/>
         <Node id="Cadastro/email.jsp" x="150" y="300" zoom="true"/>
-        <Node id="Cadastro/cadastroclientejuridico.jsp" x="1007" y="413" zoom="true"/>
+        <Node id="Cadastro/cadastropessoa.jsp" x="559" y="444" zoom="true"/>
+        <Node id="Cadastro/cadastroclientejuridico.jsp" x="1190" y="452" zoom="true"/>
+        <Node id="about.jsp" x="650" y="150" zoom="true"/>
         <Node id="Cadastro/cadastroprocesso.jsp" x="560" y="551" zoom="true"/>
-        <Node id="ExclusaoEdicao/EEProcesso.jsp" x="1099" y="106" zoom="false"/>
-        <Node id="ExclusaoEdicao/EEAdvogadoJuiz.jsp" x="597" y="51" zoom="true"/>
-        <Node id="Busca/BuscaPessoa.jsp" x="1278" y="283" zoom="false"/>
+        <Node id="configuracoes.jsp" x="1250" y="539" zoom="true"/>
+        <Node id="ExclusaoEdicao/EEProcesso.jsp" x="1146" y="101" zoom="false"/>
+        <Node id="ExclusaoEdicao/EEAdvogadoJuiz.jsp" x="535" y="-65" zoom="true"/>
+        <Node id="Busca/BuscaPessoa.jsp" x="1276" y="315" zoom="false"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

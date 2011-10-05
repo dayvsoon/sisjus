@@ -29,11 +29,10 @@
                     
                         
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:selectOneMenu value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}">
-                        <f:selectItem itemLabel="- Selecionar a Pessoa - "/>
+                    <rich:comboBox value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}" >
                         <f:selectItems value="#{FuncionarioFaces.clientsOfSystem}"></f:selectItems>
-                        <a4j:support event="onchange" reRender="idpessoa"/>
-                    </h:selectOneMenu>
+                    </rich:comboBox>
+                    
                     <h:outputText id="idpessoa" value="#{FuncionarioFaces.selectedFuncionario.nome_pessoa}" />
 
                     <h:outputLabel for="cargo" value="Cargo: "/>
@@ -43,7 +42,7 @@
 
                 </h:panelGrid>
                 <h:commandButton value="Salvar" action="#{FuncionarioFaces.FinishedFuncionario}"/>
-                <h:commandButton value="Voltar" action="#{FuncionarioFaces.GotoMenu}"/>
+                <h:commandButton value="Voltar" action="#{FuncionarioFaces.gotoMenu}"/>
         </fieldset>
     </h:form>
           </f:view>

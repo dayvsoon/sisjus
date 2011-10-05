@@ -18,7 +18,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SisMail - Enviar E-Mail</title>
     </head>
-    <body>
+    <body style="background-color: #e7e7e7">
         
         <h:form>
             <br/>

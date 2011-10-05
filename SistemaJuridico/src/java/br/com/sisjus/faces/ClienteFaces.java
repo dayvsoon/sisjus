@@ -70,7 +70,6 @@ public class ClienteFaces {
   }
   
 public String doUpdateClient(){
-
     return "gotoUpdateClienter";
 }
 public String FinishUpdateClient(){

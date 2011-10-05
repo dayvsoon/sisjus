@@ -157,7 +157,7 @@
             <to-view-id>/ExclusaoEdicao/EEfuncionario.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>gotoUpdatePerson</from-outcome>
+            <from-outcome>gotoUpdatePerson1</from-outcome>
             <to-view-id>/ExclusaoEdicao/EEpessoa.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -165,12 +165,28 @@
             <to-view-id>/ExclusaoEdicao/EEProcesso.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>gotoUpdatePerson</from-outcome>
+            <from-outcome>gotoUpdatePerson1</from-outcome>
             <to-view-id>/Busca/BuscaPessoa.jsp</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>gotoAddNewProtocolo</from-outcome>
             <to-view-id>/Cadastro/protocolo.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoUpdateClienter</from-outcome>
+            <to-view-id>/ExclusaoEdicao/EEcliente.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoAddNewAndamento</from-outcome>
+            <to-view-id>/Cadastro/andamento.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goabout</from-outcome>
+            <to-view-id>/about.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goConfig</from-outcome>
+            <to-view-id>/configuracoes.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -264,6 +280,10 @@
             <from-outcome>EditPerson</from-outcome>
             <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>gotobacktotheMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/ExclusaoEdicao/EEfuncionario.jsp</from-view-id>
@@ -306,6 +326,54 @@
         </navigation-case>
         <navigation-case>
             <from-outcome>MainMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ExclusaoEdicao/EEcliente.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>gotobacktotheMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>andamentoProcesso</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.AndamentoProcesso</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>andamentoProcessoDAO</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.dao.AndamentoProcessoDAO</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>andamentoProcessoFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.AndamentoProcessoFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/Cadastro/andamento.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>BackPage</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/about.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>aboutbackmenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>email</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.util.Email</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/configuracoes.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>aboutbackmenu</from-outcome>
             <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>

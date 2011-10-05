@@ -19,7 +19,7 @@
         <title>SisProtocolo - SisJus v0.1</title>
     </head>
     <f:view>
-    <body>
+    <body style="background-color: #e7e7e7">
         <h:form>
              <fieldset>
 	        <legend>Cadastro do Protpcolo</legend>
