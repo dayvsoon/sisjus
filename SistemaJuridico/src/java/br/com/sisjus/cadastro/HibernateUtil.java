@@ -10,6 +10,8 @@ package br.com.sisjus.cadastro;
  * @author miguel
  */
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -23,7 +25,7 @@ public class HibernateUtil {
     private static final long serialVersionUID = 1L;
     private static HibernateUtil hu;
     private SessionFactory sessionFactory;
-
+   
 
 
     private HibernateUtil() {
@@ -50,7 +52,8 @@ public class HibernateUtil {
                   .addAnnotatedClass(advogadojuiz.class)
                   .addAnnotatedClass(processo.class)
                   .addAnnotatedClass(Protocolo.class)
-                  .addAnnotatedClass(StatusProcesso.class) 
+                  .addAnnotatedClass(StatusProcesso.class)
+                  .addAnnotatedClass(AndamentoProcesso.class)
                   .buildSessionFactory();
     }
 
@@ -87,6 +90,9 @@ public class HibernateUtil {
     }
 
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
 
 }

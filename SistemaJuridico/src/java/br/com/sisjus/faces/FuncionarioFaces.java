@@ -68,18 +68,18 @@ public class FuncionarioFaces {
             ListOfFuncionario = null;
       return "gotoListFuncionario";
   }
-public String doUpdateLayer(){
-
+public String doUpdateEmployee(){
+    selectedFuncionario = new funcionario();
     return "gotoUpdateFuncionario";
 }
-public String FinishUpdateLayer(){
+public String finishUpdateEmployee(){
       funcionarioDAO.updatefuncionario(selectedFuncionario);
       ListOfFuncionario = null;
       return "gotoListFuncionario";
 
 
 }
-   public String GotoMenu(){
+   public String gotoMenu(){
       return "GotoMenu";
     }
     public int getChoise() {

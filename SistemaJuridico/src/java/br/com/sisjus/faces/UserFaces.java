@@ -61,10 +61,10 @@ public class UserFaces {
     public String LinkFromMSGEnterToMenu(){
         return "WaitSucessful";
     }
-    public String BacktoMenu(){
+    public String backtoMenu(){
         return "gotobacktotheMenu";
     }
-    public String BackToMainMenu(){
+    public String backToMainMenu(){
         return "MainMenu";
     }
     public String doAddUser(){

@@ -55,7 +55,7 @@
 		    	</h:panelGrid>
                         <h:panelGrid columns="3">
                             <h:commandButton value="Salvar" id="inserir" action="#{UserFaces.FinishedUser}" />
-                            <h:commandButton value="Voltar" action="#{UserFaces.BacktoMenu}" />
+                            <h:commandButton value="Voltar" action="#{UserFaces.backtoMenu}" />
                             <h:commandButton value="Voltar ao Menu Principal" action="#{UserFaces.backToMainMenu}"/>
                         </h:panelGrid>
 		    </fieldset>

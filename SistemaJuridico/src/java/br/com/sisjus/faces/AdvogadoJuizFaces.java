@@ -19,69 +19,74 @@ import javax.swing.JOptionPane;
  */
 public class AdvogadoJuizFaces {
 
-        private List<advogadojuiz> ListOfLayer = null;
-        private advogadoJuizDAO AdvogadoJuizDAO = new advogadoJuizDAO();
-        private advogadojuiz selectedLayer;
-        private pessoaDAO pssDAO = new pessoaDAO();
-        private int Choise;
+    private List<advogadojuiz> ListOfLayer = null;
+    private advogadoJuizDAO AdvogadoJuizDAO = new advogadoJuizDAO();
+    private advogadojuiz selectedLayer;
+    private pessoaDAO pssDAO = new pessoaDAO();
+    private int Choise;
 
     /** Creates a new instance of AdvogadoJuizFaces */
     public AdvogadoJuizFaces() {
     }
 
     public List<advogadojuiz> getListOfLayer() {
-       if (ListOfLayer == null){
-           ListOfLayer = AdvogadoJuizDAO.getLayers();
-       }
+        if (ListOfLayer == null) {
+            ListOfLayer = AdvogadoJuizDAO.getLayers();
+        }
         return ListOfLayer;
     }
-    public List<SelectItem> getClientsOfSystem(){
+
+    public List<SelectItem> getClientsOfSystem() {
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
-        for(pessoa prs : pssDAO.getPeople()){
-            toReturn.add(new SelectItem(prs.getNome()+" "+prs.getSobrenome(),prs.getNome()+" "+prs.getSobrenome()));
+        for (pessoa prs : pssDAO.getPeople()) {
+            toReturn.add(new SelectItem(prs.getNome() + " " + prs.getSobrenome(), prs.getNome() + " " + prs.getSobrenome()));
         }
         return toReturn;
     }
-      public String doAddLayer(){
+
+    public String doAddLayer() {
         selectedLayer = new advogadojuiz();
         return "gotoAddNewLayer";
     }
-  public String FinishedLayer(){
-       Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
-     System.out.println("Valor da escolha: "+Choise);
-     if(Choise == 0){
-      AdvogadoJuizDAO.addLayer(selectedLayer);
-      ListOfLayer = null;
-       JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
 
-      return "menu.jsp";
-  }else
-       JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
-      return "DontGoListCliente";
-  }
-  public String removeLayer(){
-      Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja remover?");
-     System.out.println("Valor da escolha: "+Choise);
-     if(Choise == 0){
-      AdvogadoJuizDAO.removeLayer(selectedLayer);
+    public String FinishedLayer() {
+        Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
+        System.out.println("Valor da escolha: " + Choise);
+        if (Choise == 0) {
+            AdvogadoJuizDAO.addLayer(selectedLayer);
+            ListOfLayer = null;
+            JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
+            return "menu.jsp";
+        } else {
+            JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
+        }
+        return "DontGoListCliente";
+    }
+
+    public String removeLayer() {
+        Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja remover?");
+        System.out.println("Valor da escolha: " + Choise);
+        if (Choise == 0) {
+            AdvogadoJuizDAO.removeLayer(selectedLayer);
             ListOfLayer = null;
             JOptionPane.showMessageDialog(null, "Dado removido do banco de dados com sucesso");
-      return "gotoListLayer";
-  }else
-       JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
-      return "DontGoListCliente";
-  }
-public String doUpdateLayer(){
+            return "gotoListLayer";
+        } else {
+            JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
+        }
+        return "DontGoListCliente";
+    }
 
-    return "gotoUpdateLayer";
-}
-public String FinishUpdateLayer(){
-      AdvogadoJuizDAO.updateLayer(selectedLayer);
-      ListOfLayer = null;
-      return "gotoListLayer";
+    public String doUpdateLayer() {
+        selectedLayer = new advogadojuiz();
+        return "gotoUpdateLayer";
+    }
 
-
-}
+    public String FinishUpdateLayer() {
+        AdvogadoJuizDAO.updateLayer(selectedLayer);
+        ListOfLayer = null;
+        return "gotoListLayer";
+    }
 
     public int getChoise() {
         return Choise;
@@ -106,5 +111,12 @@ public String FinishUpdateLayer(){
     public void setSelectedLayer(advogadojuiz selectedLayer) {
         this.selectedLayer = selectedLayer;
     }
-  
+
+    public pessoaDAO getPssDAO() {
+        return pssDAO;
+    }
+
+    public void setPssDAO(pessoaDAO pssDAO) {
+        this.pssDAO = pssDAO;
+    }
 }

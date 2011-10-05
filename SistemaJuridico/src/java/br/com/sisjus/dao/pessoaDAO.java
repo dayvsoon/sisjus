@@ -10,6 +10,7 @@ import br.com.sisjus.cadastro.pessoa;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
@@ -45,9 +46,9 @@ public pessoa getPerson(Integer personId){
     return person;
 }
 
-public List<pessoa> getPesquisarPessoa(Integer personId){
+public List<pessoa> getPesquisarPessoa(){
       Criteria c = getSession().createCriteria(pessoa.class);
-	        c.add(Restrictions.ilike("id", personId));
+	        c.add(Restrictions.naturalId());
 	pessoa pes = (pessoa) c.uniqueResult();
                 c.addOrder(Order.asc("id"));
 
