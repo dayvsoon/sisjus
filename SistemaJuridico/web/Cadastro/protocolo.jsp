@@ -29,6 +29,7 @@
             <h:selectOneMenu value="#{ProtocoloFaces.selectedProtocolo.numeroProcesso}" id="Nprocesso">
                 <f:selectItem itemLabel=" - Selecione o Processo - "/>
                 <f:selectItems id="SlectNProcesso" value="#{ProtocoloFaces.protocolosOfSystem}" />
+                <a4j:support event="onsubmit" reRender="Nprocesso"/>
             </h:selectOneMenu>
                 
             <h:outputLabel for="OpcaoArquivado" value="Arquivado: "/>

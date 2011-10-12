@@ -21,7 +21,7 @@
         <body>
             <h:form id="FormDeExclusaoEdicao">
                 <h1 align="center">SisJus - Sistema Sistema de Organização De Processos Jurídicos </h1>
-                <h3 align="center">Tabela De Advogado e Juiz</h3>
+                <h3 align="center">Tabela De Funcionário</h3>
                 <rich:dataTable var="dados" value="#{FuncionarioFaces.listOfFuncionario}" align="center">
                     <rich:column>
                         <f:facet name="header">

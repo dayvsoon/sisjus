@@ -51,7 +51,7 @@ public class FuncionarioFaces {
         selectedFuncionario = new funcionario();
         return "gotoAddNewFuncionario";
     }
-  public String FinishedFuncionario(){
+  public String finishedFuncionario(){
        Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
      System.out.println("Valor da escolha: "+Choise);
      if(Choise == 0){
@@ -69,7 +69,6 @@ public class FuncionarioFaces {
       return "gotoListFuncionario";
   }
 public String doUpdateEmployee(){
-    selectedFuncionario = new funcionario();
     return "gotoUpdateFuncionario";
 }
 public String finishUpdateEmployee(){
