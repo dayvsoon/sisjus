@@ -2,6 +2,7 @@
     Document   : andamento
     Created on : 28/09/2011, 21:41:00
     Author     : miguel
+    Atualizado : 10/10/2011 22:24:43
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -38,8 +39,13 @@
                         
                             <h:outputText id="OTDescricaoProcesso" value="Descricao Processo: "/>
                             <h:inputTextarea cols="70" rows="7" style="width: 1000px; height: 20;" value="#{andamentoProcessoFaces.selectedAndamento.observacao_processo}"></h:inputTextarea>
-                        
-                            <h:commandButton value="Salvar"/>
+                            <h:outputText id="otemail" value="E-mail:"/>
+                            <rich:comboBox value="#{andamentoProcessoFaces.emailDeEnvio}" id="EmailEnvio" >
+                                <f:selectItems value="#{andamentoProcessoFaces.emailUser}" />
+                            </rich:comboBox>
+                            
+                            
+                            <h:commandButton value="Salvar" action="#{andamentoProcessoFaces.finishedProtocolo}"/>
                             <h:commandButton value="Voltar" action="#{andamentoProcessoFaces.backToPageBefore}"/>
                     </h:panelGrid> 
                 </h:form>

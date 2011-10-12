@@ -4,13 +4,15 @@
  */
 package br.com.sisjus.util;
 
+
+import java.util.Date;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import javax.mail.internet.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,9 +31,13 @@ public class Email {
     public Email() {
     }
 
-    public Email(String dominio) {
+    public Email(String dominio,String seuEmail, String assunto, String emailEnvio,String texto, String password) {
         this.dominio = dominio;
-        
+        this.SeuEmail = seuEmail;
+        this.AssuntoEmail = assunto;
+        this.EmailDeEnvio = emailEnvio;
+        this.CorpoDoEmail = texto;
+        this.SuaSenha = password;
     }
     
     
@@ -66,7 +72,15 @@ public class Email {
 
         }
         System.out.println(dominio);
-        Session session = Session.getInstance(props);
+       Session session = Session.getDefaultInstance(props,
+                new javax.mail.Authenticator() {
+
+          
+            @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(SeuEmail, SuaSenha);
+                    }
+                });
         session.setDebug(true);
       
 
@@ -74,11 +88,10 @@ public class Email {
  
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(SeuEmail));
-			message.setRecipients(Message.RecipientType.TO,
-				InternetAddress.parse(EmailDeEnvio));
+			message.setRecipients(Message.RecipientType.TO,  InternetAddress.parse(EmailDeEnvio));
 			message.setSubject(AssuntoEmail);
 			message.setText(CorpoDoEmail);
- 
+                        message.setSentDate(new Date());
 						
 
 			Transport.send(message);
@@ -89,7 +102,7 @@ public class Email {
 	
             System.out.println("Feito!!!");
             JOptionPane.showMessageDialog(null, "Está sendo enviado...");
-            Thread.sleep(120); 
+            Thread.sleep(1200); 
             JOptionPane.showMessageDialog(null, "Enviado com Sucesso!");
         } catch (MessagingException e) {
            JOptionPane.showMessageDialog(null, "Envio não completado devido "+e);

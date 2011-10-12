@@ -41,7 +41,7 @@
 
 
                 </h:panelGrid>
-                <h:commandButton value="Salvar" action="#{FuncionarioFaces.FinishedFuncionario}"/>
+                <h:commandButton value="Salvar" action="#{FuncionarioFaces.finishedFuncionario}"/>
                 <h:commandButton value="Voltar" action="#{FuncionarioFaces.gotoMenu}"/>
         </fieldset>
     </h:form>

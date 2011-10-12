@@ -16,12 +16,12 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>Exclusão/Edição  - Advogado ou Juiz - SisJus </title>
+            <title>Exclusão/Edição  - Cliente - SisJus </title>
         </head>
         <body>
             <h:form id="FormDeExclusaoEdicao">
                 <h1 align="center">SisJus - Sistema Sistema de Organização De Processos Jurídicos </h1>
-                <h3 align="center">Tabela De Advogado e Juiz</h3>
+                <h3 align="center">Tabela De Cliente</h3>
                 <rich:dataTable var="dados" value="#{ClienteFaces.listOfClient}" align="center">
                     <rich:column>
                         <f:facet name="header">

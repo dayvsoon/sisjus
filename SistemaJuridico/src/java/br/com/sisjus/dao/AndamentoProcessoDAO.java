@@ -43,4 +43,6 @@ public List<AndamentoProcesso> getAndamentoDosProcessos(){
    return  getCleanList(AndamentoProcesso.class, "from andamentoprocesso andamentoprocesso where numeroProcesso = :numeroProcesso");
            }
 
+ 
+
 }

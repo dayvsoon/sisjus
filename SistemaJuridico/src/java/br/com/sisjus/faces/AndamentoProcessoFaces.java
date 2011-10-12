@@ -11,9 +11,9 @@ import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.cadastro.processo;
 import br.com.sisjus.dao.AndamentoProcessoDAO;
 import br.com.sisjus.dao.StatusProcessoDAO;
+import br.com.sisjus.dao.pessoaDAO;
 import br.com.sisjus.dao.processDAO;
 import br.com.sisjus.util.Email;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
@@ -24,60 +24,84 @@ import javax.swing.JOptionPane;
  * @author miguel
  */
 public class AndamentoProcessoFaces {
-    
-        private List<AndamentoProcesso> ListOfAndamento = null;
-        private AndamentoProcessoDAO andamentoDAO = new AndamentoProcessoDAO();
-        private AndamentoProcesso selectedAndamento;
-        private pessoa selectPessoa;
-        private processDAO procDAO = new processDAO();
-        private StatusProcessoDAO statusDao = new StatusProcessoDAO();
-        private int Choise;
-        private boolean sendEmail;
-        private String dominioEmail;
+
+    private List<AndamentoProcesso> ListOfAndamento = null;
+    private AndamentoProcessoDAO andamentoDAO = new AndamentoProcessoDAO();
+    private AndamentoProcesso selectedAndamento;
+    private pessoa selectPessoa;
+    private processDAO procDAO = new processDAO();
+    private pessoaDAO pssDAO = new pessoaDAO();
+    private StatusProcessoDAO statusDao = new StatusProcessoDAO();
+    private int Choise;
+    private boolean sendEmail;
+    private String dominioEmail;
+    private String emailDeEnvio;
+    private String assunto;
+    private String seuEmail;
+    private String corpoEmail;
+    private String password;
+
     /** Creates a new instance of AndamentoProcessoFaces */
     public AndamentoProcessoFaces() {
     }
-    
-  
-    
-    public String doAddAndamento(){
+
+    public String doAddAndamento() {
         selectedAndamento = new AndamentoProcesso();
         return "gotoAddNewAndamento";
     }
-    
-     public String backToPageBefore(){
-         System.out.println("Voltando para o menu");
+
+    public String backToPageBefore() {
+        System.out.println("Voltando para o menu");
         return "BackPage";
     }
-     
-    
-    
-    public List<SelectItem> getAndamentosOfSystem(){
+
+    public List<SelectItem> getAndamentosOfSystem() {
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
-        for(processo prc : procDAO.getProcesses() ){
+        for (processo prc : procDAO.getProcesses()) {
             toReturn.add(new SelectItem(prc.getNumero_processo()));
         }
         return toReturn;
     }
-     public List<SelectItem> getStatusOfBase(){
+
+    public List<SelectItem> getStatusOfBase() {
         List<SelectItem> toReturnStatus = new LinkedList<SelectItem>();
-        for(StatusProcesso status : statusDao.getListStatus()){
-            toReturnStatus.add(new SelectItem(status.getId(),status.getId()+" - "+status.getDescricao()));
+        for (StatusProcesso status : statusDao.getListStatus()) {
+            toReturnStatus.add(new SelectItem(status.getId(), status.getId() + " - " + status.getDescricao()));
         }
         return toReturnStatus;
     }
-    
-    public String FinishedProtocolo() throws InterruptedException {
-        System.out.println("dominio: "+dominioEmail);
-        System.out.println("Envair Email: "+sendEmail);
+
+    public List<SelectItem> getEmailUser() {
+        List<SelectItem> toReturnEmail = new LinkedList<SelectItem>();
+        for (pessoa prs : pssDAO.getEmailUser()) {
+            toReturnEmail.add(new SelectItem(prs.getEmail(), prs.getNome() + " " + prs.getSobrenome()));
+        }
+        return toReturnEmail;
+    }
+
+    public String finishedProtocolo() throws InterruptedException {
+
+        System.out.println("Email de envio: " + emailDeEnvio);
+        System.out.println("dominio: " + dominioEmail);
+        System.out.println("Envair Email: " + sendEmail);
+        assunto = "Andamento do Processo sob Nº " + selectedAndamento.getNumeroProcesso();
+        corpoEmail = selectedAndamento.getObservacao_processo();
+        System.out.println("-->  " + assunto);
+        System.out.println("Escrito  " + corpoEmail);
         Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
         System.out.println("Valor da escolha: " + Choise);
         if (Choise == 0) {
-            if(sendEmail == true){
-                Email email = new Email(dominioEmail);
+            if (sendEmail == true) {
+                Email email = new Email(dominioEmail, seuEmail, assunto, emailDeEnvio, corpoEmail,password);
+                System.out.println("Processo de captura concluido ");
                 email.Send();
-            }else
-            andamentoDAO.addAndamentoProcesso(selectedAndamento);
+                andamentoDAO.addAndamentoProcesso(selectedAndamento);
+                ListOfAndamento = null;
+                JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
+                return "gotoListProtocolo";
+            } else {
+                andamentoDAO.addAndamentoProcesso(selectedAndamento);
+            }
             ListOfAndamento = null;
             JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
             return "gotoListProtocolo";
@@ -87,7 +111,7 @@ public class AndamentoProcessoFaces {
         return "DontGoListProtocolo";
 
     }
-     
+
     public String removeProtocolo() {
         Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja remover?");
         if (Choise == 0) {
@@ -101,13 +125,13 @@ public class AndamentoProcessoFaces {
         return "DontGoListProtocolo";
     }
 
-public String FinishUpdateProtocolo(){
+    public String FinishUpdateProtocolo() {
 
-      andamentoDAO.updateProtocolo(selectedAndamento);
-      ListOfAndamento = null;
-      return "gotoListProtocolo";
+        andamentoDAO.updateProtocolo(selectedAndamento);
+        ListOfAndamento = null;
+        return "gotoListProtocolo";
 
-}
+    }
 
     public int getChoise() {
         return Choise;
@@ -165,5 +189,67 @@ public String FinishUpdateProtocolo(){
         this.statusDao = statusDao;
     }
 
+    public String getDominioEmail() {
+        return dominioEmail;
+    }
 
+    public void setDominioEmail(String dominioEmail) {
+        this.dominioEmail = dominioEmail;
+    }
+
+    public pessoa getSelectPessoa() {
+        return selectPessoa;
+    }
+
+    public void setSelectPessoa(pessoa selectPessoa) {
+        this.selectPessoa = selectPessoa;
+    }
+
+    public String getEmailDeEnvio() {
+        return emailDeEnvio;
+    }
+
+    public void setEmailDeEnvio(String emailDeEnvio) {
+        this.emailDeEnvio = emailDeEnvio;
+    }
+
+    public pessoaDAO getPssDAO() {
+        return pssDAO;
+    }
+
+    public void setPssDAO(pessoaDAO pssDAO) {
+        this.pssDAO = pssDAO;
+    }
+
+    public String getAssunto() {
+        return assunto;
+    }
+
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
+    }
+
+    public String getSeuEmail() {
+        return seuEmail;
+    }
+
+    public void setSeuEmail(String seuEmail) {
+        this.seuEmail = seuEmail;
+    }
+
+    public String getCorpoEmail() {
+        return corpoEmail;
+    }
+
+    public void setCorpoEmail(String corpoEmail) {
+        this.corpoEmail = corpoEmail;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

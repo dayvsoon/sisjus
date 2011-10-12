@@ -6,6 +6,7 @@
 package br.com.sisjus.dao;
 
 import br.com.sisjus.cadastro.HibernateUtil;
+import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.cadastro.processo;
 import java.io.Serializable;
 import java.util.List;
@@ -88,6 +89,16 @@ public processo SearchProcess(String query){
 
 		return (processo)q.uniqueResult();
 	}
+public List<pessoa> buscarSQL(String query){
+    Session ses = getSesseion();
+       Query q = ses.createSQLQuery(query);
+       //q.setParameter("email", q); 
+       ses.getTransaction().commit();
+          // ses.close();
+		
+
+		return q.list();
+}
 //@SuppressWarnings("unchecked")
  //public T load(int id){
    //  return (T) session.load(persistentClass, id);

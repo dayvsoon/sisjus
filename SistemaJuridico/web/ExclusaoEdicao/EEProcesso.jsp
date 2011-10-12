@@ -16,7 +16,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>Exclusão/Edição  - Advogado ou Juiz - SisJus </title>
+            <title>Exclusão/Edição  - Processos - SisJus </title>
         </head>
         <body>
             <h:form id="FormDeExclusaoEdicao">

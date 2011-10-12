@@ -38,7 +38,7 @@ public class PersonFaces {
     public String doSearch(){
          if (ListOfPerson == null){
           //  selectedPerson = new pessoa().pesquisarPorId(id); 
-           ListOfPerson = (List<pessoa>) personDAO.getPesquisarPessoa();
+           ListOfPerson = (List<pessoa>) personDAO.getPeopleByID();
        }
     return "gotoSearch";
 }
@@ -81,8 +81,6 @@ public class PersonFaces {
           return "EditPerson";
       }
       public String doUpdatePerson(){
-           personDAO.addPerson(selectedPerson);
-          ListOfPerson = null;
        return "gotoUpdatePerson1";
 }
         public String updatePerson(){

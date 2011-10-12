@@ -35,7 +35,7 @@ public processo getProcess(int processId){
 }
 
 public List<processo> getProcesses(){
-   return  getCleanList(processo.class,"from processo process");
+   return  getCleanList(processo.class,"from processo process where 'arquivado'<> 'Sim'");
 
 }
 

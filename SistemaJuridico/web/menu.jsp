@@ -59,7 +59,7 @@
                         </f:facet>
                         <rich:menuGroup value="Cadastro" icon="./images/cadastro.png">
                             <rich:menuItem submitMode="none" icon="./images/pessoa.png">
-                                <h:commandLink action="#{PersonFaces.doAddPerson}" value="Pessoa"/>
+                                <h:commandLink action="#{PersonFaces.doAddPerson}" id="addpessoa" value="Pessoa"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/clientes.png">
                                 <h:commandLink action="#{ClienteFaces.doAddCliente}" value="Cliente"/>
@@ -91,7 +91,7 @@
                             </rich:menuItem>
                         </rich:menuGroup>
                         <rich:menuItem submitMode="none" >
-                            <h:commandLink  value="Sair / Log Out"/>
+                            <h:commandLink  value="Sair / Log Out" action="logout"/>
                         </rich:menuItem>
                     </rich:dropDownMenu>
 
@@ -169,6 +169,7 @@
                 <br/>
                 <h4>Sisjus versão <h:outputText id="Version" value="#{Sistema.version}" /> </h4>
                 <h5>  <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 10pt; text-align: left ; padding-left: 1px; padding-bottom: 2em "/>, <span style="font-size: 9pt; text-align: left" id="timer">Relógio</span> , <h:commandLink style="font-size: 9pt; text-align: left" value="Sing Out"/>    </h5>
+                <rich:hotKey key="alt+p" handler="rich:component('addpessoa')}.show()" /> 
             </h:form>
         </body>
     </f:view>

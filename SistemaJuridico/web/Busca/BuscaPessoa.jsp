@@ -21,16 +21,16 @@
         <title>SisJus - Buscar Pessoa</title>
      
     </head>
-    <body>
+    <body style="background-color: #e7e7e7">
         <h:form>
             <h:panelGrid columns="3" id="BuscaPessoa">
                 <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                <h:selectOneMenu id="somcliente" value="#{PersonFaces.selectedPerson.id}">
-                        <f:selectItems value="#{PersonFaces.peopleBD}"/>
+                <h:selectOneMenu id="somcliente" value="#{pessoaDAO.id}">
+                    <f:selectItems value="#{PersonFaces.peopleBD}"/>
                         <a4j:support event="onchange" reRender="nome"/>
                     </h:selectOneMenu>
                 <h:commandButton value="Pesquisar" action="#{PersonFaces.doSearch}">
-                    <a4j:support event="onsubmit" reRender="nome,PanelInputs"/>
+                    <a4j:support event="onchange" reRender="nome,sobrenome,sexo,rgpessoa,txtDate,endereco,bairro,cep,uf,cidade,email,itelefone,telCel,dataDeCadastro,profissao"/>
                 </h:commandButton>    
             </h:panelGrid>
         <fieldset>
@@ -82,6 +82,7 @@
                              <h:outputLabel for="profissao" value="Profissão: "/>
                              <h:inputText id="profissao"  size="40" value="#{PersonFaces.selectedPerson.profissao}"/>
                          </h:panelGrid>
+                            
         </fieldset>
             <h:panelGrid columns="2">
                 <h:commandButton value="Salvar" action="#{PersonFaces.updatePerson}">
