@@ -8,6 +8,7 @@
         <Node id="error.jsp" x="400" y="300" zoom="true"/>
         <Node id="Cadastro/cadastroadvogadojuiz.jsp" x="562" y="384" zoom="true"/>
         <Node id="Cadastro/cadastrocliente.jsp" x="566" y="338" zoom="true"/>
+        <Node id="Cadastro/cadastrojuiz.jsp" x="150" y="459" zoom="true"/>
         <Node id="Cadastro/cadastrofuncionario.jsp" x="560" y="494" zoom="true"/>
         <Node id="Cadastro/cadastropessoa.jsp" x="559" y="444" zoom="true"/>
         <Node id="about.jsp" x="650" y="150" zoom="true"/>
@@ -18,13 +19,14 @@
         <Node id="Cadastro/andamento.jsp" x="921" y="495" zoom="true"/>
         <Node id="ExclusaoEdicao/EEcliente.jsp" x="1252" y="-65" zoom="true"/>
         <Node id="welcomeJSF.jsp" x="93" y="62" zoom="false"/>
+        <Node id="Busca/tramite.jsp" x="650" y="300" zoom="true"/>
         <Node id="MsgDeEntrada.jsp" x="184" y="254" zoom="false"/>
         <Node id="ExclusaoEdicao/EEfuncionario.jsp" x="895" y="-65" zoom="true"/>
         <Node id="Cadastro/cadastrousuario.jsp" x="14" y="367" zoom="true"/>
         <Node id="Cadastro/email.jsp" x="150" y="300" zoom="true"/>
         <Node id="Cadastro/cadastroclientejuridico.jsp" x="1190" y="452" zoom="true"/>
-        <Node id="ExclusaoEdicao/EEProcesso.jsp" x="1146" y="101" zoom="false"/>
         <Node id="configuracoes.jsp" x="1250" y="539" zoom="true"/>
+        <Node id="ExclusaoEdicao/EEProcesso.jsp" x="1223" y="121" zoom="false"/>
         <Node id="ExclusaoEdicao/EEAdvogadoJuiz.jsp" x="535" y="-65" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>

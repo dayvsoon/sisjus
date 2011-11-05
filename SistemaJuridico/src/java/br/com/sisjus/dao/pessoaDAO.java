@@ -40,6 +40,7 @@ public class pessoaDAO extends GenericDAO {
 
     public pessoa getPerson(Integer personId) {
         pessoa person = gettingPojo(pessoa.class, personId);
+        System.out.println("Pessoa Encontrada "+ person.getNome());
         return person;
     }
 
@@ -60,7 +61,7 @@ public class pessoaDAO extends GenericDAO {
         return getCleanList(pessoa.class, "from pessoa person");
     }
     public List<pessoa> getPeopleByID() {
-        return getCleanList(pessoa.class, "from pessoa person where 'id' = :id",Id);
+        return getCleanList(pessoa.class, "from pessoa person where 'id' = '"+Id+"'");
 
     }
  

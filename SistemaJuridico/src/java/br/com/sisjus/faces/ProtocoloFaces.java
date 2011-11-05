@@ -108,7 +108,7 @@ public String BackingToMenu(){
 
 public List<SelectItem> getProtocolosOfSystem(){
         List<SelectItem> toReturn = new LinkedList<SelectItem>();
-        for(processo prc : procDAO.getProcesses() ){
+        for(processo prc : procDAO.getProcessesProtocol() ){
             toReturn.add(new SelectItem(prc.getNumero_processo()));
         }
         return toReturn;

@@ -96,15 +96,15 @@ public List<SelectItem> getMajorLayerOfSystem(){
       return "gotoListProcess";
   }
 public String doUpdateProcess(){
-
     return "gotoUpdateProcess";
 }
 public String FinishUpdateProcess(){
       processDAO.updateProcess(selectedProcesso);
       ListOfProcess = null;
       return "gotoListProcess";
-
-
+}
+public String backPage(){
+    return "backPageMenu";
 }
 
     public advogadoJuizDAO getAdzDAO() {

@@ -48,69 +48,60 @@
                             <h:outputText  value="Pessoa Réu"  />
                         </f:facet>
                         <h:inputText value="#{dados.pessoa_reu}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Advogado Réu"  />
                         </f:facet>
                         <h:inputText value="#{dados.advogado_reu}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Número do Processo"  />
                         </f:facet>
                         <h:inputText value="#{dados.numero_processo}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Código Do Direito"  />
                         </f:facet>
                         <h:inputText value="#{dados.cod_direito}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Status"  />
                         </f:facet>
                         <h:selectOneMenu value="#{dados.status}" ></h:selectOneMenu>>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Juiz da Sentença"  />
                         </f:facet>
                         <h:inputText value="#{dados.juiz_sentenca}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Data inicial"  />
                         </f:facet>
                         <h:inputText value="#{dados.datainicial}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Data Final"  />
                         </f:facet>
                         <h:inputText value="#{dados.datafinal}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Usuário"  />
                         </f:facet>
                         <h:inputText value="#{dados.owner}" ></h:inputText>
-
                     </rich:column>
                     <rich:column>
                         <f:facet name="header">
                             <h:outputText  value="Ação"  />
                         </f:facet>
-                        <h:commandLink value="Excluir"  action="#{ProcessoFaces.removeProcess}"></h:commandLink> &nbsp;
+                        <h:commandLink value="Excluir" action="#{ProcessoFaces.removeProcess}" immediate="true"></h:commandLink> &nbsp;
                     </rich:column>
                 </rich:dataTable>
                     <h:commandButton value="Voltar" action="#{UserFaces.backtoMenu}" />

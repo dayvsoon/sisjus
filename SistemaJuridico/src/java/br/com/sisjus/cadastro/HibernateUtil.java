@@ -10,8 +10,7 @@ package br.com.sisjus.cadastro;
  * @author miguel
  */
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

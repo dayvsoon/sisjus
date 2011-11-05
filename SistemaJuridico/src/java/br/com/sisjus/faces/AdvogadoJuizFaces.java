@@ -88,6 +88,16 @@ public class AdvogadoJuizFaces {
         return "gotoListLayer";
     }
 
+    public String beforePage(){
+        return "beforePage";
+    }
+    public String goJuiz(){
+      selectedLayer = new advogadojuiz();
+        return "goJuiz";
+    }
+    public String goJuizMenu(){
+        return "goJuizMenu";
+    }
     public int getChoise() {
         return Choise;
     }

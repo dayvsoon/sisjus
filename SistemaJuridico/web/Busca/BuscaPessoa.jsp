@@ -25,9 +25,9 @@
         <h:form>
             <h:panelGrid columns="3" id="BuscaPessoa">
                 <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                <h:selectOneMenu id="somcliente" value="#{pessoaDAO.id}">
+                <h:selectOneMenu id="somcliente" value="#{PersonFaces.selectedPerson.id}">
                     <f:selectItems value="#{PersonFaces.peopleBD}"/>
-                        <a4j:support event="onchange" reRender="nome"/>
+                        <a4j:support event="onchange" reRender="nome,sobrenome,sexo,rgpessoa"/>
                     </h:selectOneMenu>
                 <h:commandButton value="Pesquisar" action="#{PersonFaces.doSearch}">
                     <a4j:support event="onchange" reRender="nome,sobrenome,sexo,rgpessoa,txtDate,endereco,bairro,cep,uf,cidade,email,itelefone,telCel,dataDeCadastro,profissao"/>

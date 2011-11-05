@@ -63,7 +63,7 @@
 
     </rich:column>
         </rich:dataTable>
-    <h:commandButton value="Voltar" action="#{UserFaces.backtoMenu}" />
+    <h:commandButton value="Voltar" action="#{AdvogadoJuizFaces.beforePage}" />
         </h:form>
     </body>
 </html>
