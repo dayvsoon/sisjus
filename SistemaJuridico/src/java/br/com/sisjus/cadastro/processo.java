@@ -7,14 +7,7 @@ package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
 import java.util.Calendar;
-
-
 import java.util.Date;
-import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.validator.ValidatorException;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +17,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.swing.JOptionPane;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 /**
@@ -80,20 +72,20 @@ public class processo implements Serializable {
 
     @Column(name="processobservation")
     private String observacao_processo;
-
+    
     @Column(name="ID_OWNER")
-    private Usuario owner;
+    private String owner;
 
     @Column(name="prazo")
     private Integer prazo;
     @Transient
     public int ContadorRegressivo;
 
-    public Usuario getOwner() {
+    public String getOwner() {
         return owner;
     }
 
-    public void setOwner(Usuario owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 

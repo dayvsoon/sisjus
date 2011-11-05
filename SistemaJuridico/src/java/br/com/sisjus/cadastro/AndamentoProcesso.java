@@ -22,7 +22,7 @@ public class AndamentoProcesso implements Serializable{
     @Column(name="id")
     private String numeroProcesso;
     @Column(name="status")
-    private String status;
+    private int status;
     @Column(name="datamovimento")
     private String data = br.com.sisjus.util.Data.Formatador;
     @Column(name="processobservation")
@@ -56,11 +56,11 @@ public class AndamentoProcesso implements Serializable{
         this.observacao_processo = observacao_processo;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
     

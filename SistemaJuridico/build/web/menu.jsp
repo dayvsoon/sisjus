@@ -25,7 +25,16 @@
                 margin-right: 2px;
             }
         </style>
-        <script LANGUAGE="JavaScript">
+        <script language="JavaScript" src="shortcut.js"></script>
+        <script>    
+                shortcut.add("f2",function() {
+              
+                alert("Foi pressionado a sequencia de teclas F2!");
+                window.location="./Cadastro/cadastropessoa.jsp"
+                       
+            });
+        </script>
+        <script language="JavaScript">
             function showTimer() {
                 var time=new Date();
                 var hour=time.getHours();
@@ -41,7 +50,7 @@
                 // O metodo nativo setInterval executa uma determinada funcao em um determinado tempo
                 setInterval(showTimer,1000);
             }
-
+            
         </script>
 
     </head>
@@ -54,7 +63,7 @@
                         <f:facet name="label">
                             <h:panelGroup>
                                 <h:graphicImage value="./images/file.png" styleClass="pic"/>
-                                <h:outputText value="File"/>
+                                <h:outputText value="Arquivo"/>
                             </h:panelGroup>
                         </f:facet>
                         <rich:menuGroup value="Cadastro" icon="./images/cadastro.png">
@@ -74,7 +83,7 @@
                                 <h:commandLink action="#{AdvogadoJuizFaces.doAddLayer}" value="Advogado"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/juiz.png">
-                                <h:commandLink action="#{AdvogadoJuizFaces.doAddLayer}" value="Juiz"/>
+                                <h:commandLink action="#{AdvogadoJuizFaces.goJuiz}" value="Juiz"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/Newdoc.png">
                                 <h:commandLink action="#{ProcessoFaces.doAddProcesso}" value="Processo"/>
@@ -101,7 +110,7 @@
                         <f:facet name="label">
                             <h:panelGroup>
                                 <h:graphicImage value="./images/viewmain.png" styleClass="pic"/>
-                                <h:outputText value="View"/>
+                                <h:outputText value="Buscar"/>
                             </h:panelGroup>
                         </f:facet>
                         <rich:menuGroup value="Visualizar" icon="./images/view.png">
@@ -158,6 +167,13 @@
                     <rich:dropDownMenu>
                         <f:facet name="label">
                             <h:panelGroup>
+                                <h:outputText value="Relatórios"/>
+                            </h:panelGroup>
+                        </f:facet>
+                    </rich:dropDownMenu>
+                    <rich:dropDownMenu>
+                        <f:facet name="label">
+                            <h:panelGroup>
                                 <h:outputText value="Ajuda"/>
                             </h:panelGroup>
                         </f:facet>
@@ -169,7 +185,8 @@
                 <br/>
                 <h4>Sisjus versão <h:outputText id="Version" value="#{Sistema.version}" /> </h4>
                 <h5>  <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 10pt; text-align: left ; padding-left: 1px; padding-bottom: 2em "/>, <span style="font-size: 9pt; text-align: left" id="timer">Relógio</span> , <h:commandLink style="font-size: 9pt; text-align: left" value="Sing Out"/>    </h5>
-                <rich:hotKey key="alt+p" handler="rich:component('addpessoa')}.show()" /> 
+                <rich:hotKey key="Alt+p" handler="#{rich:element('addpessoa')}.show();return gotoAddNewPerson;" /> 
+              
             </h:form>
         </body>
     </f:view>

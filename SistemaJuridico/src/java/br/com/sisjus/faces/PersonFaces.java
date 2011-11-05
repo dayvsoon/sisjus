@@ -5,7 +5,6 @@
 
 package br.com.sisjus.faces;
 
-import br.com.sisjus.cadastro.HibernateUtil;
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.pessoaDAO;
 import java.util.ArrayList;
@@ -35,13 +34,12 @@ public class PersonFaces {
     }
         
 
-    public String doSearch(){
-         if (ListOfPerson == null){
-          //  selectedPerson = new pessoa().pesquisarPorId(id); 
-           ListOfPerson = (List<pessoa>) personDAO.getPeopleByID();
-       }
-    return "gotoSearch";
-}
+    public void doSearch(){
+      //  selectedPerson = new pessoa().pesquisarPorId(id); 
+           selectedPerson =  personDAO.getPerson(selectedPerson.getId());
+    }
+    //return "gotoSearch";
+
     
     public List<pessoa> getPessoaPesquisa(Integer id){
         if (ListOfPerson == null){

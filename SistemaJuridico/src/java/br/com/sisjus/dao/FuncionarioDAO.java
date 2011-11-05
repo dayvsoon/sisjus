@@ -14,33 +14,31 @@ import java.util.List;
  */
 public class FuncionarioDAO extends GenericDAO {
 
+    public FuncionarioDAO() {
+    }
 
-    public FuncionarioDAO(){
+    public int addfuncionario(funcionario fun) {
+        savingPojo(fun);
+        return fun.getId();
+
 
     }
 
-    public int addfuncionario(funcionario fun){
-  savingPojo(fun);
-  return fun.getId();
+    public void removefuncionario(funcionario fun) {
+        removePojo(fun);
+    }
 
+    public int updatefuncionario(funcionario fun) {
+        updatePojo(fun);
+        return fun.getId();
+    }
 
-}
-public void removefuncionario(funcionario fun){
-    removePojo(fun);
-}
-public int updatefuncionario(funcionario fun){
-    savingPojo(fun);
-    return fun.getId();
-}
+    public funcionario getfuncionario(int funId) {
+        funcionario fun = gettingPojo(funcionario.class, funId);
+        return fun;
+    }
 
-public funcionario getfuncionario(int funId){
-    funcionario fun = gettingPojo(funcionario.class, funId);
-    return fun;
-}
-
-public List<funcionario> getEmployees(){
-   return  getCleanList(funcionario.class,"from funcionario fun");
-}
-
-
+    public List<funcionario> getEmployees() {
+        return getCleanList(funcionario.class, "from funcionario fun");
+    }
 }

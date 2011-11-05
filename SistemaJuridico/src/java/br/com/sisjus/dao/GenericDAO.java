@@ -33,6 +33,12 @@ protected  void savingPojo(Serializable pojo){
   sessao.beginTransaction().commit();
   sessao.close();
 }
+protected void updatePojo(Serializable pojo){
+    Session sessao = getSesseion();
+    sessao.update(pojo);
+    sessao.beginTransaction().commit();
+    sessao.close();
+}
 
 protected  <T extends Serializable> T gettingPojo(Class<T> Searchclass, Serializable key){
   Session sessao = getSesseion();
@@ -80,6 +86,7 @@ protected <T extends Serializable> List<T> getCleanList(Class<T> classToCast, St
    sessao.close();
    return returnObject;
 }
+
 public processo SearchProcess(String query){
       Session sessao = getSesseion();
        Query q = sessao.createQuery(query);
