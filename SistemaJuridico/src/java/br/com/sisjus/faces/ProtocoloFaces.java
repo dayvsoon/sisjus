@@ -27,6 +27,7 @@ public class ProtocoloFaces {
         private processDAO procDAO = new processDAO();
         private int Choise;
         private boolean permitir;
+        private int id; 
 
     /** Creates a new instance of ProtocoloFaces */
     public ProtocoloFaces() {
@@ -48,11 +49,9 @@ public class ProtocoloFaces {
         selectedProtocolo = new Protocolo();
         return "gotoAddNewProtocolo";
     }
-    
-      
-      
+
       public List<Protocolo> getProtocolo(Integer id){
-          id = Integer.parseInt( selectedProtocolo.getNumeroProcesso());
+          id =  selectedProtocolo.getId();
           ListOfProtocolo = (List<Protocolo>) protocoloDAO.getProtocolo(id);
           return ListOfProtocolo;
       }
@@ -68,7 +67,6 @@ public class ProtocoloFaces {
            permitir = true;
     }}else
      Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
-     System.out.println("Valor da escolha: "+Choise);
      if((Choise == 0)&& (permitir = true)){
      protocoloDAO.addProtocolo(selectedProtocolo);
       ListOfProtocolo = null;
@@ -99,8 +97,12 @@ public String FinishUpdateProtocolo(){
       protocoloDAO.updateProtocolo(selectedProtocolo);
       ListOfProtocolo = null;
       return "gotoListProtocolo";
-
-
+}
+public String goTraminte(){
+    return "goTramite";
+}
+public String goTramiteToMenu(){
+    return "goTramiteToMenu";
 }
 public String BackingToMenu(){
     return "goToMenu";
@@ -146,6 +148,22 @@ public List<SelectItem> getProtocolosOfSystem(){
 
     public void setSelectedProtocolo(Protocolo selectedProtocolo) {
         this.selectedProtocolo = selectedProtocolo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isPermitir() {
+        return permitir;
+    }
+
+    public void setPermitir(boolean permitir) {
+        this.permitir = permitir;
     }
 
 

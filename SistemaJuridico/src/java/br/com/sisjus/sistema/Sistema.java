@@ -4,6 +4,9 @@
  */
 package br.com.sisjus.sistema;
 
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
 /**
  *
  * @author miguel
@@ -88,7 +91,12 @@ public class Sistema {
     public void setPaginaDoSistema(String paginaDoSistema) {
         this.paginaDoSistema = paginaDoSistema;
     }
-
+public String logout() {
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(false);
+		session.invalidate(); 
+		return "logout";
+	}
     public String backToMenu(){
         return "aboutbackmenu";
     }

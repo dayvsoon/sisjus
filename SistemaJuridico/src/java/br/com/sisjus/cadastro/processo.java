@@ -8,11 +8,14 @@ package br.com.sisjus.cadastro;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -43,15 +46,12 @@ public class processo implements Serializable {
 
     @Column(name="advogado_reu")
     private String advogado_reu;
-
+    
     @Column(name="processnumber")
     private String numero_processo;
 
     @Column(name="cod_direito")
     private String cod_direito; //Exemplo: Direito Civil
-
-    @Column(name="status")
-    private Integer status;
 
     @Column(name="juiz_sentenca")
     private String juiz_sentenca;
@@ -66,20 +66,15 @@ public class processo implements Serializable {
     private Date datafinal;
 
     //private Integer Dataregressiva;
-
+    
     @Column(name="processdescription")
     private String descricao_processo;
-
-    @Column(name="processobservation")
-    private String observacao_processo;
     
     @Column(name="ID_OWNER")
     private String owner;
 
     @Column(name="prazo")
     private Integer prazo;
-    @Transient
-    public int ContadorRegressivo;
 
     public String getOwner() {
         return owner;
@@ -88,20 +83,6 @@ public class processo implements Serializable {
     public void setOwner(String owner) {
         this.owner = owner;
     }
-
-    public int ContadorDeDatas(Date dataInicial, Date dataFinal){
-        LocalDate localDateInicial = LocalDate.fromDateFields(dataInicial);
-        LocalDate localDateFinal = LocalDate.fromDateFields(dataFinal);
-
-        ContadorRegressivo = Days.daysBetween(localDateInicial, localDateFinal).getDays();
-
-        return ContadorRegressivo;
-    }
-
-    
-
-    
-
 
     public String getCod_direito() {
         return cod_direito;
@@ -126,12 +107,9 @@ public class processo implements Serializable {
     public void setDatainicial(Date datainicial) {
         this.datainicial = datainicial;
     }
-
-
     public String getDescricao_processo() {
         return descricao_processo;
     }
-
     public void setDescricao_processo(String descricao_processo) {
         this.descricao_processo = descricao_processo;
     }
@@ -193,36 +171,33 @@ public class processo implements Serializable {
         this.numero_processo = numero_processo;
     }
 
-    public String getObservacao_processo() {
-        return observacao_processo;
-    }
-
-    public void setObservacao_processo(String observacao_processo) {
-        this.observacao_processo = observacao_processo;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public int getContadorRegressivo() {
-        return ContadorRegressivo;
-    }
-
-    public void setContadorRegressivo(int ContadorRegressivo) {
-        this.ContadorRegressivo = ContadorRegressivo;
-    }
-
     public Integer getPrazo() {
 
         return prazo;
     }
 
-    public void setPrazo(Integer prazo) {
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final processo other = (processo) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 79 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+public void setPrazo(Integer prazo) {
         this.prazo = prazo;
         Calendar cal = Calendar.getInstance();
         cal.setTime(datainicial);
@@ -230,21 +205,4 @@ public class processo implements Serializable {
         datafinal = cal.getTime();
         System.out.println("Data Final: "+datafinal);
     }
-
-
-    /*
-    public Integer getDataregressiva() {
-        return Dataregressiva;
-    }
-
-    public void setDataregressiva(Integer Dataregressiva) {
-        this.Dataregressiva = Dataregressiva;
-    }
-**/
-
-    }
-
-
-
-
-
+      }

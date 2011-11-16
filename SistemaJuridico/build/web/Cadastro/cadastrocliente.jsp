@@ -32,9 +32,9 @@
                    
 
                     <h:outputLabel for="idpessoa" value="Id Pessoa: "/>
-                    <h:selectOneMenu id="somcliente" value="#{ClienteFaces.selectedClient.nome_pessoa}">
+                    <rich:comboBox id="somcliente" value="#{ClienteFaces.selectedClient.nome_pessoa}">
                         <f:selectItems value="#{ClienteFaces.clientsOfSystem}"/>
-                    </h:selectOneMenu>
+                    </rich:comboBox>
 
                     <h:outputLabel for="cpf" value="C.P.F: "/>
                     <h:inputText id="cpf" size="14" maxlength="15" onkeyup="Telefone(this,2)" value="#{ClienteFaces.selectedClient.cpfcnpj}">

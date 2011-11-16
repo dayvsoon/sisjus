@@ -21,9 +21,9 @@ public class ProtocoloDAO extends GenericDAO {
     public ProtocoloDAO() {
     }
 
-    public String addProtocolo(Protocolo protocolo){
+    public int addProtocolo(Protocolo protocolo){
         savingPojo(protocolo);
-  return protocolo.getNumeroProcesso();
+       return protocolo.getiD();
 }
 
 public void removeProtocolo(Protocolo protocolo){
@@ -40,7 +40,7 @@ public Protocolo getProtocolo(int ProtocoloId){
 }
 
 public List<Protocolo> getProtocolos(){
-   return  getCleanList(Protocolo.class, "from protocolo protocolo");
+   return  getCleanList(Protocolo.class, "from Protocolo protocol");
 }
 public List<Protocolo> getTramiteProtocolos(){
    return  getCleanList(Protocolo.class, "from protocolo protocolo where numeroProcesso = :numeroProcesso");

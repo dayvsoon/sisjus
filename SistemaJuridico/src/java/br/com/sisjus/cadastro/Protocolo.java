@@ -7,9 +7,13 @@ package br.com.sisjus.cadastro;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,9 +31,12 @@ public class Protocolo implements  Serializable {
     /** Creates a new instance of Protocolo */
     public Protocolo() {
     }
-
+    
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
+    private Integer id;
+    @Column(name="processnumber")
     private String NumeroProcesso;
     @Column(name="arquivado")
     private String Arquivado;
@@ -54,7 +61,10 @@ public class Protocolo implements  Serializable {
     public boolean Acesso;
     @Transient
     public boolean Disable;
-
+    
+  /*  @OneToMany(mappedBy="numero_processo")
+    private List<processo> processos;*/
+    
     public boolean isAcesso() {
         return Acesso;
     }
@@ -125,7 +135,13 @@ public class Protocolo implements  Serializable {
         this.NumeroProcesso = NumeroProcesso;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getOrigem() {
         return Origem;
@@ -169,6 +185,34 @@ public class Protocolo implements  Serializable {
         this.Disable = Disable;
     }
 
+    public Integer getiD() {
+        return id;
+    }
 
+    public void setiD(Integer iD) {
+        this.id = iD;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Protocolo other = (Protocolo) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
 
 }

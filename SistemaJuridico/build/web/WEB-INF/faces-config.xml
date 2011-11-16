@@ -192,6 +192,26 @@
             <from-outcome>goJuiz</from-outcome>
             <to-view-id>/Cadastro/cadastrojuiz.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>goTramite</from-outcome>
+            <to-view-id>/Busca/tramite.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goSearch</from-outcome>
+            <to-view-id>/Busca/processofilter.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/welcomeJSF.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoRelatorio</from-outcome>
+            <to-view-id>/Busca/Relatorios.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goUpdateConfig</from-outcome>
+            <to-view-id>/Busca/BuscaConfig.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/Cadastro/cadastrocliente.jsp</from-view-id>
@@ -373,6 +393,10 @@
             <from-outcome>aboutbackmenu</from-outcome>
             <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>gotoListConfig</from-outcome>
+            <to-view-id>/configuracoes.jsp</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/ExclusaoEdicao/EEProcesso.jsp</from-view-id>
@@ -393,6 +417,62 @@
             <to-view-id>/menu.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Busca/tramite.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>goTramiteToMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>backupDataBase</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.util.BackupDataBase</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/Busca/processofilter.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>backPageMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>empresa</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.cadastro.Empresa</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>logger</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.util.Log</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <managed-bean>
+        <managed-bean-name>atualizacaoDoSistemas</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.util.AtualizacaoDoSistema</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <navigation-rule>
+        <from-view-id>/Busca/Relatorios.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>RelBackMenu</from-outcome>
+            <to-view-id>/menu.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>configuracoes</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.sistema.Configuracoes</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <managed-bean>
+        <managed-bean-name>configDAO</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.dao.ConfigDAO</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>configuracoesFaces</managed-bean-name>
+        <managed-bean-class>br.com.sisjus.faces.ConfiguracoesFaces</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 </faces-config>
 
 

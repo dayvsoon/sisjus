@@ -10,7 +10,7 @@ package br.com.sisjus.cadastro;
  * @author miguel
  */
 
-
+import br.com.sisjus.sistema.Configuracoes;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -34,7 +34,7 @@ public class HibernateUtil {
                   .setProperty("hibernate.connection.url","jdbc:derby://localhost:1527/Sisjus")
                   .setProperty("hibernate.connection.username","manager")
                   .setProperty("hibernate.connection.password","manager")
-                  .setProperty("hibernate.default_schema","APP" )
+                  .setProperty("hibernate.default_schema","MANAGER" )
                   .setProperty("hibernate.hbm2ddl.auto","create")
                   .setProperty("hibernate.show_sql","true")
                   .setProperty("hibernate.format_sql","true")
@@ -53,6 +53,7 @@ public class HibernateUtil {
                   .addAnnotatedClass(Protocolo.class)
                   .addAnnotatedClass(StatusProcesso.class)
                   .addAnnotatedClass(AndamentoProcesso.class)
+                  .addAnnotatedClass(Configuracoes.class)
                   .buildSessionFactory();
     }
 

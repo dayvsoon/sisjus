@@ -13,6 +13,7 @@ import br.com.sisjus.dao.AndamentoProcessoDAO;
 import br.com.sisjus.dao.StatusProcessoDAO;
 import br.com.sisjus.dao.pessoaDAO;
 import br.com.sisjus.dao.processDAO;
+import br.com.sisjus.sistema.Configuracoes;
 import br.com.sisjus.util.Email;
 import java.util.LinkedList;
 import java.util.List;
@@ -29,17 +30,18 @@ public class AndamentoProcessoFaces {
     private AndamentoProcessoDAO andamentoDAO = new AndamentoProcessoDAO();
     private AndamentoProcesso selectedAndamento;
     private pessoa selectPessoa;
+    private Configuracoes selectConfig;
     private processDAO procDAO = new processDAO();
     private pessoaDAO pssDAO = new pessoaDAO();
     private StatusProcessoDAO statusDao = new StatusProcessoDAO();
     private int Choise;
-    private boolean sendEmail;
-    private String dominioEmail;
+    public String sendEmail;
+    public static String dominioEmail;
     private String emailDeEnvio;
     private String assunto;
-    private String seuEmail;
+    public static String seuEmail;
     private String corpoEmail;
-    private String password;
+    public static String password;
 
     /** Creates a new instance of AndamentoProcessoFaces */
     public AndamentoProcessoFaces() {
@@ -80,9 +82,11 @@ public class AndamentoProcessoFaces {
     }
 
     public String finishedProtocolo() throws InterruptedException {
-
+        emailDeEnvio = selectConfig.getSeuEmail();
+        dominioEmail = selectConfig.getDominioEmail();
         System.out.println("Email de envio: " + emailDeEnvio);
         System.out.println("dominio: " + dominioEmail);
+        sendEmail = selectConfig.getSendEmail();
         System.out.println("Envair Email: " + sendEmail);
         assunto = "Andamento do Processo sob Nº " + selectedAndamento.getNumeroProcesso();
         corpoEmail = selectedAndamento.getObservacao_processo();
@@ -90,8 +94,9 @@ public class AndamentoProcessoFaces {
         System.out.println("Escrito  " + corpoEmail);
         Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
         System.out.println("Valor da escolha: " + Choise);
+        password = selectConfig.getSuaSenha();
         if (Choise == 0) {
-            if (sendEmail == true) {
+            if (sendEmail.equals("S")) {
                 Email email = new Email(dominioEmail, seuEmail, assunto, emailDeEnvio, corpoEmail,password);
                 System.out.println("Processo de captura concluido ");
                 email.Send();
@@ -173,11 +178,11 @@ public class AndamentoProcessoFaces {
         this.selectedAndamento = selectedAndamento;
     }
 
-    public boolean isSendEmail() {
+    public String getSendEmail() {
         return sendEmail;
     }
 
-    public void setSendEmail(boolean sendEmail) {
+    public void setSendEmail(String sendEmail) {
         this.sendEmail = sendEmail;
     }
 
@@ -252,4 +257,13 @@ public class AndamentoProcessoFaces {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Configuracoes getSelectConfig() {
+        return selectConfig;
+    }
+
+    public void setSelectConfig(Configuracoes selectConfig) {
+        this.selectConfig = selectConfig;
+    }
+    
 }

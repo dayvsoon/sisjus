@@ -7,6 +7,7 @@ package br.com.sisjus.faces;
 
 import br.com.sisjus.cadastro.Usuario;
 import br.com.sisjus.dao.UserDAO;
+import br.com.sisjus.util.Log;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -35,12 +36,15 @@ public class UserFaces {
     }
 
     public String doAutenthicLogin(){
+       Log.TurnOn();
         if(userDAO.isValidLoginAndPassword(login, password)){
+            Log.info("O usuario "+login+ " efetuou o login");
             return "DoLoginSucessful";
 
         }else {
             FacesMessage msg = new FacesMessage("Usuário ou senha inválido!");
             FacesContext.getCurrentInstance().addMessage("erro", msg);
+            Log.Warning(msg.toString());
             return "DonotLoginSucessful";
         }
     }
