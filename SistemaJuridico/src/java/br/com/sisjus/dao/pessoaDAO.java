@@ -40,7 +40,6 @@ public class pessoaDAO extends GenericDAO {
 
     public pessoa getPerson(Integer personId) {
         pessoa person = gettingPojo(pessoa.class, personId);
-        System.out.println("Pessoa Encontrada "+ person.getNome());
         return person;
     }
 

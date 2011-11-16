@@ -9,6 +9,7 @@ import br.com.sisjus.cadastro.cliente;
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.ClienteDAO;
 import br.com.sisjus.dao.pessoaDAO;
+import br.com.sisjus.util.Log;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
@@ -26,6 +27,7 @@ public class ClienteFaces {
         private cliente selectedClient;
         private pessoaDAO pssDAO = new pessoaDAO();
         private int Choise;
+        private String data = br.com.sisjus.util.Data.Formatador;
 
     /** Creates a new instance of ClienteFaces */
     public ClienteFaces() {
@@ -46,21 +48,26 @@ public class ClienteFaces {
           return "gotoAddNewClienteJuridico";
       }
   public String FinishedClient(){
+      Log.TurnOn();
      Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
      System.out.println("Valor da escolha: "+Choise);
      if(Choise == 0){
      clienteDAO.addCliente(selectedClient);
+     Log.info("Dado gravado em "+data);
       ListOfCliente = null;
       JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
       return "gotoListCliente";
   }else
       JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
-      return "DontGoListCliente";
+      Log.Warning("tentativa de gravação falhada em "+data); 
+     return "DontGoListCliente";
   }
   public String removeClient(){
+      Log.TurnOn();
        Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja remover?");
         if(Choise == 0){
              clienteDAO.removeClient(selectedClient);
+             Log.info("Dado removido"+selectedClient.getNome_pessoa()+" em "+data);
              ListOfCliente = null;
              JOptionPane.showMessageDialog(null, "Dado removido no banco de dados com sucesso");
              return "gotoListCliente";

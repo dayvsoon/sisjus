@@ -13,9 +13,12 @@ import br.com.sisjus.dao.ClienteDAO;
 import br.com.sisjus.dao.StatusProcessoDAO;
 import br.com.sisjus.dao.advogadoJuizDAO;
 import br.com.sisjus.dao.processDAO;
+import br.com.sisjus.util.ReportsUtil;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
+import javax.swing.JOptionPane;
 
 
 
@@ -31,6 +34,8 @@ public class ProcessoFaces {
         private ClienteDAO cltDAO = new ClienteDAO();
         private advogadoJuizDAO adzDAO = new advogadoJuizDAO();
         private StatusProcessoDAO statusDao = new StatusProcessoDAO();
+        private int Choise;
+        private int loop;
 
 
     /** Creates a new instance of ProcessoFaces */
@@ -82,9 +87,23 @@ public List<SelectItem> getMajorLayerOfSystem(){
         return ListOfProcess;
     }
     public String doAddProcesso(){
+    loop = 7;
+       // Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
+         // if(Choise == 0){
         selectedProcesso = new processo();
+        //JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
         return "gotoAddNewProcess";
+    //}else{
+      //  JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
+        //  return "DontgotoNewProcess";
+    //}
+        
     }
+    public void gerarRelProcesso() throws IOException {		
+		selectedProcesso = processDAO.getProcess(selectedProcesso.getId());		
+		//ListOfProcess = (List) selectedProcesso;
+                new ReportsUtil().relatorioUSALL(ListOfProcess);
+	}
   public String FinishedProcess(){
       processDAO.addProcess(selectedProcesso);
       ListOfProcess = null;
@@ -106,7 +125,9 @@ public String FinishUpdateProcess(){
 public String backPage(){
     return "backPageMenu";
 }
-
+public String goSearch(){
+    return "goSearch";
+}
     public advogadoJuizDAO getAdzDAO() {
         return adzDAO;
     }
@@ -137,6 +158,30 @@ public String backPage(){
 
     public void setSelectedProcesso(processo selectedProcesso) {
         this.selectedProcesso = selectedProcesso;
+    }
+
+    public int getChoise() {
+        return Choise;
+    }
+
+    public void setChoise(int Choise) {
+        this.Choise = Choise;
+    }
+
+    public StatusProcessoDAO getStatusDao() {
+        return statusDao;
+    }
+
+    public void setStatusDao(StatusProcessoDAO statusDao) {
+        this.statusDao = statusDao;
+    }
+
+    public int getLoop() {
+        return loop;
+    }
+
+    public void setLoop(int loop) {
+        this.loop = loop;
     }
 
 

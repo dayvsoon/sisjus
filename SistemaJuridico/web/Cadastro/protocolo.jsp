@@ -72,7 +72,7 @@
             <h:inputText id="destino" value="#{ProtocoloFaces.selectedProtocolo.destino}" disabled="#{Protocolo.disable}"/>
 
             <h:commandButton action="#{ProtocoloFaces.FinishedProtocolo}" value="Salvar"/>
-            <h:commandButton value="Voltar" action="#{ProtocoloFaces.BackingToMenu}" />
+            <h:commandButton value="Voltar" action="#{ProtocoloFaces.BackingToMenu}" immediate="true" />
         </h:panelGrid>
              </fieldset>
             <h:outputText id="LabelContador" value="Quantidade de caractere: "/> <h:outputText id="Contador" value="#{ProtocoloFaces.selectedProtocolo.countWordOfResenha}"/>

@@ -36,7 +36,7 @@ public class Usuario implements Serializable
     @Column(name="id")
     private int id_user;
 
-    @Column(name="nome",nullable=false)
+    @Column(name="nome",nullable=false, unique=true)
     private String nome;
 
     @Column(name="sobrenome",nullable=false)

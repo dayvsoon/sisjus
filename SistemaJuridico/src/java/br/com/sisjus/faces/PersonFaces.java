@@ -7,10 +7,12 @@ package br.com.sisjus.faces;
 
 import br.com.sisjus.cadastro.pessoa;
 import br.com.sisjus.dao.pessoaDAO;
+import br.com.sisjus.util.Log;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.faces.model.SelectItem;
+import javax.swing.JOptionPane;
 import org.hibernate.Session;
 
 /**
@@ -24,6 +26,10 @@ public class PersonFaces {
         private pessoa selectedPerson;
         protected Session session;
         private Integer id;
+        private int Choise;
+        private int loop;
+        private boolean turnOn;
+        public String data = br.com.sisjus.util.Data.Formatador;
 
     public Integer getId() {
         return id;
@@ -60,15 +66,34 @@ public class PersonFaces {
         return ListOfPerson;
     }
       public String doAddPerson(){
+         
         selectedPerson = new pessoa();
         return "gotoAddNewPerson";
-    }
+           }
 
       public String FinishedPerson(){
-      personDAO.addPerson(selectedPerson);
-      ListOfPerson = null;
+      Choise = JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja gravar?");
+       if(Choise == 0){
+          Log.TurnOn();
+           personDAO.addPerson(selectedPerson);
+          Log.info("Dados gravado, nome = "+ selectedPerson.getNome().toString()+" em  "+data);
+          System.out.println("Nome: "+selectedPerson.getNome().toString()+"");
+          JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
+          ListOfPerson = null;
+      loop = JOptionPane.showConfirmDialog(null, "Você deseja inserir outro dado?");
+      while( loop == 0){
+          selectedPerson = new pessoa();
+          personDAO.addPerson(selectedPerson);
+           Log.info("Dados gravado, uma nova pessoa" + data);
+           ListOfPerson = null;
+          JOptionPane.showMessageDialog(null, "Dado gravado no banco de dados com sucesso");
       return "gotoListPerson";
+       }}else
+          JOptionPane.showMessageDialog(null, "Dado não gravado no banco de dados");
+      return "DontGoRecordNewPerson";
   }
+      
+      
 
       public String removePerson(){
       personDAO.removePerson(selectedPerson);
@@ -125,7 +150,37 @@ public class PersonFaces {
         this.selectedPerson = selectedPerson;
     }
 
-    /** Creates a new instance of PersonFaces */
+    public int getChoise() {
+        return Choise;
+    }
+
+    public void setChoise(int Choise) {
+        this.Choise = Choise;
+    }
+
+    public int getLoop() {
+        return loop;
+    }
+
+    public void setLoop(int loop) {
+        this.loop = loop;
+    }
+
+    public boolean isTurnOn() {
+        return turnOn;
+    }
+
+    public void setTurnOn(boolean turnOn) {
+        this.turnOn = turnOn;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
 
 }

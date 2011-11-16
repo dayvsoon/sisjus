@@ -67,12 +67,7 @@
                     <h:outputLabel for="coddir" value="Classificação do Direito: "/>
                     <h:inputText id="coddir" size="16" value="#{ProcessoFaces.selectedProcesso.cod_direito}"/>
                     <h:outputText/>
-                    
-                    
-      
-                    
-                    <h:outputText/>
-                
+ 
                     <h:outputLabel for="idjuiz" value="ID do Juiz: "/>
                     <h:selectOneMenu id="idjuiz" value="#{ProcessoFaces.selectedProcesso.juiz_sentenca}">
                         <f:selectItem itemLabel="- Selecione o Juiz - " />
@@ -108,10 +103,9 @@
                         <f:selectItem itemLabel="365 Dias" itemValue="365" />
                         <a4j:support event="onchange" reRender="datafinal"/>
                     </h:selectOneMenu>
+                    <h:outputText/>
                     
-
                     <h:outputLabel for="datafinal" value="Data Final: " />
-                    
                     <h:outputText id="datafinal" value="#{ProcessoFaces.selectedProcesso.datafinal}">
                         <f:convertDateTime  pattern="dd/MM/yyyy" type="date" dateStyle="short" timeZone="GMT-3" />
                     </h:outputText>

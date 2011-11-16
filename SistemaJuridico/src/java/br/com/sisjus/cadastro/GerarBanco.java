@@ -18,10 +18,11 @@ public class GerarBanco {
 
     public static void main(String[] args) {
 		Configuration cfg = new AnnotationConfiguration();
-                cfg.getClassMapping("HibernateUtil.class");
+                cfg.getClassMappings();
                 
 		SchemaExport SE = new SchemaExport(cfg);
 		SE.create(true, true);
+                
 
 }
     

@@ -96,7 +96,7 @@
                         </rich:menuGroup>
                         <rich:menuGroup value="Ferramentas">
                             <rich:menuItem submitMode="none" icon="./images/config.png">
-                                <h:commandLink  value="Configuração" action="#{Sistema.goConfig}"/>
+                                <h:commandLink  value="Configuração" action="#{configuracoesFaces.doAddConfig()}"/>
                             </rich:menuItem>
                         </rich:menuGroup>
                         <rich:menuItem submitMode="none" >
@@ -133,7 +133,7 @@
                                 <h:commandLink action="#{AdvogadoJuizFaces.doUpdateLayer}" value="Juiz"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/Newdoc.png">
-                                <h:commandLink action="#{ProcessoFaces.doUpdateProcess}" value="Processo"/>
+                                <h:commandLink action="#{ProcessoFaces.goSearch}" value="Processo"/>
                             </rich:menuItem>
                         </rich:menuGroup>
                     </rich:dropDownMenu>
@@ -149,7 +149,7 @@
                                 <h:commandLink action="#{ProtocoloFaces.doAddProtocolo}" value="Cadastrar"/>
                             </rich:menuItem>
                             <rich:menuItem submitMode="none" icon="./images/tramite.png">
-                                <h:commandLink value="Ver Trâmite"/>
+                                <h:commandLink value="Ver Trâmite" action="#{ProtocoloFaces.goTraminte}"/>
                             </rich:menuItem>
                         </rich:menuGroup>
                     </rich:dropDownMenu>
@@ -170,6 +170,9 @@
                                 <h:outputText value="Relatórios"/>
                             </h:panelGroup>
                         </f:facet>
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink value="Gerar Relatorios" action="#{reportsUtil.gotoRelatorio()}"/>  
+                        </rich:menuItem>    
                     </rich:dropDownMenu>
                     <rich:dropDownMenu>
                         <f:facet name="label">
@@ -180,11 +183,17 @@
                         <rich:menuItem submitMode="none">
                         <h:commandLink  value="Sobre" action="#{Sistema.goAbout()}"/>
                         </rich:menuItem>
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink value="Backup Banco de Dados" action="#{backupDataBase.backUpDatabase()}"/>
+                        </rich:menuItem>
+                        <rich:menuItem submitMode="none">
+                            <h:commandLink value="Verificar Atualização"/>
+                        </rich:menuItem>
                     </rich:dropDownMenu>
                 </rich:toolBar>
                 <br/>
                 <h4>Sisjus versão <h:outputText id="Version" value="#{Sistema.version}" /> </h4>
-                <h5>  <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 10pt; text-align: left ; padding-left: 1px; padding-bottom: 2em "/>, <span style="font-size: 9pt; text-align: left" id="timer">Relógio</span> , <h:commandLink style="font-size: 9pt; text-align: left" value="Sing Out"/>    </h5>
+                <h5>  <h:outputText value="#{UserFaces.login}, agora são: " style="font-size: 10pt; text-align: left ; padding-left: 1px; padding-bottom: 2em "/>, <span style="font-size: 9pt; text-align: left" id="timer">Relógio</span> , <h:commandLink style="font-size: 9pt; text-align: left" value="Log Out" action="#{Sistema.logout()}"/>    </h5>
                 <rich:hotKey key="Alt+p" handler="#{rich:element('addpessoa')}.show();return gotoAddNewPerson;" /> 
               
             </h:form>
